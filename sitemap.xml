@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://hyerankwak.github.io/my-new-site/</loc><priority>1.0</priority></url>
+  <url><loc>https://hyerankwak.github.io/my-new-site/blog/</loc><priority>0.9</priority></url>
+  <url><loc>https://hyerankwak.github.io/my-new-site/content-plan.html</loc><priority>0.6</priority></url>
   <url><loc>https://hyerankwak.github.io/my-new-site/posts/6-month-baby-toys.html</loc><priority>0.8</priority></url>
   <url><loc>https://hyerankwak.github.io/my-new-site/posts/7-month-baby-toys.html</loc><priority>0.8</priority></url>
   <url><loc>https://hyerankwak.github.io/my-new-site/posts/8-month-baby-toys.html</loc><priority>0.8</priority></url>
@@ -14,6 +16,14 @@
   <url><loc>https://hyerankwak.github.io/my-new-site/posts/elementary-grade-4-recommendations.html</loc><priority>0.7</priority></url>
   <url><loc>https://hyerankwak.github.io/my-new-site/posts/elementary-grade-5-recommendations.html</loc><priority>0.7</priority></url>
   <url><loc>https://hyerankwak.github.io/my-new-site/posts/elementary-grade-6-recommendations.html</loc><priority>0.7</priority></url>
+  <url><loc>https://hyerankwak.github.io/my-new-site/blog/montessori-play-at-home.html</loc><priority>0.7</priority></url>
+  <url><loc>https://hyerankwak.github.io/my-new-site/blog/baby-development-play-6-12.html</loc><priority>0.7</priority></url>
+  <url><loc>https://hyerankwak.github.io/my-new-site/blog/toy-rotation-method.html</loc><priority>0.7</priority></url>
+  <url><loc>https://hyerankwak.github.io/my-new-site/blog/toddler-sensory-play.html</loc><priority>0.7</priority></url>
+  <url><loc>https://hyerankwak.github.io/my-new-site/blog/baby-food-snack-ideas.html</loc><priority>0.7</priority></url>
+  <url><loc>https://hyerankwak.github.io/my-new-site/blog/preschool-learning-play.html</loc><priority>0.7</priority></url>
+  <url><loc>https://hyerankwak.github.io/my-new-site/blog/elementary-reading-habit.html</loc><priority>0.7</priority></url>
+  <url><loc>https://hyerankwak.github.io/my-new-site/blog/elementary-study-routine.html</loc><priority>0.7</priority></url>
   <url><loc>https://hyerankwak.github.io/my-new-site/privacy.html</loc><priority>0.4</priority></url>
   <url><loc>https://hyerankwak.github.io/my-new-site/terms.html</loc><priority>0.4</priority></url>
   <url><loc>https://hyerankwak.github.io/my-new-site/editorial-policy.html</loc><priority>0.4</priority></url>
