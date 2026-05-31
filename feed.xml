@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>토이포포 최신 글</title>
+    <link>https://hyerankwak.github.io/my-new-site/</link>
+    <description>영유아부터 초등학생까지 발달, 놀이, 학습, 생활 추천 정보</description>
+    <language>ko</language>
+    <item><title>집에서 하는 몬테소리식 놀이 방법</title><link>https://hyerankwak.github.io/my-new-site/blog/montessori-play-at-home.html</link></item>
+    <item><title>6~12개월 아기 발달에 좋은 놀이</title><link>https://hyerankwak.github.io/my-new-site/blog/baby-development-play-6-12.html</link></item>
+    <item><title>장난감 로테이션 방법</title><link>https://hyerankwak.github.io/my-new-site/blog/toy-rotation-method.html</link></item>
+    <item><title>아기 간식과 유아식 준비 팁</title><link>https://hyerankwak.github.io/my-new-site/blog/baby-food-snack-ideas.html</link></item>
+    <item><title>초등 문해력과 독서 습관</title><link>https://hyerankwak.github.io/my-new-site/blog/elementary-reading-habit.html</link></item>
+  </channel>
+</rss>
