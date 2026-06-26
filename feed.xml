@@ -3,176 +3,71 @@
   <channel>
     <title>토이포포 최신 글</title>
     <link>https://toypoppo.kr/</link>
-    <description>육아 고민, 발달놀이, 부모 가이드, 엄마표 자료를 전합니다.</description>
+    <description>육아 고민, 발달놀이, 부모 가이드, 엄마표 자료, 몬테소리, 육아도구를 전합니다.</description>
     <language>ko-KR</language>
-    <lastBuildDate>Fri, 26 Jun 2026 00:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 27 Jun 2026 00:00:00 +0900</lastBuildDate>
     <item>
-      <title>6개월 아기 발달놀이, 집에서 쉽게 하는 방법</title>
-      <link>https://toypoppo.kr/blog/6-month-baby-development-play.html</link>
-      <guid>https://toypoppo.kr/blog/6-month-baby-development-play.html</guid>
-      <description>6개월 아기 발달놀이를 뒤집기, 앉기 준비, 손 뻗기, 촉감 탐색 중심으로 정리했습니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
+      <title>개월별 발달 체크리스트</title>
+      <link>https://toypoppo.kr/parenting-tools/development-checklist.html</link>
+      <guid>https://toypoppo.kr/parenting-tools/development-checklist.html</guid>
+      <description>6개월부터 12개월까지 아이 발달을 부모가 참고용으로 확인할 수 있는 체크리스트 도구입니다.</description>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 +0900</pubDate>
     </item>
     <item>
-      <title>장난감을 계속 입에 넣는데 괜찮을까요?</title>
-      <link>https://toypoppo.kr/counseling/toy-in-mouth.html</link>
-      <guid>https://toypoppo.kr/counseling/toy-in-mouth.html</guid>
-      <description>입으로 탐색하는 시기와 위험 신호, 장난감 위생 관리 기준을 정리했습니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
+      <title>오늘의 놀이 추천</title>
+      <link>https://toypoppo.kr/parenting-tools/today-play.html</link>
+      <guid>https://toypoppo.kr/parenting-tools/today-play.html</guid>
+      <description>아이 월령과 오늘 컨디션에 맞춰 집에서 바로 할 수 있는 놀이를 추천하는 도구입니다.</description>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 +0900</pubDate>
     </item>
     <item>
-      <title>7개월인데 배밀이를 안 해요</title>
-      <link>https://toypoppo.kr/counseling/no-crawling-7-month.html</link>
-      <guid>https://toypoppo.kr/counseling/no-crawling-7-month.html</guid>
-      <description>7개월 아기 배밀이 개인차와 집에서 도울 수 있는 놀이를 정리했습니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
+      <title>장난감 선택 가이드</title>
+      <link>https://toypoppo.kr/parenting-tools/toy-selection-guide.html</link>
+      <guid>https://toypoppo.kr/parenting-tools/toy-selection-guide.html</guid>
+      <description>아이 연령과 놀이 목적에 맞는 장난감 유형을 고르는 실사용 도구입니다.</description>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 +0900</pubDate>
     </item>
     <item>
-      <title>장난감이 너무 많으면 안 좋을까요?</title>
-      <link>https://toypoppo.kr/counseling/too-many-toys.html</link>
-      <guid>https://toypoppo.kr/counseling/too-many-toys.html</guid>
-      <description>장난감이 많을 때 집중이 짧아지는 이유와 정리 기준을 안내합니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
+      <title>어린이집 준비물 체크리스트</title>
+      <link>https://toypoppo.kr/parenting-tools/daycare-checklist.html</link>
+      <guid>https://toypoppo.kr/parenting-tools/daycare-checklist.html</guid>
+      <description>어린이집 입소 전 준비물을 빠뜨리지 않도록 확인하는 체크리스트 도구입니다.</description>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 +0900</pubDate>
     </item>
     <item>
-      <title>몬테소리 장난감 꼭 필요할까요?</title>
-      <link>https://toypoppo.kr/counseling/need-montessori-toys.html</link>
-      <guid>https://toypoppo.kr/counseling/need-montessori-toys.html</guid>
-      <description>몬테소리 장난감 구매 전 부모가 먼저 알아야 할 기준을 정리했습니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
+      <title>외출 준비 체크리스트</title>
+      <link>https://toypoppo.kr/parenting-tools/outing-checklist.html</link>
+      <guid>https://toypoppo.kr/parenting-tools/outing-checklist.html</guid>
+      <description>아이와 외출할 때 꼭 필요한 물건을 상황별로 확인하는 체크리스트 도구입니다.</description>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 +0900</pubDate>
     </item>
     <item>
-      <title>돌 선물 얼마가 적당할까요?</title>
-      <link>https://toypoppo.kr/counseling/first-birthday-gift-budget.html</link>
-      <guid>https://toypoppo.kr/counseling/first-birthday-gift-budget.html</guid>
-      <description>돌 선물 예산을 정할 때 관계, 실용성, 사용 기간을 함께 보는 방법입니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
+      <title>작성자 소개</title>
+      <link>https://toypoppo.kr/author.html</link>
+      <guid>https://toypoppo.kr/author.html</guid>
+      <description>토이포포 편집팀의 콘텐츠 작성 기준입니다.</description>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 +0900</pubDate>
     </item>
     <item>
-      <title>레고는 몇 살부터 가능한가요?</title>
-      <link>https://toypoppo.kr/counseling/lego-start-age.html</link>
-      <guid>https://toypoppo.kr/counseling/lego-start-age.html</guid>
-      <description>레고 시작 연령과 듀플로, 클래식, 작은 부품 안전 기준을 정리했습니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
+      <title>콘텐츠 업데이트 정책</title>
+      <link>https://toypoppo.kr/update-policy.html</link>
+      <guid>https://toypoppo.kr/update-policy.html</guid>
+      <description>토이포포 콘텐츠 점검과 수정 원칙입니다.</description>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 +0900</pubDate>
     </item>
     <item>
-      <title>그림책을 안 좋아해요</title>
-      <link>https://toypoppo.kr/counseling/doesnt-like-books.html</link>
-      <guid>https://toypoppo.kr/counseling/doesnt-like-books.html</guid>
-      <description>그림책을 거부하는 아이에게 부모가 해볼 수 있는 접근법입니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
+      <title>쿠팡파트너스 안내</title>
+      <link>https://toypoppo.kr/affiliate-disclosure.html</link>
+      <guid>https://toypoppo.kr/affiliate-disclosure.html</guid>
+      <description>토이포포 제휴 링크 고지 기준입니다.</description>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 +0900</pubDate>
     </item>
     <item>
-      <title>낯가림이 심해요</title>
-      <link>https://toypoppo.kr/counseling/stranger-anxiety.html</link>
-      <guid>https://toypoppo.kr/counseling/stranger-anxiety.html</guid>
-      <description>낯가림이 심한 아이를 억지로 적응시키지 않는 방법을 정리했습니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>TV를 보여줘도 될까요?</title>
-      <link>https://toypoppo.kr/counseling/screen-time-baby.html</link>
-      <guid>https://toypoppo.kr/counseling/screen-time-baby.html</guid>
-      <description>영유아 화면 노출을 고민하는 부모를 위한 현실적인 기준입니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>혼자 노는 시간이 너무 짧아요</title>
-      <link>https://toypoppo.kr/counseling/short-independent-play.html</link>
-      <guid>https://toypoppo.kr/counseling/short-independent-play.html</guid>
-      <description>혼자 놀이 시간이 짧은 아이에게 필요한 환경과 부모 반응을 정리했습니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>7개월 아기 하루 일과 예시</title>
-      <link>https://toypoppo.kr/parent-guide/7-month-daily-routine.html</link>
-      <guid>https://toypoppo.kr/parent-guide/7-month-daily-routine.html</guid>
-      <description>수유, 낮잠, 발달놀이를 무리 없이 연결하는 7개월 하루 흐름입니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>8개월 아기 하루 일과 예시</title>
-      <link>https://toypoppo.kr/parent-guide/8-month-daily-routine.html</link>
-      <guid>https://toypoppo.kr/parent-guide/8-month-daily-routine.html</guid>
-      <description>기기 전후의 탐색 욕구를 고려한 8개월 하루 일과입니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>10개월 아기 놀아주는 방법</title>
-      <link>https://toypoppo.kr/parent-guide/10-month-play-guide.html</link>
-      <guid>https://toypoppo.kr/parent-guide/10-month-play-guide.html</guid>
-      <description>잡고 서기와 넣고 빼기를 좋아하는 10개월 아기를 위한 놀이법입니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>두돌 아이 집중력 놀이</title>
-      <link>https://toypoppo.kr/parent-guide/two-year-focus-play.html</link>
-      <guid>https://toypoppo.kr/parent-guide/two-year-focus-play.html</guid>
-      <description>두돌 아이가 짧게라도 몰입할 수 있는 놀이 환경과 활동입니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>비오는 날 집콕 놀이</title>
-      <link>https://toypoppo.kr/parent-guide/rainy-day-home-play.html</link>
-      <guid>https://toypoppo.kr/parent-guide/rainy-day-home-play.html</guid>
-      <description>비 오는 날 집에서 에너지를 풀고 차분히 마무리하는 놀이 흐름입니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>장난감 정리 방법</title>
-      <link>https://toypoppo.kr/parent-guide/toy-organization-method.html</link>
-      <guid>https://toypoppo.kr/parent-guide/toy-organization-method.html</guid>
-      <description>아이도 부모도 덜 지치는 장난감 정리 기준입니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>장난감 로테이션 하는 법</title>
-      <link>https://toypoppo.kr/parent-guide/toy-rotation-guide.html</link>
-      <guid>https://toypoppo.kr/parent-guide/toy-rotation-guide.html</guid>
-      <description>장난감을 줄이지 않고도 새롭게 느끼게 하는 순환 정리법입니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>그림책 읽어주는 방법</title>
-      <link>https://toypoppo.kr/parent-guide/how-to-read-picture-books.html</link>
-      <guid>https://toypoppo.kr/parent-guide/how-to-read-picture-books.html</guid>
-      <description>그림책을 끝까지 읽지 않아도 되는 현실적인 읽기 방법입니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>고구려 워크지</title>
-      <link>https://toypoppo.kr/worksheets/goguryeo-worksheet.html</link>
-      <guid>https://toypoppo.kr/worksheets/goguryeo-worksheet.html</guid>
-      <description>초등 아이와 고구려를 이야기와 퀴즈로 익히는 엄마표 자료입니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>백제 워크지</title>
-      <link>https://toypoppo.kr/worksheets/baekje-worksheet.html</link>
-      <guid>https://toypoppo.kr/worksheets/baekje-worksheet.html</guid>
-      <description>백제의 문화와 교류를 아이 눈높이로 정리한 엄마표 자료입니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>신라 워크지</title>
-      <link>https://toypoppo.kr/worksheets/silla-worksheet.html</link>
-      <guid>https://toypoppo.kr/worksheets/silla-worksheet.html</guid>
-      <description>신라와 통일 신라를 쉽게 이해하는 초등 한국사 활동지입니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>세종대왕 워크지</title>
-      <link>https://toypoppo.kr/worksheets/king-sejong-worksheet.html</link>
-      <guid>https://toypoppo.kr/worksheets/king-sejong-worksheet.html</guid>
-      <description>세종대왕과 한글 창제를 아이와 함께 생각해보는 자료입니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
-    </item>
-    <item>
-      <title>이순신 워크지</title>
-      <link>https://toypoppo.kr/worksheets/yi-sun-sin-worksheet.html</link>
-      <guid>https://toypoppo.kr/worksheets/yi-sun-sin-worksheet.html</guid>
-      <description>이순신 장군의 용기와 책임감을 다루는 초등 활동지입니다.</description>
-      <pubDate>Fri, 26 Jun 2026 00:00:00 +0900</pubDate>
+      <title>몬테소리 일상생활 놀이</title>
+      <link>https://toypoppo.kr/montessori/everyday-life-play.html</link>
+      <guid>https://toypoppo.kr/montessori/everyday-life-play.html</guid>
+      <description>비싼 교구 없이 집에서 시작하는 몬테소리 일상생활 놀이 방법입니다.</description>
+      <pubDate>Sat, 27 Jun 2026 00:00:00 +0900</pubDate>
     </item>
   </channel>
 </rss>
