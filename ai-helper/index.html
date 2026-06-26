@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI 육아도우미 Beta | 토이포포</title>
+  <meta name="description" content="AI 육아도우미 Beta는 자유 채팅이 아니라 발달놀이, 장난감, 워크지, 하루 일과를 입력값에 맞춰 추천하는 토이포포 추천 엔진입니다.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://toypoppo.kr/ai-helper/">
+  <meta property="og:title" content="AI 육아도우미 Beta | 토이포포">
+  <meta property="og:description" content="AI 육아도우미 Beta는 자유 채팅이 아니라 발달놀이, 장난감, 워크지, 하루 일과를 입력값에 맞춰 추천하는 토이포포 추천 엔진입니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://toypoppo.kr/ai-helper/">
+  <meta property="og:site_name" content="토이포포">
+  <meta property="og:locale" content="ko_KR">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4675052661212934" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://toypoppo.kr/#organization","name":"토이포포","url":"https://toypoppo.kr"},{"@type":"WebSite","@id":"https://toypoppo.kr/#website","name":"토이포포","url":"https://toypoppo.kr","publisher":{"@id":"https://toypoppo.kr/#organization"},"inLanguage":"ko-KR"},{"@type":"WebPage","name":"AI 육아도우미 Beta | 토이포포","description":"AI 육아도우미 Beta는 자유 채팅이 아니라 발달놀이, 장난감, 워크지, 하루 일과를 입력값에 맞춰 추천하는 토이포포 추천 엔진입니다.","url":"https://toypoppo.kr/ai-helper/","isPartOf":{"@id":"https://toypoppo.kr/#website"},"dateModified":"2026-06-27","inLanguage":"ko-KR"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://toypoppo.kr"},{"@type":"ListItem","position":2,"name":"AI 육아도우미 Beta","item":"https://toypoppo.kr/ai-helper/"}]}]}</script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/"><span class="brand-mark">T</span><span><strong>토이포포</strong><small>대한민국 부모를 위한 육아 정보 플랫폼</small></span></a>
+    <nav class="nav" aria-label="주요 메뉴"><a href="/counseling/">상담소</a><a href="/parent-guide/">부모가이드</a><a href="/development-play/">발달놀이</a><a href="/montessori/">몬테소리</a><a href="/worksheets/">엄마표 자료실</a><a href="/parenting-tools/">육아도구</a><a href="/local-info/">우리동네 육아정보</a><a href="/ai-helper/">AI 육아도우미</a></nav>
+  </header>
+  <main class="article-shell">
+    <article class="article-card readable-article">
+      <p class="breadcrumb"><a href="/">홈</a> / AI 육아도우미</p>
+      <p class="eyebrow">Recommendation Engine Beta</p>
+      <h1>AI 육아도우미 Beta</h1>
+      <p class="modified-date" data-modified-date="2026-06-27">최종 수정일: 2026-06-27</p>
+      <p class="lead">AI 육아도우미는 자유 채팅창이 아니라 부모가 바로 사용할 수 있는 추천 엔진 형태로 운영합니다. 현재 베타 버전은 토이포포 내부 콘텐츠와 발달놀이 기준을 바탕으로 오늘 놀이, 장난감 방향, 워크지, 하루 일과를 추천합니다.</p>
+      <div class="summary-box"><strong>애드센스 모드 운영 원칙</strong><ul><li>AI가 사이트의 메인이 되지 않도록 정보 콘텐츠를 우선합니다.</li><li>부모가 입력한 값에 맞춘 참고 추천만 제공합니다.</li><li>의료·발달 진단이나 치료 조언은 제공하지 않습니다.</li></ul></div>
+      <section class="tool-panel"><h2>AI 발달놀이 추천</h2><label>개월 <select id="playAge"><option>6개월</option><option>7개월</option><option>8개월</option><option>9개월</option><option>10개월</option><option>11개월</option><option>12개월</option></select></label><label>오늘 날씨 <select id="weather"><option>맑음</option><option>비</option><option>더움</option><option>추움</option></select></label><label>놀이 시간 <select id="playTime"><option>5분</option><option>10분</option><option>20분</option></select></label><label>집에 있는 물건 <input id="playItems" placeholder="예: 공, 거울, 천, 컵"></label><button class="button primary" id="playAiBtn" type="button">오늘 놀이 추천</button><div id="playAiResult" class="summary-box soft"></div></section>
+      <section class="tool-panel"><h2>AI 장난감 추천</h2><label>개월 <select id="toyAge"><option>6개월</option><option>9개월</option><option>12개월</option><option>24개월</option><option>초등 저학년</option></select></label><label>예산 <select id="budget"><option>1만원대</option><option>2~3만원대</option><option>5만원대</option><option>선물용</option></select></label><label>관심 분야 <select id="interest"><option>소근육</option><option>대근육</option><option>그림책</option><option>역할놀이</option><option>보드게임</option></select></label><button class="button primary" id="toyAiBtn" type="button">추천 방향 보기</button><div id="toyAiResult" class="summary-box soft"></div></section>
+      <section class="tool-panel"><h2>AI 워크지 추천</h2><label>나이 <select id="sheetAge"><option>6세</option><option>7세</option><option>초등 1학년</option><option>초등 2학년</option><option>초등 3학년</option></select></label><label>공부 분야 <select id="studyArea"><option>문해력</option><option>속담</option><option>사자성어</option><option>한국사</option><option>독해</option></select></label><button class="button primary" id="sheetAiBtn" type="button">워크지 추천</button><div id="sheetAiResult" class="summary-box soft"></div></section>
+      <section class="tool-panel"><h2>AI 하루 육아플래너</h2><label>아이 개월 <select id="planAge"><option>7개월</option><option>10개월</option><option>12개월</option><option>24개월</option><option>5세</option></select></label><label>요일 <select id="dayType"><option>평일</option><option>주말</option></select></label><label>장소 <select id="placeType"><option>실내</option><option>실외</option></select></label><button class="button primary" id="planAiBtn" type="button">오늘 일정 만들기</button><div id="planAiResult" class="summary-box soft"></div></section>
+      <section><h2>AI보다 중요한 것</h2><p>토이포포의 AI 기능은 부모의 판단을 대신하지 않습니다. 아이가 피곤해 보이거나 낯선 장소를 힘들어한다면 추천 결과보다 아이의 반응을 먼저 봐야 합니다. 베타 기간에는 추천 결과를 내부 글과 연결해, 부모가 왜 이 놀이가 필요한지 함께 이해할 수 있도록 구성합니다.</p></section>
+      <section class="note-box"><strong>전문가 상담 안내</strong><p>이 콘텐츠는 일반적인 육아 정보를 제공하기 위한 자료입니다. 아이의 발달에는 개인차가 있으며 건강 또는 발달에 대한 걱정이 있는 경우 소아청소년과 또는 관련 전문가와 상담하시기 바랍니다.</p></section>
+      <section><h2>함께 보면 좋은 글</h2><div class="related-grid"><a href="/counseling/toy-in-mouth.html"><strong>장난감을 계속 입에 넣는데 괜찮을까요?</strong><span>토이포포 안에서 이어서 읽기 좋은 육아 정보입니다.</span></a><a href="/parent-guide/toy-rotation-guide.html"><strong>장난감 로테이션 하는 법</strong><span>토이포포 안에서 이어서 읽기 좋은 육아 정보입니다.</span></a><a href="/blog/7-month-baby-development-play.html"><strong>7개월 아기 발달놀이</strong><span>토이포포 안에서 이어서 읽기 좋은 육아 정보입니다.</span></a><a href="/montessori/prepared-environment.html"><strong>몬테소리 준비된 환경</strong><span>토이포포 안에서 이어서 읽기 좋은 육아 정보입니다.</span></a><a href="/parenting-tools/today-play.html"><strong>오늘의 놀이 추천</strong><span>토이포포 안에서 이어서 읽기 좋은 육아 정보입니다.</span></a></div></section>
+    </article>
+  </main>
+  <script>
+    function set(id, html){ document.getElementById(id).innerHTML = html; }
+    document.getElementById("playAiBtn").onclick = () => {
+      const age = document.getElementById("playAge").value;
+      const weather = document.getElementById("weather").value;
+      const time = document.getElementById("playTime").value;
+      const items = document.getElementById("playItems").value || "집에 있는 안전한 물건";
+      const indoor = weather === "비" || weather === "더움" || weather === "추움";
+      set("playAiResult", "<strong>오늘 놀이: " + (indoor ? "실내 감각 탐색 놀이" : "공 굴리기와 까꿍 놀이") + "</strong><p>준비물: " + items + "</p><p>발달 효과: " + age + " 아이가 손을 뻗고, 시선을 따라가고, 반복을 예측하는 데 도움이 됩니다. 놀이 시간은 " + time + " 정도로 짧게 시작하세요.</p><p>관련 글: <a href='/blog/7-month-baby-development-play.html'>7개월 아기 발달놀이</a></p>");
+    };
+    document.getElementById("toyAiBtn").onclick = () => {
+      const age = document.getElementById("toyAge").value;
+      const interest = document.getElementById("interest").value;
+      const budget = document.getElementById("budget").value;
+      set("toyAiResult", "<strong>" + age + " · " + interest + " 중심 추천</strong><p>" + budget + "에서는 한 번 쓰고 끝나는 장난감보다 반복 사용이 가능한 유형을 고르는 편이 좋습니다. 추천 이유는 아이가 직접 조작하고 결과를 확인할 수 있기 때문입니다.</p><p>관련 글: <a href='/posts/6-month-baby-toys.html'>개월별 장난감 추천</a></p>");
+    };
+    document.getElementById("sheetAiBtn").onclick = () => {
+      const age = document.getElementById("sheetAge").value;
+      const area = document.getElementById("studyArea").value;
+      set("sheetAiResult", "<strong>" + age + " " + area + " 워크지</strong><p>처음에는 한 장을 끝내는 것보다 부모가 예시를 읽어주고 아이가 한두 문항만 스스로 풀어보는 방식이 좋습니다.</p><p>관련 글: <a href='/worksheets/elementary-reading-worksheet.html'>초등 독해 활동지</a></p>");
+    };
+    document.getElementById("planAiBtn").onclick = () => {
+      const age = document.getElementById("planAge").value;
+      const day = document.getElementById("dayType").value;
+      const place = document.getElementById("placeType").value;
+      set("planAiResult", "<strong>" + day + " " + place + " 하루 플랜</strong><p>오전: 짧은 신체놀이 · 점심 전: 그림책 한 권 · 오후: " + (place === "실외" ? "가까운 공원 산책" : "보물바구니 또는 블록 놀이") + " · 저녁: 정리 루틴을 추천합니다.</p><p>오늘 부모팁: " + age + " 아이에게는 새로운 활동보다 예측 가능한 반복이 더 안정적일 수 있습니다.</p>");
+    };
+  </script>
+  <footer class="site-footer">
+    <div><strong>토이포포</strong><p>육아 고민, 발달놀이, 부모가이드, 엄마표 자료, 우리동네 육아정보, 육아도구를 함께 다루는 부모 정보 플랫폼입니다.</p></div>
+    <nav><a href="/about.html">사이트 소개</a><a href="/author.html">작성자 소개</a><a href="/editorial-policy.html">편집 원칙</a><a href="/update-policy.html">콘텐츠 업데이트 정책</a><a href="/affiliate-disclosure.html">쿠팡파트너스 안내</a><a href="/privacy.html">개인정보처리방침</a><a href="/terms.html">이용약관</a><a href="/contact.html">문의하기</a></nav>
+    <p class="copyright">© 2026 ToyPoppo. All rights reserved.</p>
+  </footer>
+</body>
+</html>
