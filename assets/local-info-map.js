@@ -7,7 +7,12 @@
   const state = document.getElementById("mapState");
   const list = document.getElementById("mapPlaceList");
 
-  if (!mapElement || !window.kakao || !regionSelect || !needSelect) return;
+  if (!mapElement || !regionSelect || !needSelect) return;
+  if (!window.kakao) {
+    if (state) state.textContent = "지도 연결을 확인하고 있습니다. 잠시 후 다시 이용해 주세요.";
+    if (list) list.innerHTML = '<div class="map-empty">카카오맵 허용 도메인 설정이 완료되면 지도가 표시됩니다.</div>';
+    return;
+  }
 
   const regionCenters = {
     서울: [37.5665, 126.9780], 경기: [37.4138, 127.5183], 인천: [37.4563, 126.7052],
