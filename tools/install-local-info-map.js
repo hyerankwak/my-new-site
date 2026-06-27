@@ -30,7 +30,7 @@ if (!html.includes('id="localMap"')) {
 if (!html.includes("dapi.kakao.com/v2/maps/sdk.js")) {
   html = html.replace(
     "</body>",
-    '  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=3fa350c084c36848cbaadf42c19bcfcb&libraries=services&autoload=false"></script>\n  <script src="/assets/local-info-map.js"></script>\n</body>'
+    '  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=3fa350c084c36848cbaadf42c19bcfcb&libraries=services&autoload=false&v=20260627"></script>\n  <script src="/assets/local-info-map.js"></script>\n</body>'
   );
 }
 
