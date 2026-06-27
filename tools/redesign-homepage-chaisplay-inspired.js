@@ -142,7 +142,7 @@ function home() {
         <p class="eyebrow">ToyPoppo Parenting Hub</p>
         <h1>우리 아이 월령에 맞는 놀이와 장난감, 한눈에 찾아요</h1>
         <p>토이포포는 장난감만 추천하지 않습니다. 발달 단계, 놀이 방법, 부모 고민, 몬테소리 환경, 초등 자료까지 함께 정리해 부모가 저장하고 다시 찾아볼 수 있는 육아 정보 허브를 지향합니다.</p>
-        <p class="modified-date" data-modified-date="${TODAY}">최종 수정일: ${TODAY}</p>
+
         <div class="hero-actions"><a class="button primary" href="/development-play/">발달놀이 보기</a><a class="button secondary" href="/parenting-tools/">육아도구 보기</a></div>
       </div>
       <div class="home-hero__visual" aria-label="토이포포 육아 정보 카드">

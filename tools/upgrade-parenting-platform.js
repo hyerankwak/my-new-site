@@ -113,9 +113,9 @@ function localInfoIndex() {
       <p class="breadcrumb"><a href="/">홈</a> / 우리동네 육아정보</p>
       <p class="eyebrow">Local Parenting Info Beta</p>
       <h1>우리동네 육아정보 Beta</h1>
-      <p class="modified-date" data-modified-date="${TODAY}">최종 수정일: ${TODAY}</p>
+
       <p class="lead">우리동네 육아정보는 부모가 매번 흩어진 사이트를 찾아다니지 않도록, 어린이집·육아종합지원센터·어린이도서관·박물관·공원·실내 놀이터 같은 정보를 한곳에서 확인하는 베타 서비스입니다. 현재는 공공데이터와 지자체 공식 안내를 연결하기 전 단계로, 부모가 어떤 기준으로 확인해야 하는지와 관련 토이포포 글을 함께 제공합니다.</p>
-      <div class="summary-box"><strong>애드센스 심사 전 운영 원칙</strong><ul><li>실시간 데이터처럼 보이는 부정확한 목록은 제공하지 않습니다.</li><li>공식 홈페이지와 지자체 안내를 확인하는 기준을 먼저 제공합니다.</li><li>지역 정보는 베타로 운영하며 콘텐츠 가치와 부모 활용성을 우선합니다.</li></ul></div>
+
       <section class="tool-panel"><h2>지역과 목적 선택</h2><label>지역 <select id="localRegion"><option>서울</option><option>경기</option><option>인천</option><option>부산</option><option>대구</option><option>광주</option><option>대전</option><option>세종</option><option>강원</option><option>충청</option><option>전라</option><option>경상</option><option>제주</option></select></label><label>찾는 정보 <select id="localNeed"><option>어린이도서관</option><option>육아종합지원센터</option><option>박물관·과학관</option><option>공원·실내 놀이터</option><option>무료 체험·공연</option><option>어린이집</option></select></label><button class="button primary" id="localBtn" type="button">확인 기준 보기</button><div id="localResult" class="summary-box soft"></div></section>
       <section><h2>제공 예정 정보</h2><div class="link-grid">${categories.map(([title, desc]) => `<a href="/local-info/${title.includes("도서관") ? "kids-library" : title.includes("센터") ? "support-center" : title.includes("박물관") ? "museum-science" : title.includes("체험") ? "family-events" : title.includes("공원") ? "parks-playgrounds" : "daycare"}.html"><strong>${title}</strong><span>${desc}</span></a>`).join("")}</div></section>
       <section><h2>부모가 먼저 확인할 것</h2><p>지역 육아 정보는 운영시간, 휴관일, 예약 방식, 주차 여부, 연령 제한이 자주 바뀝니다. 그래서 토이포포는 단순히 장소명을 나열하기보다 공식 홈페이지 확인 포인트와 아이 연령별 이용 팁을 함께 정리합니다. 예를 들어 8개월 아기라면 공연보다 짧은 체류가 가능한 어린이도서관 영유아실이나 실내 놀이공간이 더 현실적일 수 있습니다.</p><p>또한 같은 박물관이라도 유모차 이동이 편한지, 수유실이 있는지, 아이가 쉬어갈 공간이 있는지에 따라 부모의 만족도가 달라집니다. 베타 기간에는 이러한 부모 관점 체크리스트를 먼저 제공하고, 이후 공식 공공데이터와 연결해 지역별 목록을 확장할 예정입니다.</p></section>
@@ -152,7 +152,7 @@ function localCategoryPage({ slug, title, description, tips }) {
       <p class="breadcrumb"><a href="/">홈</a> / <a href="/local-info/">우리동네 육아정보</a> / ${esc(title)}</p>
       <p class="eyebrow">Local Guide Beta</p>
       <h1>${esc(title)}</h1>
-      <p class="modified-date" data-modified-date="${TODAY}">최종 수정일: ${TODAY}</p>
+
       <p class="lead">${esc(description)}</p>
       <section><h2>소개</h2><p>${esc(title)} 정보는 부모가 아이와 외출하거나 돌봄 자원을 찾을 때 자주 확인하는 영역입니다. 토이포포는 실시간 목록을 무리하게 보여주기보다, 부모가 공식 정보를 볼 때 놓치기 쉬운 운영시간, 위치, 예약 방식, 아이 연령에 맞는 이용 팁을 먼저 정리합니다.</p></section>
       <section><h2>운영시간 확인법</h2><p>운영시간은 기관과 계절, 방학, 공휴일, 행사 일정에 따라 달라질 수 있습니다. 방문 전 공식 홈페이지나 지자체 공지, 전화 안내를 확인하는 것이 가장 정확합니다. 특히 영유아와 함께 움직일 때는 낮잠 시간과 식사 시간을 피해서 여유 있게 일정을 잡는 편이 좋습니다.</p></section>
@@ -177,11 +177,11 @@ function toolPage({ url, title, description, intro, body, script = "" }) {
       <p class="breadcrumb"><a href="/">홈</a> / <a href="/parenting-tools/">육아도구</a> / ${esc(title)}</p>
       <p class="eyebrow">Parenting Tool</p>
       <h1>${esc(title)}</h1>
-      <p class="modified-date" data-modified-date="${TODAY}">최종 수정일: ${TODAY}</p>
+
       <p class="lead">${esc(intro)}</p>
       ${body}
       <section><h2>부모가 실제로 쓰는 방법</h2><p>도구를 사용할 때는 한 번에 모든 항목을 완벽하게 채우려고 하기보다, 오늘 필요한 질문 하나만 해결한다는 마음으로 보는 것이 좋습니다. 예를 들어 예방접종 체크는 다음 접종일을 확정하는 도구가 아니라 병원 방문 전 기록을 정리하는 용도에 가깝습니다. 엄마표 학습 추천도 아이의 수준을 평가하기보다 오늘 어떤 자료를 한 장 골라볼지 결정하는 데 초점을 둡니다.</p><p>아이와 관련된 도구는 결과가 단순할수록 오래 쓰기 좋습니다. 토이포포는 복잡한 점수표를 만들기보다 부모가 바로 행동으로 옮길 수 있는 설명, 관련 글, 주의사항을 함께 제공합니다. 결과가 마음에 들지 않거나 아이 반응이 다르면 언제든 활동을 줄이거나 다른 글로 이동해도 됩니다.</p></section>
-      <section><h2>자주 묻는 질문</h2><h3>이 도구 결과를 그대로 따라야 하나요?</h3><p>아닙니다. 결과는 참고용입니다. 아이의 컨디션, 가족 일정, 병원 안내, 어린이집 안내가 더 우선입니다.</p><h3>개인정보를 저장하나요?</h3><p>현재 도구는 입력값을 서버에 저장하지 않는 정적 페이지 방식으로 구성했습니다. 부모가 가볍게 확인할 수 있도록 만든 베타 기능입니다.</p><h3>결과가 우리 아이와 맞지 않으면 어떻게 하나요?</h3><p>아이마다 발달 속도와 관심사가 다릅니다. 결과가 맞지 않으면 관련 글을 참고해 더 쉬운 활동이나 다른 방향을 선택하세요.</p><h3>광고나 구매 링크가 포함되나요?</h3><p>애드센스 승인 전에는 정보 제공을 우선하기 위해 구매 링크를 넣지 않았습니다.</p><h3>언제 업데이트되나요?</h3><p>부모가 자주 찾는 질문과 실제 사용 흐름을 기준으로 도구 설명과 연결 글을 계속 보강할 예정입니다.</p></section>
+      <section><h2>자주 묻는 질문</h2><h3>이 도구 결과를 그대로 따라야 하나요?</h3><p>아닙니다. 결과는 참고용입니다. 아이의 컨디션, 가족 일정, 병원 안내, 어린이집 안내가 더 우선입니다.</p><h3>개인정보를 저장하나요?</h3><p>현재 도구는 입력값을 서버에 저장하지 않는 정적 페이지 방식으로 구성했습니다. 부모가 가볍게 확인할 수 있도록 만든 베타 기능입니다.</p><h3>결과가 우리 아이와 맞지 않으면 어떻게 하나요?</h3><p>아이마다 발달 속도와 관심사가 다릅니다. 결과가 맞지 않으면 관련 글을 참고해 더 쉬운 활동이나 다른 방향을 선택하세요.</p><h3>광고나 구매 링크가 포함되나요?</h3><p>이 도구는 정보 제공을 우선하며 구매 링크를 포함하지 않습니다.</p><h3>언제 업데이트되나요?</h3><p>부모가 자주 찾는 질문과 실제 사용 흐름을 기준으로 도구 설명과 연결 글을 계속 보강할 예정입니다.</p></section>
       <section><h2>활용할 때 주의할 점</h2><p>토이포포의 육아도구는 부모가 오늘의 선택을 쉽게 정리하도록 돕는 참고용 도구입니다. 결과를 정답처럼 보지 말고 아이의 컨디션, 가족 일정, 생활 환경에 맞춰 조절해 주세요. 건강이나 발달에 대한 걱정이 있다면 전문가 상담을 우선해야 합니다.</p></section>
       ${expertNotice()}
       ${relatedLinks()}
@@ -203,9 +203,9 @@ function aiHelperPage() {
       <p class="breadcrumb"><a href="/">홈</a> / AI 육아도우미</p>
       <p class="eyebrow">Recommendation Engine Beta</p>
       <h1>AI 육아도우미 Beta</h1>
-      <p class="modified-date" data-modified-date="${TODAY}">최종 수정일: ${TODAY}</p>
+
       <p class="lead">AI 육아도우미는 자유 채팅창이 아니라 부모가 바로 사용할 수 있는 추천 엔진 형태로 운영합니다. 현재 베타 버전은 토이포포 내부 콘텐츠와 발달놀이 기준을 바탕으로 오늘 놀이, 장난감 방향, 워크지, 하루 일과를 추천합니다.</p>
-      <div class="summary-box"><strong>애드센스 모드 운영 원칙</strong><ul><li>AI가 사이트의 메인이 되지 않도록 정보 콘텐츠를 우선합니다.</li><li>부모가 입력한 값에 맞춘 참고 추천만 제공합니다.</li><li>의료·발달 진단이나 치료 조언은 제공하지 않습니다.</li></ul></div>
+      <div class="summary-box"><strong>추천 도구 이용 안내</strong><ul><li>AI가 사이트의 메인이 되지 않도록 정보 콘텐츠를 우선합니다.</li><li>부모가 입력한 값에 맞춘 참고 추천만 제공합니다.</li><li>의료·발달 진단이나 치료 조언은 제공하지 않습니다.</li></ul></div>
       <section class="tool-panel"><h2>AI 발달놀이 추천</h2><label>개월 <select id="playAge"><option>6개월</option><option>7개월</option><option>8개월</option><option>9개월</option><option>10개월</option><option>11개월</option><option>12개월</option></select></label><label>오늘 날씨 <select id="weather"><option>맑음</option><option>비</option><option>더움</option><option>추움</option></select></label><label>놀이 시간 <select id="playTime"><option>5분</option><option>10분</option><option>20분</option></select></label><label>집에 있는 물건 <input id="playItems" placeholder="예: 공, 거울, 천, 컵"></label><button class="button primary" id="playAiBtn" type="button">오늘 놀이 추천</button><div id="playAiResult" class="summary-box soft"></div></section>
       <section class="tool-panel"><h2>AI 장난감 추천</h2><label>개월 <select id="toyAge"><option>6개월</option><option>9개월</option><option>12개월</option><option>24개월</option><option>초등 저학년</option></select></label><label>예산 <select id="budget"><option>1만원대</option><option>2~3만원대</option><option>5만원대</option><option>선물용</option></select></label><label>관심 분야 <select id="interest"><option>소근육</option><option>대근육</option><option>그림책</option><option>역할놀이</option><option>보드게임</option></select></label><button class="button primary" id="toyAiBtn" type="button">추천 방향 보기</button><div id="toyAiResult" class="summary-box soft"></div></section>
       <section class="tool-panel"><h2>AI 워크지 추천</h2><label>나이 <select id="sheetAge"><option>6세</option><option>7세</option><option>초등 1학년</option><option>초등 2학년</option><option>초등 3학년</option></select></label><label>공부 분야 <select id="studyArea"><option>문해력</option><option>속담</option><option>사자성어</option><option>한국사</option><option>독해</option></select></label><button class="button primary" id="sheetAiBtn" type="button">워크지 추천</button><div id="sheetAiResult" class="summary-box soft"></div></section>
@@ -257,7 +257,7 @@ function updateToolsIndex() {
 <body>
   ${header()}
   <main>
-    <section class="hero compact"><p class="eyebrow">Parenting Tools</p><h1>부모가 바로 쓰는 육아도구</h1><p>정보를 읽고 끝내지 않고, 오늘 바로 체크하고 고를 수 있도록 만든 토이포포의 실사용 도구 모음입니다.</p><p class="modified-date" data-modified-date="${TODAY}">최종 수정일: ${TODAY}</p></section>
+    <section class="hero compact"><p class="eyebrow">Parenting Tools</p><h1>부모가 바로 쓰는 육아도구</h1><p>정보를 읽고 끝내지 않고, 오늘 바로 체크하고 고를 수 있도록 만든 토이포포의 실사용 도구 모음입니다.</p></section>
     <section class="section"><div class="section-head"><h2>도구 모음</h2><p>아이 월령과 생활 상황에 맞춰 필요한 도구를 선택하세요.</p></div><div class="link-grid">
       <a href="/parenting-tools/development-checklist.html"><strong>개월별 발달 체크리스트</strong><span>6~12개월 발달 모습을 참고용으로 확인합니다.</span></a>
       <a href="/parenting-tools/today-play.html"><strong>오늘의 놀이 추천</strong><span>아이 컨디션에 맞는 놀이를 고릅니다.</span></a>
@@ -303,8 +303,8 @@ function buildHome() {
       <div class="home-hero__copy">
         <p class="eyebrow">ToyPoppo Parenting Platform</p>
         <h1>놀이, 발달, 동네 정보까지 부모의 하루를 가볍게</h1>
-        <p>토이포포는 장난감 추천을 넘어 상담소, 부모가이드, 발달놀이, 몬테소리, 엄마표 자료실, 육아도구, 우리동네 육아정보를 연결하는 육아 정보 플랫폼으로 확장하고 있습니다. 애드센스 승인 전에는 정보 콘텐츠를 중심에 두고, AI와 공공데이터 기능은 베타 보조 도구로 운영합니다.</p>
-        <p class="modified-date" data-modified-date="${TODAY}">최종 수정일: ${TODAY}</p>
+        <p>토이포포는 장난감 추천을 넘어 상담소, 부모가이드, 발달놀이, 몬테소리, 엄마표 자료실, 육아도구, 우리동네 육아정보를 연결하는 육아 정보 플랫폼으로 확장하고 있습니다. 정보 콘텐츠를 중심에 두고, AI와 공공데이터 기능은 부모의 선택을 돕는 보조 도구로 운영합니다.</p>
+
         <div class="hero-actions"><a class="button primary" href="/counseling/">상담소 보기</a><a class="button secondary" href="/local-info/">우리동네 육아정보</a></div>
       </div>
       <div class="home-hero__visual" aria-label="토이포포 육아 플랫폼 카드">
@@ -317,7 +317,7 @@ function buildHome() {
     <section class="icon-section" aria-label="토이포포 주요 메뉴">${categories.map(([icon, title, href, desc]) => `<a class="icon-tile" href="${href}"><span>${icon}</span><strong>${title}</strong><small>${desc}</small></a>`).join("")}</section>
     <section class="age-strip"><div><strong>토이포포 베타 방향</strong><span>정보 콘텐츠가 중심이고 AI와 지역 정보는 보조 기능입니다.</span></div><div class="age-pills"><a href="/local-info/"><strong>지역</strong><span>육아정보</span></a><a href="/ai-helper/"><strong>AI</strong><span>추천엔진</span></a><a href="/parenting-tools/"><strong>도구</strong><span>체크리스트</span></a><a href="/worksheets/"><strong>자료</strong><span>워크지</span></a><a href="/development-play/"><strong>놀이</strong><span>발달놀이</span></a><a href="/counseling/"><strong>상담</strong><span>부모고민</span></a></div></section>
     ${sections.map(([title, desc, links]) => `<section class="section"><div class="section-head"><h2>${esc(title)}</h2><p>${esc(desc)}</p></div><div class="link-grid">${links.map(([href, label, text]) => `<a href="${href}"><strong>${esc(label)}</strong><span>${esc(text)}</span></a>`).join("")}</div></section>`).join("\n")}
-    <section class="principles"><h2>토이포포 콘텐츠 원칙</h2><ul><li>애드센스 승인 전에는 정보 콘텐츠의 신뢰도와 완성도를 최우선으로 합니다.</li><li>AI 기능은 자유 채팅이 아니라 추천 엔진 형태로만 제공합니다.</li><li>공공데이터는 실제 부모에게 도움이 되는 항목만 공식 정보 기준으로 다룹니다.</li><li>지역 정보는 운영시간과 예약 방식이 바뀔 수 있어 공식 홈페이지 확인을 함께 안내합니다.</li><li>의료·발달 진단을 대체하지 않습니다.</li></ul></section>
+    <section class="principles"><h2>토이포포 콘텐츠 원칙</h2><ul><li>정보 콘텐츠의 신뢰도와 완성도를 최우선으로 합니다.</li><li>AI 기능은 자유 채팅이 아니라 추천 엔진 형태로만 제공합니다.</li><li>공공데이터는 실제 부모에게 도움이 되는 항목만 공식 정보 기준으로 다룹니다.</li><li>지역 정보는 운영시간과 예약 방식이 바뀔 수 있어 공식 홈페이지 확인을 함께 안내합니다.</li><li>의료·발달 진단을 대체하지 않습니다.</li></ul></section>
   </main>
   ${footer()}
 </body>

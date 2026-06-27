@@ -108,7 +108,7 @@ function montessoriEverydayPage() {
       <p class="breadcrumb"><a href="/">홈</a> / <a href="/montessori/">몬테소리</a> / ${title}</p>
       <p class="eyebrow">Montessori Home</p>
       <h1>${title}: 집안일을 아이의 놀이로 바꾸는 방법</h1>
-      <p class="modified-date" data-modified-date="${TODAY}">최종 수정일: ${TODAY}</p>
+
       <p class="lead">몬테소리 일상생활 놀이는 특별한 교구를 사야 시작할 수 있는 활동이 아닙니다. 아이가 매일 보는 컵, 숟가락, 수건, 작은 바구니, 물통 같은 생활 물건을 이용해 스스로 해보고, 실패하고, 다시 시도하는 시간을 만드는 것이 핵심입니다. 부모 입장에서는 집안일이 조금 느려질 수 있지만, 아이에게는 손 조절, 순서 이해, 집중력, 독립심을 함께 경험하는 소중한 시간이 됩니다.</p>
 
       <div class="summary-box"><strong>먼저 기억할 점</strong><ul><li>일상생활 놀이는 결과보다 과정이 중요합니다.</li><li>부모가 대신 완성해주기보다 아이가 반복할 시간을 줍니다.</li><li>물, 작은 물건, 도구를 사용할 때는 반드시 가까이에서 지켜봅니다.</li></ul></div>
@@ -151,7 +151,7 @@ function patchModifiedDateAttributes() {
     html = html.replace(/<p class="modified-date">/g, `<p class="modified-date" data-modified-date="${TODAY}">`);
     html = html.replace(/쿠팡 링크가 없나요\?/g, "구매 링크가 없나요?");
     if (!html.includes("data-modified-date") && html.includes("<h1")) {
-      html = html.replace(/(<h1[^>]*>[\s\S]*?<\/h1>)/, `$1\n      <p class="modified-date" data-modified-date="${TODAY}">최종 수정일: ${TODAY}</p>`);
+      html = html.replace(/(<h1[^>]*>[\s\S]*?<\/h1>)/, `$1\n`);
     }
     write(rel, html);
   }

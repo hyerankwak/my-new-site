@@ -105,7 +105,7 @@ ${siteHeader()}
       <p class="eyebrow">Parenting Tool</p>
       <h1>${esc(title)}</h1>
       <p class="lead">${esc(intro)}</p>
-      <p class="modified-date">최종 수정일: ${TODAY}</p>
+
       <div class="summary-box"><strong>이 도구는 이렇게 사용해요</strong><ul><li>아이 월령과 상황에 맞춰 참고용으로 사용합니다.</li><li>결과를 절대적인 진단으로 보지 않습니다.</li><li>부모가 오늘 바로 실행할 수 있는 작은 행동을 고르는 데 목적이 있습니다.</li></ul></div>
       ${toolHtml}
       <section><h2>활용 방법</h2>${guide.map((p) => `<p>${esc(p)}</p>`).join("")}</section>
@@ -126,7 +126,7 @@ ${siteHeader()}
       <p class="eyebrow">Trust</p>
       <h1>${esc(title)}</h1>
       <p class="lead">${esc(description)}</p>
-      <p class="modified-date">최종 수정일: ${TODAY}</p>
+
       ${body}
       ${relatedLinks(url)}
     </article>
@@ -160,7 +160,7 @@ const toolPages = [
     intro: "장난감은 많이 사는 것보다 지금 아이에게 맞는 놀이 목적을 정하고 고르는 것이 중요합니다.",
     toolHtml: `<section class="tool-panel"><h2>장난감 유형 고르기</h2><label>아이 연령 <select id="toyAge"><option>0~12개월</option><option>13~24개월</option><option>3~5세</option><option>초등 저학년</option></select></label><label>목적 <select id="toyGoal"><option>소근육</option><option>대근육</option><option>언어</option><option>집중력</option><option>창의놀이</option></select></label><button class="button primary" id="toyBtn" type="button">추천 기준 보기</button><div id="toyResult" class="summary-box"></div></section><script>document.getElementById("toyBtn").onclick=()=>{const age=document.getElementById("toyAge").value;const goal=document.getElementById("toyGoal").value;const base={소근육:"넣고 빼기, 끼우기, 큰 블록, 손으로 조작하는 장난감",대근육:"공, 터널, 밀고 끄는 장난감, 균형을 돕는 활동",언어:"생활 그림책, 동물 소리책, 역할놀이 소품",집중력:"퍼즐, 분류놀이, 컵쌓기, 단순 규칙 보드게임",창의놀이:"블록, 미술놀이, 역할놀이, 만들기 재료"}[goal];document.getElementById("toyResult").innerHTML='<strong>'+age+' · '+goal+'</strong><p>'+base+'을 먼저 살펴보세요. 부품 크기, 세척 가능 여부, 아이가 반복할 수 있는 구조인지도 함께 확인하세요.</p>'};</script>`,
     guide: ["장난감 선택은 유행보다 아이의 현재 놀이 행동을 기준으로 잡는 것이 좋습니다.", "같은 연령이라도 아이가 몸을 많이 쓰는지, 손 조작을 좋아하는지, 말놀이에 관심이 있는지에 따라 장난감 유형이 달라집니다."],
-    faq: [["비싼 장난감이 더 좋은가요?", "가격보다 반복 사용 가능성과 안전성이 중요합니다."], ["몇 개 정도 꺼내두면 좋나요?", "한 번에 5~6개 정도가 집중하기 쉽습니다."], ["전자 장난감은 안 좋은가요?", "나쁘다기보다 조용한 탐색 장난감과 균형이 필요합니다."], ["성별로 나눠 사야 하나요?", "성별보다 아이 흥미와 발달 단계가 더 중요합니다."], ["쿠팡 링크가 없나요?", "이 도구는 애드센스 승인용 정보 제공을 우선해 구매 링크를 넣지 않았습니다."]],
+    faq: [["비싼 장난감이 더 좋은가요?", "가격보다 반복 사용 가능성과 안전성이 중요합니다."], ["몇 개 정도 꺼내두면 좋나요?", "한 번에 5~6개 정도가 집중하기 쉽습니다."], ["전자 장난감은 안 좋은가요?", "나쁘다기보다 조용한 탐색 장난감과 균형이 필요합니다."], ["성별로 나눠 사야 하나요?", "성별보다 아이 흥미와 발달 단계가 더 중요합니다."], ["쿠팡 링크가 없나요?", "이 도구는 정보 제공을 우선하며 구매 링크를 포함하지 않습니다."]],
   },
   {
     url: "/parenting-tools/daycare-checklist.html",
@@ -193,13 +193,13 @@ const trustPages = [
     url: "/affiliate-disclosure.html",
     title: "쿠팡파트너스 안내",
     description: "토이포포의 제휴 링크 운영 원칙과 광고성 콘텐츠 고지 기준을 안내합니다.",
-    body: `<section><h2>제휴 링크 운영 원칙</h2><p>토이포포는 향후 일부 상품 추천 글에 쿠팡파트너스 등 제휴 링크를 포함할 수 있습니다. 제휴 링크가 포함된 글에는 방문자가 알아볼 수 있도록 고지 문구를 명확히 표시합니다.</p><p>현재 육아 정보 허브 개편 글과 상담소, 부모 가이드, 발달놀이, 엄마표 자료실, 육아도구 페이지에는 구매 링크를 넣지 않았습니다. 애드센스 승인 전에는 정보성 콘텐츠의 신뢰도와 독립성을 우선합니다.</p></section><section><h2>추천 기준</h2><p>상품을 소개할 때도 가격이나 광고 수익보다 안전성, 사용 기간, 아이 발달 단계, 부모의 관리 편의성을 먼저 고려합니다. 제휴 여부가 콘텐츠의 기본 판단 기준을 바꾸지 않도록 운영합니다.</p></section>`,
+    body: `<section><h2>제휴 링크 운영 원칙</h2><p>토이포포는 향후 일부 상품 추천 글에 쿠팡파트너스 등 제휴 링크를 포함할 수 있습니다. 제휴 링크가 포함된 글에는 방문자가 알아볼 수 있도록 고지 문구를 명확히 표시합니다.</p><p>현재 육아 정보 허브 개편 글과 상담소, 부모 가이드, 발달놀이, 엄마표 자료실, 육아도구 페이지에는 구매 링크를 넣지 않았습니다. 정보성 콘텐츠의 신뢰도와 독립성을 우선합니다.</p></section><section><h2>추천 기준</h2><p>상품을 소개할 때도 가격이나 광고 수익보다 안전성, 사용 기간, 아이 발달 단계, 부모의 관리 편의성을 먼저 고려합니다. 제휴 여부가 콘텐츠의 기본 판단 기준을 바꾸지 않도록 운영합니다.</p></section>`,
   },
   {
     url: "/update-policy.html",
     title: "콘텐츠 업데이트 정책",
     description: "토이포포 콘텐츠의 작성일, 수정일, 검토 기준, 업데이트 방식을 안내합니다.",
-    body: `<section><h2>업데이트 원칙</h2><p>토이포포의 육아 정보는 부모가 실제 생활에서 참고할 수 있도록 주기적으로 보완합니다. 월령별 발달놀이, 상담소 글, 부모 가이드, 엄마표 자료실은 검색 유입과 부모 질문을 참고해 내용을 추가하거나 문장을 더 명확하게 다듬습니다.</p><p>각 글에는 최종 수정일을 표시하고, 발달 및 건강과 관련된 글에는 전문가 상담 안내 문구를 함께 제공합니다. 오래된 정보나 표현이 발견되면 우선순위를 정해 수정합니다.</p></section><section><h2>수정 대상</h2><ul class="check-list"><li>발달 기준이 단정적으로 보이는 문장</li><li>부모가 오해할 수 있는 건강 관련 표현</li><li>내부 링크가 끊긴 페이지</li><li>내용이 짧거나 실제 도움이 부족한 글</li><li>검색 의도와 맞지 않는 제목 또는 설명</li></ul></section>`,
+    body: `<section><h2>업데이트 원칙</h2><p>토이포포의 육아 정보는 부모가 실제 생활에서 참고할 수 있도록 주기적으로 보완합니다. 월령별 발달놀이, 상담소 글, 부모 가이드, 엄마표 자료실은 검색 유입과 부모 질문을 참고해 내용을 추가하거나 문장을 더 명확하게 다듬습니다.</p><p>발달 및 건강과 관련된 글에는 전문가 상담 안내 문구를 함께 제공합니다. 오래된 정보나 표현이 발견되면 우선순위를 정해 수정합니다.</p></section><section><h2>수정 대상</h2><ul class="check-list"><li>발달 기준이 단정적으로 보이는 문장</li><li>부모가 오해할 수 있는 건강 관련 표현</li><li>내부 링크가 끊긴 페이지</li><li>내용이 짧거나 실제 도움이 부족한 글</li><li>검색 의도와 맞지 않는 제목 또는 설명</li></ul></section>`,
   },
 ];
 
@@ -229,7 +229,7 @@ function patchGeneratedHtml() {
       let html = fs.readFileSync(p, "utf8");
       html = html.replace(/<nav class="nav" aria-label="주요 메뉴">[\s\S]*?<\/nav>/, `<nav class="nav" aria-label="주요 메뉴">${nav.map(([label, href]) => `<a href="${href}">${label}</a>`).join("")}</nav>`);
       html = html.replace(/<small>.*?<\/small>/, "<small>대한민국 부모를 위한 육아 정보 허브</small>");
-      html = html.replace(/<h1>(.*?)<\/h1>/, `<h1>$1</h1>\n      <p class="modified-date">최종 수정일: ${TODAY}</p>`);
+      html = html.replace(/<h1>(.*?)<\/h1>/, `<h1>$1</h1>\n`);
       if (!html.includes("전문가 상담 안내")) html = html.replace(/(\s*<section><h2>함께 보면 좋은 글<\/h2>)/, `\n      ${expertNotice()}\n$1`);
       fs.writeFileSync(p, html, "utf8");
     }
@@ -240,7 +240,6 @@ function patchGeneratedHtml() {
     if (!fs.existsSync(p)) continue;
     let html = fs.readFileSync(p, "utf8");
     html = html.replace(/<nav class="nav" aria-label="[^"]*">[\s\S]*?<\/nav>/, `<nav class="nav" aria-label="주요 메뉴">${nav.map(([label, href]) => `<a href="${href}">${label}</a>`).join("")}</nav>`);
-    if (!html.includes("최종 수정일:")) html = html.replace(/<h1>(.*?)<\/h1>/, `<h1>$1</h1>\n      <p class="modified-date">최종 수정일: ${TODAY}</p>`);
     if (!html.includes("전문가 상담 안내")) html = html.replace(/(\s*<section>\s*<h2>함께 보면 좋은 글<\/h2>)/, `\n      ${expertNotice()}\n$1`);
     fs.writeFileSync(p, html, "utf8");
   }
@@ -273,7 +272,7 @@ ${siteHeader()}
   <main>
     <section class="hero"><p class="eyebrow">ToyPoppo Parenting Hub</p><h1>장난감보다 먼저, 아이와 부모의 하루를 이해합니다</h1><p>토이포포는 단순 장난감 추천 사이트가 아니라 육아 고민, 발달놀이, 교육 자료, 부모 가이드, 몬테소리 환경, 실사용 육아도구를 함께 제공하는 정보 허브입니다.</p><div class="hero-actions"><a class="button primary" href="/parenting-tools/">육아도구 보기</a><a class="button secondary" href="/counseling/">상담소 보기</a></div></section>
     ${sections.map(([title, desc, links]) => `<section class="section"><div class="section-head"><h2>${esc(title)}</h2><p>${esc(desc)}</p></div><div class="link-grid">${links.map(([href, label, text]) => `<a href="${href}"><strong>${esc(label)}</strong><span>${esc(text)}</span></a>`).join("")}</div></section>`).join("\n")}
-    <section class="principles"><h2>토이포포 콘텐츠 원칙</h2><ul><li>실제 육아 생활에 도움이 되는 정보를 우선합니다.</li><li>상품 추천보다 발달 단계, 놀이 목적, 부모의 생활 상황을 먼저 설명합니다.</li><li>건강과 발달에 관한 내용은 일반 정보로 제공하며 전문가 상담을 대체하지 않습니다.</li><li>제휴 링크가 있는 경우 명확히 고지합니다.</li><li>콘텐츠는 주기적으로 점검하고 최종 수정일을 표시합니다.</li></ul></section>
+    <section class="principles"><h2>토이포포 콘텐츠 원칙</h2><ul><li>실제 육아 생활에 도움이 되는 정보를 우선합니다.</li><li>상품 추천보다 발달 단계, 놀이 목적, 부모의 생활 상황을 먼저 설명합니다.</li><li>건강과 발달에 관한 내용은 일반 정보로 제공하며 전문가 상담을 대체하지 않습니다.</li><li>제휴 링크가 있는 경우 명확히 고지합니다.</li><li>콘텐츠는 주기적으로 점검하고 필요한 내용을 보완합니다.</li></ul></section>
   </main>
 ${footer()}`;
 }
