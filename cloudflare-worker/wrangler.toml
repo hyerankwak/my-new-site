@@ -1,0 +1,15 @@
+name = "toypoppo-public-data"
+main = "src/index.js"
+compatibility_date = "2026-06-27"
+account_id = "5f386ceb33e3f3db15d68d861e50edc2"
+workers_dev = true
+
+routes = [
+  { pattern = "toypoppo.kr/api/*", zone_name = "toypoppo.kr" }
+]
+
+[vars]
+ALLOWED_ORIGIN = "https://toypoppo.kr"
+
+# DATA_GO_KR_SERVICE_KEY is stored as a Cloudflare secret:
+# npx wrangler secret put DATA_GO_KR_SERVICE_KEY

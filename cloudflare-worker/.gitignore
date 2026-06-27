@@ -1,0 +1,3 @@
+wrangler-oauth*.log
+.wrangler/
+.dev.vars
