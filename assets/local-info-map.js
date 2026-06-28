@@ -206,7 +206,7 @@
         : "장소 검색을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.");
     }, {
       location: new kakao.maps.LatLng(center[0], center[1]),
-      radius: options.radius || 30000,
+      radius: options.radius || 20000,
     });
   }
 
