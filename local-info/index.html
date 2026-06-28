@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>우리동네 육아정보 검색 | 도서관·박물관·공원·놀이터</title>
-  <meta name="description" content="공공데이터와 지도를 이용해 우리동네 어린이도서관, 박물관, 미술관, 공원, 어린이놀이터, 가족 행사와 체험 정보를 찾아보세요.">
+  <title>우리동네 육아정보 | 아이와 갈 만한 곳 지역별 검색</title>
+  <meta name="description" content="서울, 경기, 인천 등 전국 지역별 어린이도서관, 박물관, 과학관, 공원, 실내놀이터, 체험시설과 공연을 지도에서 찾아보세요.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://toypoppo.kr/local-info/">
-  <meta property="og:title" content="우리동네 육아정보 검색 | 토이포포">
-  <meta property="og:description" content="공공데이터와 지도로 우리동네 도서관, 박물관, 공원, 놀이터와 가족 행사를 찾아보세요.">
+  <meta property="og:title" content="우리동네 육아정보 | 토이포포">
+  <meta property="og:description" content="우리 아이와 갈 만한 장소를 지역, 연령, 날씨와 목적에 맞춰 찾아보세요.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://toypoppo.kr/local-info/">
   <meta property="og:site_name" content="토이포포">
@@ -16,58 +16,178 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4675052661212934" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="/assets/styles.css">
   <link rel="stylesheet" href="/assets/local-info-map.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://toypoppo.kr/#organization","name":"토이포포","url":"https://toypoppo.kr"},{"@type":"WebSite","@id":"https://toypoppo.kr/#website","name":"토이포포","url":"https://toypoppo.kr","publisher":{"@id":"https://toypoppo.kr/#organization"},"inLanguage":"ko-KR"},{"@type":"WebPage","name":"우리동네 육아정보 Beta | 토이포포","description":"지역별 어린이집, 육아종합지원센터, 어린이도서관, 박물관, 과학관, 공원, 실내 놀이터를 부모 관점으로 확인하는 토이포포 베타 서비스입니다.","url":"https://toypoppo.kr/local-info/","isPartOf":{"@id":"https://toypoppo.kr/#website"},"dateModified":"2026-06-27","inLanguage":"ko-KR"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://toypoppo.kr"},{"@type":"ListItem","position":2,"name":"우리동네 육아정보 Beta","item":"https://toypoppo.kr/local-info/"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","name":"우리동네 육아정보","url":"https://toypoppo.kr/local-info/","description":"전국 지역별 어린이도서관, 박물관, 공원, 놀이터와 체험시설을 부모 관점으로 탐색하는 서비스입니다.","inLanguage":"ko-KR"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈","item":"https://toypoppo.kr/"},{"@type":"ListItem","position":2,"name":"우리동네 육아정보","item":"https://toypoppo.kr/local-info/"}]}]}</script>
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="/"><span class="brand-mark">T</span><span><strong>토이포포</strong><small>대한민국 부모를 위한 육아 정보 플랫폼</small></span></a>
     <nav class="nav" aria-label="주요 메뉴"><a class="nav-primary" href="/#toy-recommendations">장난감 추천</a><a href="/development-play/">발달놀이</a><a href="/parent-guide/">부모가이드</a><a href="/counseling/">상담소</a><a href="/montessori/">몬테소리</a><a href="/worksheets/">엄마표 자료실</a><a href="/parenting-tools/">육아도구</a><a href="/local-info/">우리동네</a></nav>
   </header>
-  <main class="article-shell">
-    <article class="article-card readable-article">
-      <p class="breadcrumb"><a href="/">홈</a> / 우리동네 육아정보</p>
-      <p class="eyebrow">Local Parenting Information</p>
-      <h1>우리동네 육아정보</h1>
 
-      <p class="lead">우리동네 육아정보는 부모가 흩어진 사이트를 찾아다니지 않도록 어린이도서관, 박물관·미술관, 도시공원, 어린이놀이시설, 공연과 축제 정보를 한곳에 모았습니다. 공공데이터 검색과 지도를 함께 사용하고, 실제 방문 전 확인해야 할 운영시간·예약·주차 기준도 안내합니다.</p>
-
-      <section class="tool-panel"><h2>지역과 목적 선택</h2><label>지역 <select id="localRegion"><option>서울</option><option>경기</option><option>인천</option><option>부산</option><option>대구</option><option>광주</option><option>대전</option><option>세종</option><option>강원</option><option>충청</option><option>전라</option><option>경상</option><option>제주</option></select></label><label>찾는 정보 <select id="localNeed"><option>어린이도서관</option><option>육아종합지원센터</option><option>박물관·과학관</option><option>공원·실내 놀이터</option><option>무료 체험·공연</option></select></label><button class="button primary" id="localBtn" type="button">확인 기준 보기</button><div id="localResult" class="summary-box soft"></div></section>
-      <section class="map-panel" aria-labelledby="mapTitle">
-        <div class="map-panel__head">
-          <div><h2 id="mapTitle">지도에서 우리동네 육아 장소 찾기</h2><p>지역과 시설 종류를 선택하면 가까운 장소를 지도와 목록으로 확인할 수 있어요.</p></div>
-          <button class="map-current" id="mapCurrent" type="button">현재 위치로 이동</button>
+  <main class="local-hub">
+    <section class="local-hero">
+      <div>
+        <p class="eyebrow">LOCAL PARENTING GUIDE</p>
+        <h1>📍 우리동네 육아정보</h1>
+        <p>우리 아이와 갈 만한 장소를 지역별로 쉽고 빠르게 찾아보세요. 지도 정보에 아이 연령별 부모 팁과 방문 준비 기준을 더했습니다.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#regionBrowse">지역 선택</a>
+          <button class="button secondary" id="heroCurrent" type="button">내 주변</button>
+          <a class="button secondary" href="/local-info/search.html">상세 검색</a>
         </div>
-        <div id="localMap" class="local-map" aria-label="우리동네 육아 장소 지도"></div>
-        <div class="map-state"><span id="mapState">지도를 준비하고 있습니다.</span><small>장소 정보 제공: Kakao Maps</small></div>
-        <div id="mapPlaceList" class="map-place-list"></div>
-      </section>
-      <section class="summary-box"><p class="eyebrow">LIVE PUBLIC DATA</p><h2>실제 공공데이터로 아이와 갈 곳 찾기</h2><p>지역과 기간을 선택하면 한국문화정보원의 공연·전시·체험 데이터를 실시간으로 조회합니다. 장소, 일정, 요금과 공식 페이지를 한곳에서 확인할 수 있습니다.</p><p><a class="button primary" href="/local-info/search.html">공공데이터 검색 시작 →</a></p></section>
-      <section><h2>시설별 부모 가이드</h2><div class="link-grid"><a href="/local-info/support-center.html"><strong>육아종합지원센터</strong><span>부모교육, 장난감도서관, 놀이 프로그램 확인</span></a><a href="/local-info/kids-library.html"><strong>어린이도서관</strong><span>영유아 자료실, 북스타트, 그림책 프로그램</span></a><a href="/local-info/museum-science.html"><strong>박물관·과학관</strong><span>비 오는 날 실내 체험과 연령별 관람 팁</span></a><a href="/local-info/family-events.html"><strong>무료 체험·공연</strong><span>가족 행사, 문화센터, 어린이 공연 찾는 기준</span></a><a href="/local-info/parks-playgrounds.html"><strong>공원·어린이놀이터</strong><span>날씨와 아이 연령에 맞춘 외출 장소 고르기</span></a></div></section>
-      <section><h2>부모가 먼저 확인할 것</h2><p>지역 육아 정보는 운영시간, 휴관일, 예약 방식, 주차 여부, 연령 제한이 자주 바뀝니다. 그래서 토이포포는 단순히 장소명을 나열하기보다 공식 홈페이지 확인 포인트와 아이 연령별 이용 팁을 함께 정리합니다. 예를 들어 8개월 아기라면 공연보다 짧은 체류가 가능한 어린이도서관 영유아실이나 실내 놀이공간이 더 현실적일 수 있습니다.</p><p>또한 같은 박물관이라도 유모차 이동이 편한지, 수유실이 있는지, 아이가 쉬어갈 공간이 있는지에 따라 부모의 만족도가 달라집니다. 베타 기간에는 이러한 부모 관점 체크리스트를 먼저 제공하고, 이후 공식 공공데이터와 연결해 지역별 목록을 확장할 예정입니다.</p></section>
-      <section class="note-box"><strong>전문가 상담 안내</strong><p>이 콘텐츠는 일반적인 육아 정보를 제공하기 위한 자료입니다. 아이의 발달에는 개인차가 있으며 건강 또는 발달에 대한 걱정이 있는 경우 소아청소년과 또는 관련 전문가와 상담하시기 바랍니다.</p></section>
-      <section><h2>함께 보면 좋은 글</h2><div class="related-grid"><a href="/counseling/toy-in-mouth.html"><strong>장난감을 계속 입에 넣는데 괜찮을까요?</strong><span>토이포포 안에서 이어서 읽기 좋은 육아 정보입니다.</span></a><a href="/parent-guide/toy-rotation-guide.html"><strong>장난감 로테이션 하는 법</strong><span>토이포포 안에서 이어서 읽기 좋은 육아 정보입니다.</span></a><a href="/blog/7-month-baby-development-play.html"><strong>7개월 아기 발달놀이</strong><span>토이포포 안에서 이어서 읽기 좋은 육아 정보입니다.</span></a><a href="/montessori/prepared-environment.html"><strong>몬테소리 준비된 환경</strong><span>토이포포 안에서 이어서 읽기 좋은 육아 정보입니다.</span></a><a href="/parenting-tools/today-play.html"><strong>오늘의 놀이 추천</strong><span>토이포포 안에서 이어서 읽기 좋은 육아 정보입니다.</span></a></div></section>
-    </article>
+      </div>
+      <div class="local-hero__map" aria-hidden="true">
+        <span class="pin pin-a">📚</span><span class="pin pin-b">🌳</span><span class="pin pin-c">🏛️</span>
+        <strong>오늘은 어디로 갈까요?</strong>
+        <small>도서관 · 박물관 · 공원 · 체험</small>
+      </div>
+    </section>
+
+    <section class="local-section" id="regionBrowse">
+      <div class="local-section__head">
+        <div><p class="eyebrow">BROWSE BY REGION</p><h2>지역으로 찾기</h2></div>
+        <p>시·도를 누르면 지도와 시설 목록이 함께 바뀝니다.</p>
+      </div>
+      <div class="region-chips" id="regionChips" role="group" aria-label="지역 선택">
+        <button class="is-active" type="button" data-region="서울">서울</button><button type="button" data-region="경기">경기</button>
+        <button type="button" data-region="인천">인천</button><button type="button" data-region="부산">부산</button>
+        <button type="button" data-region="대구">대구</button><button type="button" data-region="광주">광주</button>
+        <button type="button" data-region="대전">대전</button><button type="button" data-region="울산">울산</button>
+        <button type="button" data-region="세종">세종</button><button type="button" data-region="강원">강원</button>
+        <button type="button" data-region="충북">충북</button><button type="button" data-region="충남">충남</button>
+        <button type="button" data-region="전북">전북</button><button type="button" data-region="전남">전남</button>
+        <button type="button" data-region="경북">경북</button><button type="button" data-region="경남">경남</button>
+        <button type="button" data-region="제주">제주</button>
+      </div>
+      <div class="region-detail">
+        <label for="localRegion">선택 지역</label>
+        <select id="localRegion">
+          <option>서울</option><option>경기</option><option>인천</option><option>부산</option><option>대구</option>
+          <option>광주</option><option>대전</option><option>울산</option><option>세종</option><option>강원</option>
+          <option>충북</option><option>충남</option><option>전북</option><option>전남</option><option>경북</option>
+          <option>경남</option><option>제주</option>
+        </select>
+        <label for="localDistrict">시·군·구</label>
+        <input id="localDistrict" type="search" placeholder="예: 송파구, 수원시 (선택)">
+        <button class="button primary" id="localBtn" type="button">이 지역 보기</button>
+      </div>
+    </section>
+
+    <section class="local-section">
+      <div class="local-section__head">
+        <div><p class="eyebrow">POPULAR CATEGORIES</p><h2>아이와 자주 찾는 장소</h2></div>
+        <p>아이의 관심과 오늘의 목적에 맞는 카테고리를 골라보세요.</p>
+      </div>
+      <div class="local-category-grid" id="categoryGrid">
+        <button class="is-active" type="button" data-need="어린이도서관" data-kind="indoor"><span>📚</span><strong>어린이도서관</strong><small>그림책과 짧은 외출</small></button>
+        <button type="button" data-need="육아종합지원센터" data-kind="indoor"><span>🏡</span><strong>육아지원센터</strong><small>놀이실과 부모교육</small></button>
+        <button type="button" data-need="어린이 박물관" data-kind="indoor"><span>🏛️</span><strong>박물관</strong><small>전시와 역사 체험</small></button>
+        <button type="button" data-need="어린이 과학관" data-kind="indoor"><span>🧪</span><strong>과학관</strong><small>만지고 관찰하는 체험</small></button>
+        <button type="button" data-need="어린이 공원" data-kind="outdoor"><span>🌳</span><strong>공원</strong><small>산책과 대근육 놀이</small></button>
+        <button type="button" data-need="키즈카페 실내놀이터" data-kind="indoor"><span>🏃</span><strong>실내놀이터</strong><small>날씨 걱정 없는 활동</small></button>
+        <button type="button" data-need="문화센터 어린이" data-kind="indoor"><span>🎨</span><strong>문화센터</strong><small>정기 수업과 만들기</small></button>
+        <button type="button" data-need="어린이 체험관" data-kind="indoor"><span>🎪</span><strong>체험시설</strong><small>직접 해보는 하루</small></button>
+        <button type="button" data-need="어린이 공연장" data-kind="indoor"><span>🎭</span><strong>공연</strong><small>공연 시간과 연령 확인</small></button>
+      </div>
+      <select id="localNeed" class="visually-hidden" aria-label="찾는 시설">
+        <option>어린이도서관</option><option>육아종합지원센터</option><option>어린이 박물관</option>
+        <option>어린이 과학관</option><option>어린이 공원</option><option>키즈카페 실내놀이터</option>
+        <option>문화센터 어린이</option><option>어린이 체험관</option><option>어린이 공연장</option>
+      </select>
+    </section>
+
+    <section class="today-picker">
+      <div class="local-section__head">
+        <div><p class="eyebrow">TODAY PICK</p><h2>오늘 아이랑 어디 가지?</h2></div>
+        <p>상황을 선택하면 어울리는 장소 유형과 준비 팁을 제안합니다.</p>
+      </div>
+      <div class="today-actions" id="todayActions">
+        <button type="button" data-preset="today">☀️ 오늘 추천</button>
+        <button type="button" data-preset="rain">🌧️ 비 오는 날</button>
+        <button type="button" data-preset="weekend">🗓️ 주말 추천</button>
+        <button type="button" data-preset="free">🎟️ 무료 추천</button>
+        <button type="button" data-preset="indoor">🏠 실내 추천</button>
+        <button type="button" data-preset="outdoor">🌿 야외 추천</button>
+      </div>
+      <div class="today-result" id="todayResult"><strong>오늘의 기본 추천</strong><p>가까운 어린이도서관은 체류 시간을 조절하기 쉽고 연령 차이가 있어도 이용하기 편합니다.</p></div>
+    </section>
+
+    <section class="local-section">
+      <div class="local-section__head">
+        <div><p class="eyebrow">FIND YOUR FIT</p><h2>아이 연령과 방문 조건</h2></div>
+        <p>연령을 선택하면 결과 카드의 부모 팁이 달라집니다.</p>
+      </div>
+      <div class="filter-row" id="ageFilters" role="group" aria-label="아이 연령">
+        <button class="is-active" type="button" data-age="baby">0~12개월</button>
+        <button type="button" data-age="toddler">1~2세</button>
+        <button type="button" data-age="preschool">3~4세</button>
+        <button type="button" data-age="kindergarten">5~7세</button>
+        <button type="button" data-age="elementary">초등</button>
+      </div>
+      <div class="check-conditions" id="conditionFilters">
+        <label><input type="checkbox" value="주차"> 주차</label>
+        <label><input type="checkbox" value="수유실"> 수유실</label>
+        <label><input type="checkbox" value="기저귀교환대"> 기저귀교환대</label>
+        <label><input type="checkbox" value="유모차"> 유모차</label>
+        <label><input type="checkbox" value="예약"> 예약 여부</label>
+        <label><input type="checkbox" value="주말운영"> 주말 운영</label>
+      </div>
+      <p class="condition-note" id="conditionNote">편의시설 정보는 장소별로 변경될 수 있어 선택한 항목을 방문 전 공식 안내에서 확인하도록 표시합니다.</p>
+    </section>
+
+    <section class="map-panel" aria-labelledby="mapTitle">
+      <div class="map-panel__head">
+        <div><p class="eyebrow">MAP & LIST</p><h2 id="mapTitle">지도와 목록으로 한눈에 보기</h2><p id="mapIntro">서울 어린이도서관을 찾고 있습니다.</p></div>
+        <button class="map-current" id="mapCurrent" type="button">내 주변 찾기</button>
+      </div>
+      <div class="map-split">
+        <div>
+          <div id="localMap" class="local-map" aria-label="우리동네 육아 장소 지도"></div>
+          <div class="map-state"><span id="mapState">지도를 준비하고 있습니다.</span><small>장소 정보: Kakao Maps</small></div>
+        </div>
+        <div class="map-list-column">
+          <div class="list-heading"><strong id="listHeading">검색 결과</strong><a href="/local-info/search.html">공공데이터 상세 검색</a></div>
+          <div id="mapPlaceList" class="map-place-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="parent-value">
+      <div class="local-section__head">
+        <div><p class="eyebrow">TOYPOPPO PARENT TIPS</p><h2>장소보다 중요한 방문 준비</h2></div>
+      </div>
+      <div class="parent-tip-grid">
+        <article><span>👶</span><h3>영유아와 갈 때</h3><p>낮잠과 수유 사이에 이동하고 첫 방문은 60~90분 정도로 짧게 잡아보세요.</p></article>
+        <article><span>🎒</span><h3>챙기면 좋은 것</h3><p>물, 작은 간식, 여벌 옷, 물티슈와 아이가 익숙해하는 작은 놀잇감이 도움이 됩니다.</p></article>
+        <article><span>🔎</span><h3>공식 안내 확인</h3><p>운영시간, 휴관일, 예약, 주차와 편의시설은 방문 당일 공식 홈페이지에서 확인하세요.</p></article>
+      </div>
+    </section>
+
+    <section class="local-section">
+      <div class="local-section__head"><div><p class="eyebrow">KEEP PLAYING</p><h2>방문 경험을 집 놀이로 이어가기</h2></div></div>
+      <div class="link-grid">
+        <a href="/#toy-recommendations"><strong>발달별 장난감 추천</strong><span>오늘 본 관심사를 집 놀이로 이어가기</span></a>
+        <a href="/development-play/"><strong>개월별 발달놀이</strong><span>연령에 맞는 짧은 놀이 찾기</span></a>
+        <a href="/parent-guide/outing-checklist.html"><strong>아이와 외출 준비 체크리스트</strong><span>빠뜨리기 쉬운 준비물 확인</span></a>
+        <a href="/parent-guide/rainy-day-home-play.html"><strong>비 오는 날 집콕 놀이</strong><span>외출이 어려운 날의 대안</span></a>
+        <a href="/worksheets/"><strong>엄마표 자료실</strong><span>박물관과 책 경험을 활동지로 확장</span></a>
+        <a href="/counseling/short-independent-play.html"><strong>혼자 노는 시간이 짧아요</strong><span>놀이 환경과 기대 수준 점검</span></a>
+      </div>
+    </section>
+
+    <section class="source-note">
+      <h2>정보 이용 안내</h2>
+      <p>지도 장소 정보는 Kakao Maps, 시설·행사 검색은 공공데이터포털과 관계 기관의 데이터를 활용합니다. 토이포포의 연령별 팁은 일반적인 방문 준비를 돕기 위한 안내이며, 운영시간·요금·예약·편의시설은 변경될 수 있으므로 방문 전 공식 안내를 확인해 주세요.</p>
+    </section>
   </main>
-  <script>
-    const tips = {
-      "어린이도서관": "영유아 자료실, 북스타트 프로그램, 유모차 이동 동선, 수유실 여부를 먼저 확인하세요. 12개월 전후 아이는 긴 프로그램보다 짧은 그림책 탐색 시간이 더 편합니다.",
-      "육아종합지원센터": "부모교육, 장난감도서관, 시간제 보육, 놀이체험실 운영 여부를 확인하세요. 예약제인 경우가 많아 공식 홈페이지 공지를 먼저 보는 것이 안전합니다.",
-      "박물관·과학관": "관람 시간은 짧게 잡고 유모차 이동, 수유실, 휴게 공간, 소리 큰 전시 여부를 확인하세요. 비 오는 날 실내 대안으로 좋지만 아이 컨디션을 우선하세요.",
-      "공원·실내 놀이터": "날씨, 그늘, 화장실, 주차, 바닥재, 영유아 구역 분리 여부를 확인하세요. 미세먼지나 폭염일에는 실내 공간이 더 현실적입니다.",
-      "무료 체험·공연": "무료 행사는 예약 마감이 빠릅니다. 연령 제한, 보호자 동반 여부, 공연 시간, 소리와 조명 강도를 함께 확인하세요."
-    };
-    document.getElementById("localBtn").onclick = () => {
-      const region = document.getElementById("localRegion").value;
-      const need = document.getElementById("localNeed").value;
-      document.getElementById("localResult").innerHTML = "<strong>" + region + " · " + need + " 확인 팁</strong><p>" + tips[need] + "</p><p>베타 기간에는 공식 홈페이지와 지자체 공지를 함께 확인해 주세요.</p>";
-    };
-  </script>
+
   <footer class="site-footer">
-    <div><strong>토이포포</strong><p>육아 고민, 발달놀이, 부모가이드, 엄마표 자료, 우리동네 육아정보, 육아도구를 함께 다루는 부모 정보 플랫폼입니다.</p></div>
-    <nav><a href="/about.html">사이트 소개</a><a href="/author.html">작성자 소개</a><a href="/editorial-policy.html">편집 원칙</a><a href="/update-policy.html">콘텐츠 업데이트 정책</a><a href="/affiliate-disclosure.html">쿠팡파트너스 안내</a><a href="/privacy.html">개인정보처리방침</a><a href="/terms.html">이용약관</a><a href="/contact.html">문의하기</a></nav>
+    <div><strong>토이포포</strong><p>놀이, 발달, 부모 고민과 우리동네 육아정보를 연결합니다.</p></div>
+    <nav><a href="/about.html">사이트 소개</a><a href="/author.html">작성자 소개</a><a href="/editorial-policy.html">편집 원칙</a><a href="/update-policy.html">업데이트 정책</a><a href="/privacy.html">개인정보처리방침</a><a href="/terms.html">이용약관</a><a href="/contact.html">문의하기</a></nav>
     <p class="copyright">© 2026 ToyPoppo. All rights reserved.</p>
   </footer>
-  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=3fa350c084c36848cbaadf42c19bcfcb&libraries=services&autoload=false&v=20260627"></script>
+
+  <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=3fa350c084c36848cbaadf42c19bcfcb&libraries=services&autoload=false&v=20260628"></script>
   <script src="/assets/local-info-map.js"></script>
 </body>
 </html>
