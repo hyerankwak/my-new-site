@@ -38,7 +38,7 @@
     "어린이 박물관": { endpoint: "places", type: "museum" },
     "어린이 과학관": { endpoint: "places", type: "museum", keyword: "과학" },
     "어린이 공원": { endpoint: "places", type: "park" },
-    "키즈카페 실내놀이터": { endpoint: "places", type: "playground" },
+    어린이놀이터: { endpoint: "places", type: "playground" },
     "문화센터 어린이": { endpoint: "culture", keyword: "어린이" },
     "어린이 체험관": { endpoint: "culture", keyword: "체험" },
     "어린이 공연장": { endpoint: "culture", keyword: "어린이" },
@@ -187,7 +187,7 @@
       card.innerHTML = `<span class="map-place__top"><strong>${escapeHtml(place.place_name)}</strong><span>${escapeHtml(category)}</span></span>
         <span>${escapeHtml(address)}</span>
         <small><b>${escapeHtml(tip.label)} 부모 팁</b> · ${escapeHtml(tip.text)}</small>
-        <span class="place-tags">${tip.tags.map((tag) => `<em>${escapeHtml(tag)}</em>`).join("")}${selectedChecks()}</span>
+        <span class="place-tags">${place.environment ? `<em>${escapeHtml(place.environment)}</em>` : ""}${tip.tags.map((tag) => `<em>${escapeHtml(tag)}</em>`).join("")}${selectedChecks()}</span>
         <span class="place-view">지도에서 보기 →</span>`;
       card.addEventListener("click", () => showPlace(place, marker, card));
       if (marker) {
@@ -218,6 +218,7 @@
       x: item.longitude,
       y: item.latitude,
       category_name: item.category || categoryLabel(),
+      environment: item.description || "",
       place_url: item.url || "",
     };
   }
