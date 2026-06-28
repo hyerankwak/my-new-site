@@ -264,9 +264,15 @@
 
     try {
       syncUrl();
-      const response = await fetch(`${API_BASE}/api/${source.endpoint}?${params.toString()}`);
-      const payload = await response.json();
+      let response = await fetch(`${API_BASE}/api/${source.endpoint}?${params.toString()}`);
+      let payload = await response.json();
       if (!response.ok) throw new Error(payload.message || "공공데이터 조회 실패");
+      if (!(payload.items || []).length && source.keyword && source.endpoint === "places") {
+        params.delete("keyword");
+        response = await fetch(`${API_BASE}/api/${source.endpoint}?${params.toString()}`);
+        payload = await response.json();
+        if (!response.ok) throw new Error(payload.message || "공공데이터 조회 실패");
+      }
       const data = (payload.items || []).map(toPlace);
       if (data.length) renderPlaces(data);
       else showEmpty("조건에 맞는 공식 데이터가 없습니다. 다른 지역이나 카테고리를 선택해 보세요.");
