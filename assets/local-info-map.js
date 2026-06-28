@@ -196,7 +196,7 @@
     list.innerHTML = '<div class="map-empty">지도와 목록을 준비하고 있습니다.</div>';
     map.setCenter(new kakao.maps.LatLng(center[0], center[1]));
 
-    places.keywordSearch(query, (data, statusCode) => {
+    const callback = (data, statusCode) => {
       if (statusCode === kakao.maps.services.Status.OK) {
         renderPlaces(data);
         return;
@@ -204,10 +204,15 @@
       showEmpty(statusCode === kakao.maps.services.Status.ZERO_RESULT
         ? "조건에 맞는 장소가 없습니다. 지역이나 카테고리를 바꿔보세요."
         : "장소 검색을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.");
-    }, {
-      location: new kakao.maps.LatLng(center[0], center[1]),
-      radius: options.radius || 20000,
-    });
+    };
+    if (options.useRegion === false) {
+      places.keywordSearch(query, callback, {
+        location: new kakao.maps.LatLng(center[0], center[1]),
+        radius: options.radius || 12000,
+      });
+    } else {
+      places.keywordSearch(query, callback);
+    }
   }
 
   function useCurrentLocation() {
