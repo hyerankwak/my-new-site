@@ -12,6 +12,13 @@
   const typeSelect = document.getElementById("dataType");
   const dateFields = [...document.querySelectorAll(".date-field")];
   const API_BASE = "https://toypoppo-public-data.rururubs.workers.dev";
+  const SCIENCE_DATA_URL = "/assets/data/science-museums.json?v=20260628b";
+  const regionNames = {
+    서울: "서울특별시", 부산: "부산광역시", 대구: "대구광역시", 인천: "인천광역시",
+    광주: "광주광역시", 대전: "대전광역시", 울산: "울산광역시", 세종: "세종특별자치시",
+    경기: "경기도", 강원: "강원", 충북: "충청북도", 충남: "충청남도",
+    전북: "전라북도", 전남: "전라남도", 경북: "경상북도", 경남: "경상남도", 제주: "제주",
+  };
   const environmentPanel = document.getElementById("environmentPanel");
   const weatherSummary = document.getElementById("weatherSummary");
   const airSummary = document.getElementById("airSummary");
@@ -68,6 +75,24 @@
   function syncType() {
     const cultureMode = typeSelect.value === "culture";
     dateFields.forEach((field) => { field.hidden = !cultureMode; });
+  }
+
+  async function loadScienceMuseums(params) {
+    const response = await fetch(SCIENCE_DATA_URL, { headers: { Accept: "application/json" } });
+    const payload = await response.json();
+    if (!response.ok) throw new Error("과학관 자료를 불러오지 못했습니다.");
+
+    const sido = String(params.get("sido") || "").trim();
+    const sigungu = String(params.get("sigungu") || "").trim();
+    const keyword = String(params.get("keyword") || "").trim().toLowerCase();
+    const items = (payload.items || []).filter((item) => {
+      const haystack = `${item.title} ${item.address}`.toLowerCase();
+      return (!sido || item.address.includes(regionNames[sido] || sido))
+        && (!sigungu || item.address.includes(sigungu))
+        && (!keyword || haystack.includes(keyword));
+    });
+
+    return { items, totalCount: items.length, source: payload.source };
   }
   typeSelect.addEventListener("change", syncType);
   syncType();
@@ -129,9 +154,14 @@
     count.textContent = "불러오는 중";
 
     try {
-      const response = await fetch(`${API_BASE}/api/${endpoint}?${params.toString()}`, { headers: { Accept: "application/json" } });
-      const payload = await response.json();
-      if (!response.ok) throw new Error(payload.message || "공공데이터를 불러오지 못했습니다.");
+      let payload;
+      if (type === "science") {
+        payload = await loadScienceMuseums(params);
+      } else {
+        const response = await fetch(`${API_BASE}/api/${endpoint}?${params.toString()}`, { headers: { Accept: "application/json" } });
+        payload = await response.json();
+        if (!response.ok) throw new Error(payload.message || "공공데이터를 불러오지 못했습니다.");
+      }
 
       const items = Array.isArray(payload.items) ? payload.items : [];
       status.textContent = "API 연결됨";

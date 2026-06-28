@@ -1,0 +1,162 @@
+{
+    "source":  "과학기술정보통신부 국립중앙과학관",
+    "dataset":  "과학학습콘텐츠 관련 과학관 정보",
+    "sourceUrl":  "https://www.data.go.kr/data/15067821/fileData.do",
+    "count":  22,
+    "items":  [
+                  {
+                      "title":  "국립서울과학관",
+                      "address":  "서울특별시 종로구 창경궁로 215",
+                      "phone":  "02-3668-2208",
+                      "url":  "http://www.ssm.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "옥토끼우주센터",
+                      "address":  "인천광역시 강화군 불은면 강화동로 403",
+                      "phone":  "032-937-6917",
+                      "url":  "http://www.oktokki.com/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "우석헌자연사박물관",
+                      "address":  "경기도 남양주시 진접읍 금강로 1095",
+                      "phone":  "031-572-9555",
+                      "url":  "http://www.geomuseum.org/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "국립과천과학관",
+                      "address":  "경기도 과천시 과천동 상하벌로 110",
+                      "phone":  "02-3677-1500",
+                      "url":  "http://sciencecenter.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "강화은암자연사박물관",
+                      "address":  "인천광역시 강화군 송해면 장정양오길 437",
+                      "phone":  "032-934-8872",
+                      "url":  "http://cafe.naver.com/eunammuseum",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "해남공룡박물관",
+                      "address":  "전라남도 해남군 황산면 공룡박물관길 234",
+                      "phone":  "061-532-7225",
+                      "url":  "http://uhangridinopia.haenam.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "서대문자연사박물관",
+                      "address":  "서울특별시 서대문구 연희동 산5-58",
+                      "phone":  "02-330-8899",
+                      "url":  "http://namu.sdm.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "문경석탄박물관",
+                      "address":  "경상북도 문경시 가은읍 왕능길 112",
+                      "phone":  "054-550-6424",
+                      "url":  "http://coal.gbmg.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "청주랜드관리사무소",
+                      "address":  "충청북도 청주시 명암동 산 72-13",
+                      "phone":  "043-200-4705",
+                      "url":  "http://cjuland.cjcity.net/main/cjuland",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "전라북도어린이회관",
+                      "address":  "전라북도 전주시 덕진구 송천동1가 234-5",
+                      "phone":  "063-290-6688",
+                      "url":  "http://child.jeonbuk.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "계룡산자연사박물관",
+                      "address":  "충청남도 공주시 반포면 임금봉길 49-25",
+                      "phone":  "042-824-4055",
+                      "url":  "http://www.krnamu.or.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "국립중앙과학관",
+                      "address":  "대전광역시 유성구 대덕대로 481",
+                      "phone":  "042-601-7894",
+                      "url":  "http://www.science.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "당진해양테마과학관",
+                      "address":  "충청남도 당진군 신평면 삽교천산길 79",
+                      "phone":  "041-363-9229",
+                      "url":  "http://www.dmto.or.kr/sub3/sub3_3.php",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "제주특별자치도민속자연사박물관",
+                      "address":  "제주특별자치도 제주시 삼성로 40",
+                      "phone":  "064-710-7708",
+                      "url":  "http://museum.jeju.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "목포자연사박물관",
+                      "address":  "전라남도 목포시 남농로 135 용해동",
+                      "phone":  "061-274-3655",
+                      "url":  "http://museum.mokpo.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "태백고생대자연사박물관",
+                      "address":  "강원도 태백시 태백로 2249 동점동 295",
+                      "phone":  "033-581-8181",
+                      "url":  "http://www.paleozoic.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "홍성조류탐사과학관",
+                      "address":  "충청남도 홍성군 서부면 남당항로 934-14",
+                      "phone":  "041-630-9696",
+                      "url":  "http://blog.naver.com/birdcenter",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "부천로보파크",
+                      "address":  "경기도 부천시 원미구 평천로 655",
+                      "phone":  "070-7094-5479",
+                      "url":  "http://www.robopark.org/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "로보라이프뮤지엄",
+                      "address":  "경상북도 포항시 남구 효자동 산31",
+                      "phone":  "054-279-0427",
+                      "url":  "http://www.robolife.kr",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "부산광역시 어린이회관",
+                      "address":  "부산광역시 부산진구 승지곡로 33번길 29-28",
+                      "phone":  "051-810-8800",
+                      "url":  "http://www.childpia.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "신라역사과학관",
+                      "address":  "경상북도 경주시 하동공예촌길 33",
+                      "phone":  "054-745-4998",
+                      "url":  "http://www.sasm.or.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "창원과학체험관",
+                      "address":  "경상남도 창원시 의창구 충혼로72번길 16",
+                      "phone":  "055-267-2676",
+                      "url":  "http://www.cwsc.co.kr/",
+                      "category":  "과학관"
+                  }
+              ]
+}

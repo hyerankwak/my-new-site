@@ -33,10 +33,16 @@
     경남: [35.4606, 128.2132], 제주: [33.4996, 126.5312],
   };
   const API_BASE = "https://toypoppo-public-data.rururubs.workers.dev";
+  const regionNames = {
+    서울: "서울특별시", 부산: "부산광역시", 대구: "대구광역시", 인천: "인천광역시",
+    광주: "광주광역시", 대전: "대전광역시", 울산: "울산광역시", 세종: "세종특별자치시",
+    경기: "경기도", 강원: "강원", 충북: "충청북도", 충남: "충청남도",
+    전북: "전라북도", 전남: "전라남도", 경북: "경상북도", 경남: "경상남도", 제주: "제주",
+  };
   const publicSources = {
     어린이도서관: { endpoint: "places", type: "library" },
     "어린이 박물관": { endpoint: "places", type: "museum" },
-    "어린이 과학관": { endpoint: "places", type: "museum", keyword: "과학" },
+    "어린이 과학관": { endpoint: "science" },
     "어린이 공원": { endpoint: "places", type: "park" },
     어린이놀이터: { endpoint: "places", type: "playground" },
     "문화센터 어린이": { endpoint: "culture", keyword: "어린이" },
@@ -111,6 +117,7 @@
   let latestMarkers = [];
   let map;
   let places;
+  let geocoder;
   let infoWindow;
   let currentMarker;
   const initialParams = new URLSearchParams(window.location.search);
@@ -223,6 +230,23 @@
     };
   }
 
+  function geocodePlaces(data) {
+    return Promise.all(data.map((place) => new Promise((resolve) => {
+      if (place.x && place.y) {
+        resolve(place);
+        return;
+      }
+      const address = place.road_address_name || place.address_name;
+      geocoder.addressSearch(address, (result, statusCode) => {
+        if (statusCode === kakao.maps.services.Status.OK && result[0]) {
+          resolve({ ...place, x: result[0].x, y: result[0].y });
+        } else {
+          resolve(place);
+        }
+      });
+    })));
+  }
+
   async function searchPlaces(options = {}) {
     const region = regionSelect.value;
     const district = districtInput.value.trim();
@@ -251,6 +275,26 @@
       showEmpty("이 카테고리는 지역별 공식 정보 페이지에서 준비하고 있습니다.");
       return;
     }
+
+    if (source.endpoint === "science") {
+      try {
+        syncUrl();
+        const response = await fetch("/assets/data/science-museums.json?v=20260628b");
+        const payload = await response.json();
+        if (!response.ok) throw new Error("과학관 자료 조회 실패");
+        const keyword = district.toLowerCase();
+        const data = (payload.items || [])
+          .filter((item) => item.address.includes(regionNames[region] || region))
+          .filter((item) => !keyword || `${item.title} ${item.address}`.toLowerCase().includes(keyword))
+          .map(toPlace);
+        if (data.length) renderPlaces(await geocodePlaces(data));
+        else showEmpty("선택한 지역의 과학관 공식 데이터가 없습니다. 인접 지역도 확인해 보세요.");
+      } catch {
+        showEmpty("과학관 자료를 불러오지 못했습니다. 잠시 후 다시 이용해 주세요.");
+      }
+      return;
+    }
+
     const params = new URLSearchParams({ sido: region, limit: "30" });
     if (district) params.set("sigungu", district);
     if (source.endpoint === "places") params.set("type", source.type);
@@ -327,6 +371,7 @@
       level: 8,
     });
     places = new kakao.maps.services.Places();
+    geocoder = new kakao.maps.services.Geocoder();
     infoWindow = new kakao.maps.InfoWindow({ removable: true });
     map.addControl(new kakao.maps.ZoomControl(), kakao.maps.ControlPosition.RIGHT);
 
