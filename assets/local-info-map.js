@@ -32,6 +32,17 @@
     전북: [35.8203, 127.1088], 전남: [34.8161, 126.4629], 경북: [36.4919, 128.8889],
     경남: [35.4606, 128.2132], 제주: [33.4996, 126.5312],
   };
+  const API_BASE = "https://toypoppo-public-data.rururubs.workers.dev";
+  const publicSources = {
+    어린이도서관: { endpoint: "places", type: "library" },
+    "어린이 박물관": { endpoint: "places", type: "museum" },
+    "어린이 과학관": { endpoint: "places", type: "museum", keyword: "과학" },
+    "어린이 공원": { endpoint: "places", type: "park" },
+    "키즈카페 실내놀이터": { endpoint: "places", type: "playground" },
+    "문화센터 어린이": { endpoint: "culture", keyword: "어린이" },
+    "어린이 체험관": { endpoint: "culture", keyword: "체험" },
+    "어린이 공연장": { endpoint: "culture", keyword: "어린이" },
+  };
 
   const ageTips = {
     baby: {
@@ -141,9 +152,11 @@
       card.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
     const address = place.road_address_name || place.address_name || "주소 정보 없음";
-    infoWindow.setContent(`<div class="map-infowindow"><strong>${escapeHtml(place.place_name)}</strong>${escapeHtml(address)}</div>`);
-    infoWindow.open(map, marker);
-    map.panTo(marker.getPosition());
+    if (marker) {
+      infoWindow.setContent(`<div class="map-infowindow"><strong>${escapeHtml(place.place_name)}</strong>${escapeHtml(address)}</div>`);
+      infoWindow.open(map, marker);
+      map.panTo(marker.getPosition());
+    }
   }
 
   function renderPlaces(data) {
@@ -153,8 +166,9 @@
     const tip = ageTips[selectedAge];
 
     latestPlaces.forEach((place) => {
-      const position = new kakao.maps.LatLng(Number(place.y), Number(place.x));
-      const marker = new kakao.maps.Marker({ map, position, title: place.place_name });
+      const hasCoordinates = Number.isFinite(Number(place.y)) && Number.isFinite(Number(place.x));
+      const position = hasCoordinates ? new kakao.maps.LatLng(Number(place.y), Number(place.x)) : null;
+      const marker = position ? new kakao.maps.Marker({ map, position, title: place.place_name }) : null;
       const card = document.createElement("button");
       const address = place.road_address_name || place.address_name || "주소 정보 없음";
       const category = place.category_name ? place.category_name.split(" > ").slice(-1)[0] : categoryLabel();
@@ -166,13 +180,15 @@
         <span class="place-tags">${tip.tags.map((tag) => `<em>${escapeHtml(tag)}</em>`).join("")}${selectedChecks()}</span>
         <span class="place-view">지도에서 보기 →</span>`;
       card.addEventListener("click", () => showPlace(place, marker, card));
-      kakao.maps.event.addListener(marker, "click", () => showPlace(place, marker, card));
-      latestMarkers.push({ marker, card });
+      if (marker) {
+        kakao.maps.event.addListener(marker, "click", () => showPlace(place, marker, card));
+        latestMarkers.push({ marker, card });
+      }
       list.appendChild(card);
-      bounds.extend(position);
+      if (position) bounds.extend(position);
     });
 
-    if (latestPlaces.length) map.setBounds(bounds);
+    if (latestMarkers.length) map.setBounds(bounds);
     const area = [regionSelect.value, districtInput.value.trim()].filter(Boolean).join(" ");
     state.textContent = `${area} ${categoryLabel()} 검색 결과 ${latestPlaces.length}곳`;
     listHeading.textContent = `${area} · ${categoryLabel()}`;
@@ -184,34 +200,67 @@
     list.innerHTML = `<div class="map-empty">${escapeHtml(message)}</div>`;
   }
 
-  function searchPlaces(options = {}) {
+  function toPlace(item) {
+    return {
+      place_name: item.title,
+      road_address_name: item.address || item.roadAddress || item.place || "",
+      address_name: item.lotAddress || "",
+      x: item.longitude,
+      y: item.latitude,
+      category_name: item.category || categoryLabel(),
+      place_url: item.url || "",
+    };
+  }
+
+  async function searchPlaces(options = {}) {
     const region = regionSelect.value;
     const district = districtInput.value.trim();
     const need = needSelect.value;
     const center = options.center || regionCenters[region] || regionCenters.서울;
-    const query = [options.useRegion === false ? "" : region, district, need].filter(Boolean).join(" ");
-
     clearMarkers();
     state.textContent = "장소를 찾고 있습니다.";
     list.innerHTML = '<div class="map-empty">지도와 목록을 준비하고 있습니다.</div>';
     map.setCenter(new kakao.maps.LatLng(center[0], center[1]));
 
-    const callback = (data, statusCode) => {
-      if (statusCode === kakao.maps.services.Status.OK) {
-        renderPlaces(data);
-        return;
-      }
-      showEmpty(statusCode === kakao.maps.services.Status.ZERO_RESULT
-        ? "조건에 맞는 장소가 없습니다. 지역이나 카테고리를 바꿔보세요."
-        : "장소 검색을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.");
-    };
     if (options.useRegion === false) {
+      const query = need;
+      const callback = (data, statusCode) => {
+        if (statusCode === kakao.maps.services.Status.OK) renderPlaces(data);
+        else showEmpty("내 주변 장소를 찾지 못했습니다. 지역을 선택해 탐색해 주세요.");
+      };
       places.keywordSearch(query, callback, {
         location: new kakao.maps.LatLng(center[0], center[1]),
         radius: options.radius || 12000,
       });
-    } else {
-      places.keywordSearch(query, callback);
+      return;
+    }
+
+    const source = publicSources[need];
+    if (!source) {
+      showEmpty("이 카테고리는 지역별 공식 정보 페이지에서 준비하고 있습니다.");
+      return;
+    }
+    const params = new URLSearchParams({ sido: region, limit: "30" });
+    if (district) params.set("sigungu", district);
+    if (source.endpoint === "places") params.set("type", source.type);
+    if (source.keyword) params.set("keyword", source.keyword);
+    if (source.endpoint === "culture") {
+      const today = new Date();
+      const later = new Date(today);
+      later.setMonth(later.getMonth() + 3);
+      params.set("from", today.toISOString().slice(0, 10));
+      params.set("to", later.toISOString().slice(0, 10));
+    }
+
+    try {
+      const response = await fetch(`${API_BASE}/api/${source.endpoint}?${params.toString()}`);
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.message || "공공데이터 조회 실패");
+      const data = (payload.items || []).map(toPlace);
+      if (data.length) renderPlaces(data);
+      else showEmpty("조건에 맞는 공식 데이터가 없습니다. 다른 지역이나 카테고리를 선택해 보세요.");
+    } catch {
+      showEmpty("공공데이터를 불러오지 못했습니다. 잠시 후 상세 검색을 이용해 주세요.");
     }
   }
 
