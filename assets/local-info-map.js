@@ -113,6 +113,7 @@
   let places;
   let infoWindow;
   let currentMarker;
+  const initialParams = new URLSearchParams(window.location.search);
 
   const escapeHtml = (value) => String(value || "")
     .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
@@ -133,6 +134,15 @@
     needSelect.value = need;
     const target = [...categoryGrid.querySelectorAll("button")].find((button) => button.dataset.need === need);
     if (target) updateActive(categoryGrid, "button", target);
+  }
+
+  function syncUrl() {
+    const params = new URLSearchParams();
+    params.set("region", regionSelect.value);
+    params.set("need", needSelect.value);
+    if (districtInput.value.trim()) params.set("district", districtInput.value.trim());
+    params.set("age", selectedAge);
+    history.replaceState(null, "", `${window.location.pathname}?${params.toString()}#mapTitle`);
   }
 
   function clearMarkers() {
@@ -253,6 +263,7 @@
     }
 
     try {
+      syncUrl();
       const response = await fetch(`${API_BASE}/api/${source.endpoint}?${params.toString()}`);
       const payload = await response.json();
       if (!response.ok) throw new Error(payload.message || "공공데이터 조회 실패");
@@ -287,6 +298,22 @@
   }
 
   kakao.maps.load(() => {
+    const requestedRegion = initialParams.get("region");
+    const requestedNeed = initialParams.get("need");
+    const requestedDistrict = initialParams.get("district");
+    const requestedAge = initialParams.get("age");
+    if (requestedRegion && regionCenters[requestedRegion]) {
+      regionSelect.value = requestedRegion;
+      const regionButton = regionChips.querySelector(`[data-region="${requestedRegion}"]`);
+      if (regionButton) updateActive(regionChips, "button", regionButton);
+    }
+    if (requestedNeed && publicSources[requestedNeed]) setNeed(requestedNeed);
+    if (requestedDistrict) districtInput.value = requestedDistrict;
+    if (requestedAge && ageTips[requestedAge]) {
+      selectedAge = requestedAge;
+      const ageButton = ageFilters.querySelector(`[data-age="${requestedAge}"]`);
+      if (ageButton) updateActive(ageFilters, "button", ageButton);
+    }
     const initial = regionCenters[regionSelect.value] || regionCenters.서울;
     map = new kakao.maps.Map(mapElement, {
       center: new kakao.maps.LatLng(initial[0], initial[1]),
