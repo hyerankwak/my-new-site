@@ -12,7 +12,7 @@
   const typeSelect = document.getElementById("dataType");
   const dateFields = [...document.querySelectorAll(".date-field")];
   const API_BASE = "https://toypoppo-public-data.rururubs.workers.dev";
-  const SCIENCE_DATA_URL = "/assets/data/science-museums.json?v=20260628b";
+  const SCIENCE_DATA_URL = "/assets/data/science-museums.json?v=20260629a";
   const regionNames = {
     서울: "서울특별시", 부산: "부산광역시", 대구: "대구광역시", 인천: "인천광역시",
     광주: "광주광역시", 대전: "대전광역시", 울산: "울산광역시", 세종: "세종특별자치시",
@@ -60,6 +60,7 @@
       <div>
         <p class="eyebrow">${escapeHtml(text(item.category || item.realm, "공공정보"))}</p>
         <h3>${escapeHtml(text(item.title))}</h3>
+        ${item.region ? `<p class="culture-card__meta"><strong>지역</strong> ${escapeHtml(item.region)}${item.ownership ? ` · ${escapeHtml(item.ownership)}` : ""}</p>` : ""}
         ${item.address ? `<p class="culture-card__meta"><strong>주소</strong> ${escapeHtml(item.address)}</p>` : ""}
         ${item.place ? `<p class="culture-card__meta"><strong>장소</strong> ${escapeHtml(item.place)}</p>` : ""}
         ${item.startDate || item.endDate ? `<p class="culture-card__meta"><strong>기간</strong> ${escapeHtml(text(item.startDate))} ~ ${escapeHtml(text(item.endDate))}</p>` : ""}
@@ -86,13 +87,13 @@
     const sigungu = String(params.get("sigungu") || "").trim();
     const keyword = String(params.get("keyword") || "").trim().toLowerCase();
     const items = (payload.items || []).filter((item) => {
-      const haystack = `${item.title} ${item.address}`.toLowerCase();
-      return (!sido || item.address.includes(regionNames[sido] || sido))
-        && (!sigungu || item.address.includes(sigungu))
+      const haystack = `${item.title} ${item.region || ""} ${item.address || ""}`.toLowerCase();
+      return (!sido || item.region === sido || (item.address || "").includes(regionNames[sido] || sido))
+        && (!sigungu || (item.address || "").includes(sigungu))
         && (!keyword || haystack.includes(keyword));
     });
 
-    return { items, totalCount: items.length, source: payload.source };
+    return { items, totalCount: items.length, source: "과학기술정보통신부 국립중앙과학관" };
   }
   typeSelect.addEventListener("change", syncType);
   syncType();

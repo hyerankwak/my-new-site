@@ -225,8 +225,9 @@
       x: item.longitude,
       y: item.latitude,
       category_name: item.category || categoryLabel(),
-      environment: item.description || "",
+      environment: item.description || item.ownership || "",
       place_url: item.url || "",
+      region: item.region || "",
     };
   }
 
@@ -237,11 +238,28 @@
         return;
       }
       const address = place.road_address_name || place.address_name;
-      geocoder.addressSearch(address, (result, statusCode) => {
+      if (address) {
+        geocoder.addressSearch(address, (result, statusCode) => {
+          if (statusCode === kakao.maps.services.Status.OK && result[0]) {
+            resolve({ ...place, x: result[0].x, y: result[0].y });
+          } else {
+            resolve(place);
+          }
+        });
+        return;
+      }
+      places.keywordSearch(`${place.place_name} ${place.region}`, (result, statusCode) => {
         if (statusCode === kakao.maps.services.Status.OK && result[0]) {
-          resolve({ ...place, x: result[0].x, y: result[0].y });
+          resolve({
+            ...place,
+            road_address_name: result[0].road_address_name,
+            address_name: result[0].address_name,
+            x: result[0].x,
+            y: result[0].y,
+            place_url: result[0].place_url || place.place_url,
+          });
         } else {
-          resolve(place);
+          resolve(null);
         }
       });
     })));
@@ -279,16 +297,21 @@
     if (source.endpoint === "science") {
       try {
         syncUrl();
-        const response = await fetch("/assets/data/science-museums.json?v=20260628b");
+        const response = await fetch("/assets/data/science-museums.json?v=20260629a");
         const payload = await response.json();
         if (!response.ok) throw new Error("과학관 자료 조회 실패");
         const keyword = district.toLowerCase();
         const data = (payload.items || [])
-          .filter((item) => item.address.includes(regionNames[region] || region))
-          .filter((item) => !keyword || `${item.title} ${item.address}`.toLowerCase().includes(keyword))
+          .filter((item) => item.region === region || (item.address || "").includes(regionNames[region] || region))
+          .filter((item) => !keyword || `${item.title} ${item.region || ""} ${item.address || ""}`.toLowerCase().includes(keyword))
           .map(toPlace);
-        if (data.length) renderPlaces(await geocodePlaces(data));
-        else showEmpty("선택한 지역의 과학관 공식 데이터가 없습니다. 인접 지역도 확인해 보세요.");
+        if (data.length) {
+          const verified = (await geocodePlaces(data)).filter(Boolean);
+          if (verified.length) renderPlaces(verified);
+          else showEmpty("공식 목록은 있지만 현재 지도에서 확인되는 과학관을 찾지 못했습니다. 인접 지역도 확인해 보세요.");
+        } else {
+          showEmpty("선택한 지역의 과학관 공식 데이터가 없습니다. 인접 지역도 확인해 보세요.");
+        }
       } catch {
         showEmpty("과학관 자료를 불러오지 못했습니다. 잠시 후 다시 이용해 주세요.");
       }

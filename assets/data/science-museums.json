@@ -1,151 +1,1053 @@
 {
-    "source":  "과학기술정보통신부 국립중앙과학관",
-    "dataset":  "과학학습콘텐츠 관련 과학관 정보",
-    "sourceUrl":  "https://www.data.go.kr/data/15067821/fileData.do",
-    "count":  22,
+    "sources":  [
+                    {
+                        "organization":  "과학기술정보통신부 국립중앙과학관",
+                        "dataset":  "중앙과학관 연계 과학관 목록",
+                        "sourceUrl":  "https://www.data.go.kr/data/15067987/fileData.do"
+                    },
+                    {
+                        "organization":  "과학기술정보통신부 국립중앙과학관",
+                        "dataset":  "과학학습콘텐츠 관련 과학관 정보",
+                        "sourceUrl":  "https://www.data.go.kr/data/15067821/fileData.do"
+                    }
+                ],
+    "count":  137,
     "items":  [
                   {
-                      "title":  "국립서울과학관",
-                      "address":  "서울특별시 종로구 창경궁로 215",
-                      "phone":  "02-3668-2208",
-                      "url":  "http://www.ssm.go.kr/",
+                      "title":  "국립산림과학원 산림과학관",
+                      "region":  "서울",
+                      "ownership":  "국립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "서울특별시과학전시관",
+                      "region":  "서울",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "서울영어과학교육센터(서울시민천문대)",
+                      "region":  "서울",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "한생연융합교육과학관",
+                      "region":  "서울",
+                      "ownership":  "사립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "한생연실험누리과학관",
+                      "region":  "서울",
+                      "ownership":  "사립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "한생연생명과학박물관",
+                      "region":  "서울",
+                      "ownership":  "사립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "한생연인간과로봇과학관",
+                      "region":  "서울",
+                      "ownership":  "사립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "LG사이언스홀(서울)",
+                      "region":  "서울",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "에너지체험관 행복한I",
+                      "region":  "서울",
+                      "ownership":  "사립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "디지털파빌리온",
+                      "region":  "서울",
+                      "ownership":  "사립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "과학동아 천문과학관",
+                      "region":  "서울",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "충우곤충박물관",
+                      "region":  "서울",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "육영재단어린이회관",
+                      "region":  "서울",
+                      "ownership":  "사립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "국립부산과학관",
+                      "region":  "부산",
+                      "ownership":  "국립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "국립수산과학관",
+                      "region":  "부산",
+                      "ownership":  "국립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "부산광역시 과학교육원",
+                      "region":  "부산",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "부산과학체험관(부산광역시어린이회관)",
+                      "region":  "부산",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "부산광역시유아교육진흥원",
+                      "region":  "부산",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "LG사이언스홀(부산)",
+                      "region":  "부산",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "국립대구과학관",
+                      "region":  "대구",
+                      "ownership":  "국립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "국립대구기상과학관",
+                      "region":  "대구",
+                      "ownership":  "국립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "대구광역시과학교육원과학관",
+                      "region":  "대구",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "어린이회관",
+                      "region":  "대구",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "창공과학관",
+                      "region":  "대구",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "인천광역시 교육과학연구원",
+                      "region":  "인천",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "인천어린이과학관",
+                      "region":  "인천",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "인천나비공원",
+                      "region":  "인천",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "소리체험박물관",
+                      "region":  "인천",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
                       "category":  "과학관"
                   },
                   {
                       "title":  "옥토끼우주센터",
+                      "region":  "인천",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
                       "address":  "인천광역시 강화군 불은면 강화동로 403",
                       "phone":  "032-937-6917",
                       "url":  "http://www.oktokki.com/",
                       "category":  "과학관"
                   },
                   {
-                      "title":  "우석헌자연사박물관",
-                      "address":  "경기도 남양주시 진접읍 금강로 1095",
-                      "phone":  "031-572-9555",
-                      "url":  "http://www.geomuseum.org/",
-                      "category":  "과학관"
-                  },
-                  {
-                      "title":  "국립과천과학관",
-                      "address":  "경기도 과천시 과천동 상하벌로 110",
-                      "phone":  "02-3677-1500",
-                      "url":  "http://sciencecenter.go.kr/",
-                      "category":  "과학관"
-                  },
-                  {
                       "title":  "강화은암자연사박물관",
+                      "region":  "인천",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
                       "address":  "인천광역시 강화군 송해면 장정양오길 437",
                       "phone":  "032-934-8872",
                       "url":  "http://cafe.naver.com/eunammuseum",
                       "category":  "과학관"
                   },
                   {
-                      "title":  "해남공룡박물관",
-                      "address":  "전라남도 해남군 황산면 공룡박물관길 234",
-                      "phone":  "061-532-7225",
-                      "url":  "http://uhangridinopia.haenam.go.kr/",
+                      "title":  "국립광주과학관",
+                      "region":  "광주",
+                      "ownership":  "국립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
                       "category":  "과학관"
                   },
                   {
-                      "title":  "서대문자연사박물관",
-                      "address":  "서울특별시 서대문구 연희동 산5-58",
-                      "phone":  "02-330-8899",
-                      "url":  "http://namu.sdm.go.kr/",
-                      "category":  "과학관"
-                  },
-                  {
-                      "title":  "문경석탄박물관",
-                      "address":  "경상북도 문경시 가은읍 왕능길 112",
-                      "phone":  "054-550-6424",
-                      "url":  "http://coal.gbmg.go.kr/",
-                      "category":  "과학관"
-                  },
-                  {
-                      "title":  "청주랜드관리사무소",
-                      "address":  "충청북도 청주시 명암동 산 72-13",
-                      "phone":  "043-200-4705",
-                      "url":  "http://cjuland.cjcity.net/main/cjuland",
-                      "category":  "과학관"
-                  },
-                  {
-                      "title":  "전라북도어린이회관",
-                      "address":  "전라북도 전주시 덕진구 송천동1가 234-5",
-                      "phone":  "063-290-6688",
-                      "url":  "http://child.jeonbuk.go.kr/",
-                      "category":  "과학관"
-                  },
-                  {
-                      "title":  "계룡산자연사박물관",
-                      "address":  "충청남도 공주시 반포면 임금봉길 49-25",
-                      "phone":  "042-824-4055",
-                      "url":  "http://www.krnamu.or.kr/",
+                      "title":  "광주광역시교육과학연구원",
+                      "region":  "광주",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
                       "category":  "과학관"
                   },
                   {
                       "title":  "국립중앙과학관",
+                      "region":  "대전",
+                      "ownership":  "국립",
+                      "membership":  "정회원",
                       "address":  "대전광역시 유성구 대덕대로 481",
                       "phone":  "042-601-7894",
                       "url":  "http://www.science.go.kr/",
                       "category":  "과학관"
                   },
                   {
+                      "title":  "대전시민천문대",
+                      "region":  "대전",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "대전교육과학연구원",
+                      "region":  "대전",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "충청남도과학교육원",
+                      "region":  "대전",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "울산과학관",
+                      "region":  "울산",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "국립과천과학관",
+                      "region":  "경기",
+                      "ownership":  "국립",
+                      "membership":  "정회원",
+                      "address":  "경기도 과천시 과천동 상하벌로 110",
+                      "phone":  "02-3677-1500",
+                      "url":  "http://sciencecenter.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "의정부과학도서관 천문우주체험실",
+                      "region":  "경기",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "안성맞춤천문과학관",
+                      "region":  "경기",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "포천아트밸리 천문과학관",
+                      "region":  "경기",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "의왕조류생태과학관",
+                      "region":  "경기",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "경기도과학교육원 과학전시관",
+                      "region":  "경기",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "마이크로과학관",
+                      "region":  "경기",
+                      "ownership":  "사립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "인체과학박물관",
+                      "region":  "경기",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "어메이징파크과학관",
+                      "region":  "경기",
+                      "ownership":  "사립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "재단법인 송암스페이스센터",
+                      "region":  "경기",
+                      "ownership":  "사립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "자연과별가평천문대",
+                      "region":  "경기",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "㈜민재생태환경과학관",
+                      "region":  "경기",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "우석헌자연사디스커버리센터",
+                      "region":  "경기",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "홍천생명건강과학관",
+                      "region":  "강원",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "국토정중앙천문대",
+                      "region":  "강원",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "춘천교육지원청 창의교육지원센터",
+                      "region":  "강원",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "천문인마을",
+                      "region":  "강원",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "한생연자연속과학체험관",
+                      "region":  "강원",
+                      "ownership":  "사립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "한방생명과학관",
+                      "region":  "충북",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "증평좌구산천문대",
+                      "region":  "충북",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "충주고구려천문관",
+                      "region":  "충북",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "충주자연생태체험관",
+                      "region":  "충북",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "충청북도교육과학연구원",
+                      "region":  "충북",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "별새꽃돌과학관",
+                      "region":  "충북",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "아산장영실과학관",
+                      "region":  "충남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "서산류방택천문기상과학관",
+                      "region":  "충남",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "청양칠갑산천문대",
+                      "region":  "충남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "천안홍대용과학관",
+                      "region":  "충남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "홍성 조류탐사 과학관",
+                      "region":  "충남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
                       "title":  "당진해양테마과학관",
+                      "region":  "충남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
                       "address":  "충청남도 당진군 신평면 삽교천산길 79",
                       "phone":  "041-363-9229",
                       "url":  "http://www.dmto.or.kr/sub3/sub3_3.php",
                       "category":  "과학관"
                   },
                   {
-                      "title":  "제주특별자치도민속자연사박물관",
-                      "address":  "제주특별자치도 제주시 삼성로 40",
-                      "phone":  "064-710-7708",
-                      "url":  "http://museum.jeju.go.kr/",
+                      "title":  "갯벌생태과학관",
+                      "region":  "충남",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
                       "category":  "과학관"
                   },
                   {
-                      "title":  "목포자연사박물관",
-                      "address":  "전라남도 목포시 남농로 135 용해동",
-                      "phone":  "061-274-3655",
-                      "url":  "http://museum.mokpo.go.kr/",
+                      "title":  "천리포수목원",
+                      "region":  "충남",
+                      "ownership":  "사립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
                       "category":  "과학관"
                   },
                   {
-                      "title":  "태백고생대자연사박물관",
-                      "address":  "강원도 태백시 태백로 2249 동점동 295",
-                      "phone":  "033-581-8181",
-                      "url":  "http://www.paleozoic.go.kr/",
+                      "title":  "농업과학관",
+                      "region":  "전북",
+                      "ownership":  "국립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
                       "category":  "과학관"
                   },
                   {
-                      "title":  "홍성조류탐사과학관",
-                      "address":  "충청남도 홍성군 서부면 남당항로 934-14",
-                      "phone":  "041-630-9696",
-                      "url":  "http://blog.naver.com/birdcenter",
+                      "title":  "정읍첨단과학관",
+                      "region":  "전북",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
                       "category":  "과학관"
                   },
                   {
-                      "title":  "부천로보파크",
-                      "address":  "경기도 부천시 원미구 평천로 655",
-                      "phone":  "070-7094-5479",
-                      "url":  "http://www.robopark.org/",
+                      "title":  "무주 반디별천문과학관",
+                      "region":  "전북",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "남원항공우주천문대",
+                      "region":  "전북",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "부안곤충탐사과학관(누에곤충과학관)",
+                      "region":  "전북",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "만경강수생생물체험과학관",
+                      "region":  "전북",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "전라북도과학교육원",
+                      "region":  "전북",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "순창건강장수체험과학관",
+                      "region":  "전북",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "곡성섬진강천문대",
+                      "region":  "전남",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "순천만천문대",
+                      "region":  "전남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "정남진천문과학관",
+                      "region":  "전남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "고흥우주천문과학관",
+                      "region":  "전남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "자연생태과학관",
+                      "region":  "전남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "한국민물고기과학관",
+                      "region":  "전남",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "해양수산과학관",
+                      "region":  "전남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "섬진강어류생태관",
+                      "region":  "전남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "목포어린이바다과학관",
+                      "region":  "전남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "정남진물과학관",
+                      "region":  "전남",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "전라남도과학교육원",
+                      "region":  "전남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "나로우주센터 우주과학관",
+                      "region":  "전남",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "국제환경천문대과학관",
+                      "region":  "전남",
+                      "ownership":  "사립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "구미과학관",
+                      "region":  "경북",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "울진과학체험관",
+                      "region":  "경북",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "김천녹색미래과학관",
+                      "region":  "경북",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "영천 최무선과학관",
+                      "region":  "경북",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "영양반딧불이천문대",
+                      "region":  "경북",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "영천보현산천문과학관",
+                      "region":  "경북",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "울진 곤충여행관",
+                      "region":  "경북",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "경상북도 민물고기생태체험관",
+                      "region":  "경북",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "콩세계과학관",
+                      "region":  "경북",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "울진해양생태관(울진아쿠아리움)",
+                      "region":  "경북",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "경상북도과학교육원",
+                      "region":  "경북",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
                       "category":  "과학관"
                   },
                   {
                       "title":  "로보라이프뮤지엄",
+                      "region":  "경북",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
                       "address":  "경상북도 포항시 남구 효자동 산31",
                       "phone":  "054-279-0427",
                       "url":  "http://www.robolife.kr",
                       "category":  "과학관"
                   },
                   {
-                      "title":  "부산광역시 어린이회관",
-                      "address":  "부산광역시 부산진구 승지곡로 33번길 29-28",
-                      "phone":  "051-810-8800",
-                      "url":  "http://www.childpia.kr/",
+                      "title":  "예천천문우주센터",
+                      "region":  "경북",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
                       "category":  "과학관"
                   },
                   {
                       "title":  "신라역사과학관",
+                      "region":  "경북",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
                       "address":  "경상북도 경주시 하동공예촌길 33",
                       "phone":  "054-745-4998",
                       "url":  "http://www.sasm.or.kr/",
@@ -153,9 +1055,332 @@
                   },
                   {
                       "title":  "창원과학체험관",
+                      "region":  "경남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
                       "address":  "경상남도 창원시 의창구 충혼로72번길 16",
                       "phone":  "055-267-2676",
                       "url":  "http://www.cwsc.co.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "3D과학체험관",
+                      "region":  "경남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "옥포대첩기념공원",
+                      "region":  "경남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "함양약초과학관",
+                      "region":  "경남",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "김해천문대",
+                      "region":  "경남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "사천첨단항공우주과학관",
+                      "region":  "경남",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "거창월성우주창의과학관",
+                      "region":  "경남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "지리산생태과학관",
+                      "region":  "경남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "천적생태과학관",
+                      "region":  "경남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "고성공룡테마과학관",
+                      "region":  "경남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "통영수산과학관",
+                      "region":  "경남",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "거제조선해양전시관",
+                      "region":  "경남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "경상남도과학교육원",
+                      "region":  "경남",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "부경동물원",
+                      "region":  "경남",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "제주별빛누리공원",
+                      "region":  "제주",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "서귀포천문과학문화관",
+                      "region":  "제주",
+                      "ownership":  "공립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "제주교육과학연구원",
+                      "region":  "제주",
+                      "ownership":  "공립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "아이디어생활과학관",
+                      "region":  "제주",
+                      "ownership":  "사립",
+                      "membership":  "정회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "제주해양과학관",
+                      "region":  "제주",
+                      "ownership":  "사립",
+                      "membership":  "비회원",
+                      "address":  "",
+                      "phone":  "",
+                      "url":  "",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "국립서울과학관",
+                      "region":  "서울",
+                      "ownership":  "",
+                      "membership":  "",
+                      "address":  "서울특별시 종로구 창경궁로 215",
+                      "phone":  "02-3668-2208",
+                      "url":  "http://www.ssm.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "우석헌자연사박물관",
+                      "region":  "경기",
+                      "ownership":  "",
+                      "membership":  "",
+                      "address":  "경기도 남양주시 진접읍 금강로 1095",
+                      "phone":  "031-572-9555",
+                      "url":  "http://www.geomuseum.org/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "해남공룡박물관",
+                      "region":  "전남",
+                      "ownership":  "",
+                      "membership":  "",
+                      "address":  "전라남도 해남군 황산면 공룡박물관길 234",
+                      "phone":  "061-532-7225",
+                      "url":  "http://uhangridinopia.haenam.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "서대문자연사박물관",
+                      "region":  "서울",
+                      "ownership":  "",
+                      "membership":  "",
+                      "address":  "서울특별시 서대문구 연희동 산5-58",
+                      "phone":  "02-330-8899",
+                      "url":  "http://namu.sdm.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "문경석탄박물관",
+                      "region":  "경북",
+                      "ownership":  "",
+                      "membership":  "",
+                      "address":  "경상북도 문경시 가은읍 왕능길 112",
+                      "phone":  "054-550-6424",
+                      "url":  "http://coal.gbmg.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "청주랜드관리사무소",
+                      "region":  "충북",
+                      "ownership":  "",
+                      "membership":  "",
+                      "address":  "충청북도 청주시 명암동 산 72-13",
+                      "phone":  "043-200-4705",
+                      "url":  "http://cjuland.cjcity.net/main/cjuland",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "전라북도어린이회관",
+                      "region":  "전북",
+                      "ownership":  "",
+                      "membership":  "",
+                      "address":  "전라북도 전주시 덕진구 송천동1가 234-5",
+                      "phone":  "063-290-6688",
+                      "url":  "http://child.jeonbuk.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "계룡산자연사박물관",
+                      "region":  "충남",
+                      "ownership":  "",
+                      "membership":  "",
+                      "address":  "충청남도 공주시 반포면 임금봉길 49-25",
+                      "phone":  "042-824-4055",
+                      "url":  "http://www.krnamu.or.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "제주특별자치도민속자연사박물관",
+                      "region":  "제주",
+                      "ownership":  "",
+                      "membership":  "",
+                      "address":  "제주특별자치도 제주시 삼성로 40",
+                      "phone":  "064-710-7708",
+                      "url":  "http://museum.jeju.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "목포자연사박물관",
+                      "region":  "전남",
+                      "ownership":  "",
+                      "membership":  "",
+                      "address":  "전라남도 목포시 남농로 135 용해동",
+                      "phone":  "061-274-3655",
+                      "url":  "http://museum.mokpo.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "태백고생대자연사박물관",
+                      "region":  "강원",
+                      "ownership":  "",
+                      "membership":  "",
+                      "address":  "강원도 태백시 태백로 2249 동점동 295",
+                      "phone":  "033-581-8181",
+                      "url":  "http://www.paleozoic.go.kr/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "홍성조류탐사과학관",
+                      "region":  "충남",
+                      "ownership":  "",
+                      "membership":  "",
+                      "address":  "충청남도 홍성군 서부면 남당항로 934-14",
+                      "phone":  "041-630-9696",
+                      "url":  "http://blog.naver.com/birdcenter",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "부천로보파크",
+                      "region":  "경기",
+                      "ownership":  "",
+                      "membership":  "",
+                      "address":  "경기도 부천시 원미구 평천로 655",
+                      "phone":  "070-7094-5479",
+                      "url":  "http://www.robopark.org/",
+                      "category":  "과학관"
+                  },
+                  {
+                      "title":  "부산광역시 어린이회관",
+                      "region":  "부산",
+                      "ownership":  "",
+                      "membership":  "",
+                      "address":  "부산광역시 부산진구 승지곡로 33번길 29-28",
+                      "phone":  "051-810-8800",
+                      "url":  "http://www.childpia.kr/",
                       "category":  "과학관"
                   }
               ]
