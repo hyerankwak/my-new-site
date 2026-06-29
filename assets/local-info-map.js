@@ -341,7 +341,14 @@
         payload = await response.json();
         if (!response.ok) throw new Error(payload.message || "공공데이터 조회 실패");
       }
-      const data = (payload.items || []).map(toPlace);
+      const allowedParkTypes = new Set([
+        "국가도시공원", "소공원", "어린이공원", "근린공원", "역사공원", "문화공원",
+        "수변공원", "묘지공원", "체육공원", "도시농업공원", "방재공원",
+      ]);
+      const sourceItems = source.type === "park"
+        ? (payload.items || []).filter((item) => allowedParkTypes.has(item.category))
+        : (payload.items || []);
+      const data = sourceItems.map(toPlace);
       if (data.length) renderPlaces(data);
       else showEmpty("조건에 맞는 공식 데이터가 없습니다. 다른 지역이나 카테고리를 선택해 보세요.");
     } catch {

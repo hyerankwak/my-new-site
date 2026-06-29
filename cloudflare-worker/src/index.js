@@ -106,17 +106,21 @@ function itemBlocks(xml) {
 }
 
 function normalizeItem(item, type, label) {
-  const title = tag(item, [
+  const rawTitle = tag(item, [
     "lbrryNm", "fcltyNm", "museumNm", "museumArtgrNm", "parkNm", "eventNm",
     "fstvlNm", "trrsrtNm", "rcrfrstNm", "prkplceNm", "ciName", "pfctNm",
     "title", "subject",
   ]);
+  const category = tag(item, ["parkSe", "museumSe", "fcltySe", "eventSe", "prkplceSe"]) || label;
+  const title = type === "park" && !rawTitle.includes("공원") && category.endsWith("공원")
+    ? `${rawTitle} ${category}`
+    : rawTitle;
   const roadAddress = tag(item, ["rdnmadr", "roadNmAddr", "ciRdnmadr", "adres", "address"]);
   const lotAddress = tag(item, ["lnmadr", "lotnoAddr", "ciLnmadr"]);
   return {
     id: tag(item, ["manageNo", "mngNo", "ciSeq", "pfctSn", "seq", "id"]),
     type,
-    category: tag(item, ["parkSe", "museumSe", "fcltySe", "eventSe", "prkplceSe"]) || label,
+    category,
     title,
     description: tag(item, ["trrsrtIntrcn", "fstvlCo", "eventCo", "intrcn", "remark"]),
     address: roadAddress || lotAddress,
@@ -150,6 +154,24 @@ function keywordMatches(item, keyword) {
   const needle = keyword.toLocaleLowerCase("ko-KR");
   return `${item.title} ${item.category} ${item.description} ${item.address} ${item.place}`
     .toLocaleLowerCase("ko-KR").includes(needle);
+}
+
+function isValidPark(item) {
+  if (item.type !== "park") return true;
+  return /^(국가도시공원|소공원|어린이공원|근린공원|역사공원|문화공원|수변공원|묘지공원|체육공원|도시농업공원|방재공원)$/.test(item.category);
+}
+
+function uniquePlaces(items) {
+  const seen = new Set();
+  return items.filter((item) => {
+    const baseTitle = item.type === "park"
+      ? item.title.replace(/\s*(국가도시공원|소공원|어린이공원|근린공원|역사공원|문화공원|수변공원|묘지공원|체육공원|도시농업공원|방재공원)$/, "")
+      : item.title;
+    const key = `${item.type}|${baseTitle}|${item.address}`.replace(/\s+/g, "").toLocaleLowerCase("ko-KR");
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 function normalizeJsonPlayground(item, type, label) {
@@ -230,10 +252,11 @@ async function standardPlaces(requestUrl, env) {
     rawItems = itemBlocks(xml).map((item) => normalizeItem(item, type, source.label));
   }
 
-  const normalized = rawItems
+  const normalized = uniquePlaces(rawItems
     .filter((item) => item.title)
+    .filter(isValidPark)
     .filter((item) => regionMatches(item, officialSido, sigungu))
-    .filter((item) => keywordMatches(item, keyword));
+    .filter((item) => keywordMatches(item, keyword)));
 
   return json({
     source: source.name,
