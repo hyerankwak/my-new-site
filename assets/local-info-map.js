@@ -40,11 +40,10 @@
     전북: "전라북도", 전남: "전라남도", 경북: "경상북도", 경남: "경상남도", 제주: "제주",
   };
   const publicSources = {
-    어린이도서관: { endpoint: "places", type: "library" },
-    "어린이 박물관": { endpoint: "places", type: "museum" },
-    "어린이 과학관": { endpoint: "science" },
-    "어린이 공원": { endpoint: "places", type: "park" },
-    어린이놀이터: { endpoint: "places", type: "playground" },
+    박물관: { endpoint: "curated", kind: "박물관" },
+    미술관: { endpoint: "curated", kind: "미술관" },
+    과학관: { endpoint: "curated", kind: "과학관" },
+    자연사관: { endpoint: "curated", kind: "자연사관" },
   };
 
   const ageTips = {
@@ -77,34 +76,34 @@
 
   const presetData = {
     today: {
-      need: "어린이도서관",
-      title: "오늘의 부담 적은 외출",
-      text: "가까운 어린이도서관은 체류 시간을 조절하기 쉽고, 날씨가 바뀌어도 이용하기 편합니다.",
+      need: "박물관",
+      title: "오늘의 부담 적은 전시 나들이",
+      text: "처음 방문이라면 어린이 전시나 가족 체험이 있는 박물관이 동선과 체류 시간을 조절하기 쉽습니다.",
     },
     rain: {
-      need: "어린이 과학관",
+      need: "과학관",
       title: "비 오는 날 실내 추천",
       text: "과학관이나 체험관은 실내 이동이 편하지만 주말에는 붐빌 수 있어 예약과 주차를 먼저 확인하세요.",
     },
     weekend: {
-      need: "어린이놀이터",
-      title: "주말에 몸을 움직이는 장소",
-      text: "도시공원 어린이놀이터에서 충분히 움직이고, 그늘과 화장실 위치를 먼저 확인하세요.",
+      need: "자연사관",
+      title: "주말 목적지 추천",
+      text: "공룡, 화석, 동물, 바다 생물처럼 아이 관심사가 분명한 자연사관은 주말 목적지로 만족도가 높습니다.",
     },
     free: {
-      need: "어린이 공원",
-      title: "비용 부담이 적은 야외 놀이",
-      text: "공원은 무료 이용이 일반적이지만 주차비와 행사 비용은 별도일 수 있습니다. 화장실과 그늘 위치도 확인하세요.",
+      need: "미술관",
+      title: "비용 부담이 적은 전시",
+      text: "국공립 미술관은 무료 또는 저렴한 전시가 많습니다. 아이가 지치기 전 작품 몇 점만 보는 방식이 좋습니다.",
     },
     indoor: {
-      need: "어린이 박물관",
+      need: "박물관",
       title: "날씨 영향을 덜 받는 실내 외출",
       text: "박물관은 전부 보려 하기보다 아이가 멈추는 전시 두세 곳에 집중하면 만족도가 높습니다.",
     },
-    outdoor: {
-      need: "어린이 공원",
-      title: "몸을 충분히 쓰는 야외 외출",
-      text: "기온과 미세먼지를 확인하고 물, 모자, 여벌 옷을 준비하세요. 낮잠 직전의 긴 야외 활동은 피하는 편이 좋습니다.",
+    elementary: {
+      need: "과학관",
+      title: "초등 아이에게 좋은 전시",
+      text: "초등 아이는 과학관에서 관찰 주제를 하나 정하고, 돌아온 뒤 짧은 기록이나 활동지로 이어가면 좋습니다.",
     },
   };
 
@@ -222,7 +221,7 @@
       x: item.longitude,
       y: item.latitude,
       category_name: item.category || categoryLabel(),
-      environment: item.description || item.ownership || "",
+      environment: item.tip || item.description || item.ownership || "",
       place_url: item.url || "",
       region: item.region || "",
     };
@@ -291,6 +290,31 @@
       return;
     }
 
+    if (source.endpoint === "curated") {
+      try {
+        syncUrl();
+        const response = await fetch("/assets/data/family-culture-places.json?v=20260630a");
+        if (!response.ok) throw new Error("큐레이션 자료 조회 실패");
+        const payload = await response.json();
+        const keyword = district.toLowerCase();
+        const data = (payload.items || [])
+          .filter((item) => item.region === region)
+          .filter((item) => item.kind === source.kind)
+          .filter((item) => !keyword || `${item.title} ${item.region || ""} ${item.address || ""}`.toLowerCase().includes(keyword))
+          .map(toPlace);
+        if (data.length) {
+          const verified = (await geocodePlaces(data)).filter(Boolean);
+          if (verified.length) renderPlaces(verified);
+          else showEmpty("대표 장소 목록은 있지만 현재 지도에서 위치를 확인하지 못했습니다. 지역명을 넓혀 다시 찾아보세요.");
+        } else {
+          showEmpty("선택한 지역의 대표 장소가 아직 적습니다. 다른 카테고리나 인접 지역을 확인해 보세요.");
+        }
+      } catch {
+        showEmpty("대표 장소 자료를 불러오지 못했습니다. 잠시 후 다시 이용해 주세요.");
+      }
+      return;
+    }
+
     if (source.endpoint === "science") {
       try {
         syncUrl();
@@ -315,42 +339,7 @@
       return;
     }
 
-    const params = new URLSearchParams({ sido: region, limit: "30" });
-    if (district) params.set("sigungu", district);
-    if (source.endpoint === "places") params.set("type", source.type);
-    if (source.keyword) params.set("keyword", source.keyword);
-    if (source.endpoint === "culture") {
-      const today = new Date();
-      const later = new Date(today);
-      later.setMonth(later.getMonth() + 3);
-      params.set("from", today.toISOString().slice(0, 10));
-      params.set("to", later.toISOString().slice(0, 10));
-    }
-
-    try {
-      syncUrl();
-      let response = await fetch(`${API_BASE}/api/${source.endpoint}?${params.toString()}`);
-      let payload = await response.json();
-      if (!response.ok) throw new Error(payload.message || "공공데이터 조회 실패");
-      if (!(payload.items || []).length && source.keyword && source.endpoint === "places") {
-        params.delete("keyword");
-        response = await fetch(`${API_BASE}/api/${source.endpoint}?${params.toString()}`);
-        payload = await response.json();
-        if (!response.ok) throw new Error(payload.message || "공공데이터 조회 실패");
-      }
-      const allowedParkTypes = new Set([
-        "국가도시공원", "소공원", "어린이공원", "근린공원", "역사공원", "문화공원",
-        "수변공원", "묘지공원", "체육공원", "도시농업공원", "방재공원",
-      ]);
-      const sourceItems = source.type === "park"
-        ? (payload.items || []).filter((item) => allowedParkTypes.has(item.category))
-        : (payload.items || []);
-      const data = sourceItems.map(toPlace);
-      if (data.length) renderPlaces(data);
-      else showEmpty("조건에 맞는 공식 데이터가 없습니다. 다른 지역이나 카테고리를 선택해 보세요.");
-    } catch {
-      showEmpty("공공데이터를 불러오지 못했습니다. 잠시 후 상세 검색을 이용해 주세요.");
-    }
+    showEmpty("현재 지도는 박물관, 미술관, 과학관, 자연사관 대표 장소만 제공합니다.");
   }
 
   function useCurrentLocation() {

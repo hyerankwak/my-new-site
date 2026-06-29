@@ -13,6 +13,7 @@
   const dateFields = [...document.querySelectorAll(".date-field")];
   const API_BASE = "https://toypoppo-public-data.rururubs.workers.dev";
   const SCIENCE_DATA_URL = "/assets/data/science-museums.json?v=20260629a";
+  const CULTURE_DATA_URL = "/assets/data/family-culture-places.json?v=20260630a";
   const regionNames = {
     서울: "서울특별시", 부산: "부산광역시", 대구: "대구광역시", 인천: "인천광역시",
     광주: "광주광역시", 대전: "대전광역시", 울산: "울산광역시", 세종: "세종특별자치시",
@@ -53,8 +54,8 @@
     const officialUrl = safeUrl(item.url);
     const imageUrl = safeUrl(item.image);
     const media = imageUrl
-      ? `<img class="culture-card__image" src="${imageUrl}" alt="${text(item.title, "문화행사")} 포스터" loading="lazy" referrerpolicy="no-referrer">`
-      : `<div class="culture-card__placeholder" aria-hidden="true">문화<br>행사</div>`;
+      ? `<img class="culture-card__image" src="${imageUrl}" alt="${text(item.title, "전시 장소")} 이미지" loading="lazy" referrerpolicy="no-referrer">`
+      : `<div class="culture-card__placeholder" aria-hidden="true">전시<br>체험</div>`;
     return `<article class="culture-card">
       ${media}
       <div>
@@ -68,14 +69,15 @@
         ${item.hours ? `<p class="culture-card__meta"><strong>운영</strong> ${escapeHtml(item.hours)}</p>` : ""}
         ${item.closed ? `<p class="culture-card__meta"><strong>휴관</strong> ${escapeHtml(item.closed)}</p>` : ""}
         ${item.fee || item.price ? `<p class="culture-card__meta"><strong>요금</strong> ${escapeHtml(text(item.fee || item.price))}</p>` : ""}
+        ${item.tip ? `<p class="culture-card__meta"><strong>부모 팁</strong> ${escapeHtml(item.tip)}</p>` : ""}
         ${officialUrl ? `<a class="culture-card__link" href="${officialUrl}" target="_blank" rel="noopener noreferrer">공식 정보 확인 →</a>` : ""}
+        ${!officialUrl && item.searchUrl ? `<a class="culture-card__link" href="${escapeHtml(item.searchUrl)}" target="_blank" rel="noopener noreferrer">지도에서 확인 →</a>` : ""}
       </div>
     </article>`;
   }
 
   function syncType() {
-    const cultureMode = typeSelect.value === "culture";
-    dateFields.forEach((field) => { field.hidden = !cultureMode; });
+    dateFields.forEach((field) => { field.hidden = true; });
   }
 
   async function loadScienceMuseums(params) {
@@ -94,6 +96,32 @@
     });
 
     return { items, totalCount: items.length, source: "과학기술정보통신부 국립중앙과학관" };
+  }
+  async function loadCuratedPlaces(params) {
+    const response = await fetch(CULTURE_DATA_URL, { headers: { Accept: "application/json" } });
+    const payload = await response.json();
+    if (!response.ok) throw new Error("큐레이션 장소 자료를 불러오지 못했습니다.");
+
+    const sido = String(params.get("sido") || "").trim();
+    const sigungu = String(params.get("sigungu") || "").trim();
+    const keyword = String(params.get("keyword") || "").trim().toLowerCase();
+    const type = String(params.get("type") || "museum");
+    const kinds = {
+      museum: ["박물관"],
+      art: ["미술관"],
+      science: ["과학관"],
+      natural: ["자연사관"],
+    }[type] || ["박물관", "미술관", "과학관", "자연사관"];
+
+    const items = (payload.items || []).filter((item) => {
+      const haystack = `${item.title} ${item.region || ""} ${item.kind || ""} ${item.address || ""} ${item.tip || ""}`.toLowerCase();
+      return (!sido || item.region === sido)
+        && kinds.includes(item.kind)
+        && (!sigungu || (item.address || "").includes(sigungu))
+        && (!keyword || haystack.includes(keyword));
+    });
+
+    return { items, totalCount: items.length, source: "토이포포 큐레이션" };
   }
   typeSelect.addEventListener("change", syncType);
   syncType();
@@ -156,13 +184,7 @@
 
     try {
       let payload;
-      if (type === "science") {
-        payload = await loadScienceMuseums(params);
-      } else {
-        const response = await fetch(`${API_BASE}/api/${endpoint}?${params.toString()}`, { headers: { Accept: "application/json" } });
-        payload = await response.json();
-        if (!response.ok) throw new Error(payload.message || "공공데이터를 불러오지 못했습니다.");
-      }
+      payload = await loadCuratedPlaces(params);
 
       const items = Array.isArray(payload.items) ? payload.items : [];
       status.textContent = "API 연결됨";
@@ -170,7 +192,7 @@
       count.textContent = `${items.length}개 표시 · 전체 ${payload.totalCount || items.length}개`;
       results.innerHTML = items.map(card).join("");
       empty.hidden = items.length > 0;
-      if (!items.length) empty.textContent = "조건에 맞는 결과가 없습니다. 검색 기간이나 검색어를 넓혀 보세요.";
+      if (!items.length) empty.textContent = "조건에 맞는 결과가 없습니다. 지역이나 검색어를 넓혀 보세요.";
     } catch (err) {
       status.textContent = "연결 확인 필요";
       status.classList.add("is-error");
