@@ -45,9 +45,6 @@
     "어린이 과학관": { endpoint: "science" },
     "어린이 공원": { endpoint: "places", type: "park" },
     어린이놀이터: { endpoint: "places", type: "playground" },
-    "문화센터 어린이": { endpoint: "kakao-culture-center" },
-    "어린이 체험관": { endpoint: "culture", keyword: "체험" },
-    "어린이 공연장": { endpoint: "culture", keyword: "어린이" },
   };
 
   const ageTips = {
@@ -90,9 +87,9 @@
       text: "과학관이나 체험관은 실내 이동이 편하지만 주말에는 붐빌 수 있어 예약과 주차를 먼저 확인하세요.",
     },
     weekend: {
-      need: "어린이 체험관",
-      title: "주말에 경험을 남기는 장소",
-      text: "체험시설은 예약 시간이 정해진 경우가 많습니다. 이동 시간보다 아이가 참여할 프로그램을 먼저 고르세요.",
+      need: "어린이놀이터",
+      title: "주말에 몸을 움직이는 장소",
+      text: "도시공원 어린이놀이터에서 충분히 움직이고, 그늘과 화장실 위치를 먼저 확인하세요.",
     },
     free: {
       need: "어린이 공원",
@@ -265,34 +262,6 @@
     })));
   }
 
-  function keywordSearch(query) {
-    return new Promise((resolve) => {
-      places.keywordSearch(query, (result, statusCode) => {
-        resolve(statusCode === kakao.maps.services.Status.OK ? result : []);
-      });
-    });
-  }
-
-  async function searchCultureCenters(region, district) {
-    const area = [region, district].filter(Boolean).join(" ");
-    const searches = await Promise.all([
-      keywordSearch(`${area} 문화센터`),
-      keywordSearch(`${area} 어린이문화회관`),
-      keywordSearch(`${area} 평생학습관`),
-    ]);
-    const accepted = /(문화센터|문화회관|어린이문화|평생학습|문화의집|아동회관|청소년수련관)/;
-    const rejected = /(약국|부동산|세탁|미용|카페|주차장)/;
-    const seen = new Set();
-    return searches.flat().filter((place) => {
-      const address = place.road_address_name || place.address_name || "";
-      const key = `${place.place_name}|${address}`;
-      if (!accepted.test(place.place_name) || rejected.test(place.place_name) || seen.has(key)) return false;
-      seen.add(key);
-      place.environment = "어린이 강좌·접수 일정 확인";
-      return true;
-    });
-  }
-
   async function searchPlaces(options = {}) {
     const region = regionSelect.value;
     const district = districtInput.value.trim();
@@ -319,14 +288,6 @@
     const source = publicSources[need];
     if (!source) {
       showEmpty("이 카테고리는 지역별 공식 정보 페이지에서 준비하고 있습니다.");
-      return;
-    }
-
-    if (source.endpoint === "kakao-culture-center") {
-      syncUrl();
-      const data = await searchCultureCenters(region, district);
-      if (data.length) renderPlaces(data);
-      else showEmpty("선택한 지역에서 확인되는 문화센터가 없습니다. 인접 지역이나 시·군·구를 바꿔 보세요.");
       return;
     }
 
