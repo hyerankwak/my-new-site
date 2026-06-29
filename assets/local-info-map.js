@@ -45,7 +45,7 @@
     "어린이 과학관": { endpoint: "science" },
     "어린이 공원": { endpoint: "places", type: "park" },
     어린이놀이터: { endpoint: "places", type: "playground" },
-    "문화센터 어린이": { endpoint: "culture", keyword: "어린이" },
+    "문화센터 어린이": { endpoint: "kakao-culture-center" },
     "어린이 체험관": { endpoint: "culture", keyword: "체험" },
     "어린이 공연장": { endpoint: "culture", keyword: "어린이" },
   };
@@ -265,6 +265,34 @@
     })));
   }
 
+  function keywordSearch(query) {
+    return new Promise((resolve) => {
+      places.keywordSearch(query, (result, statusCode) => {
+        resolve(statusCode === kakao.maps.services.Status.OK ? result : []);
+      });
+    });
+  }
+
+  async function searchCultureCenters(region, district) {
+    const area = [region, district].filter(Boolean).join(" ");
+    const searches = await Promise.all([
+      keywordSearch(`${area} 문화센터`),
+      keywordSearch(`${area} 어린이문화회관`),
+      keywordSearch(`${area} 평생학습관`),
+    ]);
+    const accepted = /(문화센터|문화회관|어린이문화|평생학습|문화의집|아동회관|청소년수련관)/;
+    const rejected = /(약국|부동산|세탁|미용|카페|주차장)/;
+    const seen = new Set();
+    return searches.flat().filter((place) => {
+      const address = place.road_address_name || place.address_name || "";
+      const key = `${place.place_name}|${address}`;
+      if (!accepted.test(place.place_name) || rejected.test(place.place_name) || seen.has(key)) return false;
+      seen.add(key);
+      place.environment = "어린이 강좌·접수 일정 확인";
+      return true;
+    });
+  }
+
   async function searchPlaces(options = {}) {
     const region = regionSelect.value;
     const district = districtInput.value.trim();
@@ -291,6 +319,14 @@
     const source = publicSources[need];
     if (!source) {
       showEmpty("이 카테고리는 지역별 공식 정보 페이지에서 준비하고 있습니다.");
+      return;
+    }
+
+    if (source.endpoint === "kakao-culture-center") {
+      syncUrl();
+      const data = await searchCultureCenters(region, district);
+      if (data.length) renderPlaces(data);
+      else showEmpty("선택한 지역에서 확인되는 문화센터가 없습니다. 인접 지역이나 시·군·구를 바꿔 보세요.");
       return;
     }
 
