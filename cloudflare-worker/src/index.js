@@ -181,7 +181,7 @@ function normalizeJsonPlayground(item, type, label) {
     type,
     category: item.instlPlaceCdNm || item.inspSeNm || label,
     title: item.pfctNm || item.ciName || item.fcltyNm || "어린이놀이시설",
-    description: item.idrodrCdNm ? `${item.idrodrCdNm} · ${item.prvtPblcYnCdNm || ""}` : "",
+    description: [item.idrodrCdNm, item.prvtPblcYnCdNm, item.operYnCdNm].filter(Boolean).join(" · "),
     address: address || item.lotnoAddr || item.rgnCdNm || "",
     roadAddress: address,
     lotAddress: item.lotnoAddr || "",
@@ -193,6 +193,9 @@ function normalizeJsonPlayground(item, type, label) {
     url: "",
     safetyDate: item.inspYmd || item.inspDe || "",
     safetyResult: item.inspResult || item.inspRslt || "",
+    operatingStatus: item.operYnCdNm || "",
+    closedDate: item.clsgYmd || "",
+    installedDate: item.instlYmd || "",
   };
 }
 
@@ -215,8 +218,14 @@ async function standardPlaces(requestUrl, env) {
   const limit = Math.min(Math.max(Number(requestUrl.searchParams.get("limit")) || 20, 1), 50);
   const upstream = new URL(source.url);
   upstream.searchParams.set("serviceKey", env.DATA_GO_KR_SERVICE_KEY);
-  upstream.searchParams.set("pageNo", "1");
-  upstream.searchParams.set("numOfRows", type in PLAYGROUND_SOURCES ? "100" : "1000");
+  if (type in PLAYGROUND_SOURCES) {
+    upstream.searchParams.set("pageIndex", "1");
+    upstream.searchParams.set("recordCountPerPage", type === "playground" ? "5000" : "1000");
+    if (type === "playground") upstream.searchParams.set("instlPlaceCd", "A003");
+  } else {
+    upstream.searchParams.set("pageNo", "1");
+    upstream.searchParams.set("numOfRows", "1000");
+  }
   upstream.searchParams.set("type", type in PLAYGROUND_SOURCES ? "json" : "xml");
   const unfilteredUpstream = new URL(upstream);
 
@@ -225,8 +234,8 @@ async function standardPlaces(requestUrl, env) {
   const sigungu = clean(requestUrl.searchParams.get("sigungu"));
   const keyword = clean(requestUrl.searchParams.get("keyword"));
   if (type in PLAYGROUND_SOURCES) {
-    if (officialSido) upstream.searchParams.set("sido", officialSido);
-    if (sigungu) upstream.searchParams.set("sigungu", sigungu);
+    // The playground API has no region request parameter. Region filtering is
+    // applied after retrieving public playgrounds installed in urban parks.
   } else {
     if (officialSido) upstream.searchParams.set("ctprvnNm", officialSido);
     if (sigungu) upstream.searchParams.set("signguNm", sigungu);
@@ -254,6 +263,7 @@ async function standardPlaces(requestUrl, env) {
 
   const normalized = uniquePlaces(rawItems
     .filter((item) => item.title)
+    .filter((item) => type !== "playground" || (!item.closedDate && !/폐쇄|미운영/.test(item.operatingStatus)))
     .filter(isValidPark)
     .filter((item) => regionMatches(item, officialSido, sigungu))
     .filter((item) => keywordMatches(item, keyword)));
