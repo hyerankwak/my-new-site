@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hyerankwak.github.io/my-new-site/sitemap.xml
+Sitemap: https://wedding-guide.co.kr/sitemap.xml
