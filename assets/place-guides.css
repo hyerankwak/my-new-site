@@ -30,6 +30,44 @@
   background: #fff;
 }
 
+.place-hero-photo {
+  margin: 22px 0 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 14px 34px rgba(112, 64, 88, .12);
+}
+
+.place-hero-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.place-hero-photo figcaption {
+  padding: 10px 14px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.cta-strip {
+  margin: 26px 0;
+  padding: 20px;
+  border: 1px solid #f1bfd3;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fff5fa, #effcf7);
+}
+
+.cta-strip strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #4c3545;
+  font-size: 18px;
+}
+
 .conversation-grid,
 .place-fact-grid {
   display: grid;
