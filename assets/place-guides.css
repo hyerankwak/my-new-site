@@ -1,0 +1,104 @@
+.mission-card,
+.passport-card,
+.observation-card {
+  margin: 18px 0;
+  padding: 20px;
+  border: 2px solid #f3c9d9;
+  border-radius: 14px;
+  background: #fffdf8;
+}
+
+.mission-card h3,
+.passport-card h3,
+.observation-card h3 {
+  margin: 0 0 12px;
+}
+
+.mission-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  margin: 12px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mission-list li {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.conversation-grid,
+.place-fact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.conversation-grid div,
+.place-fact-grid div {
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fffafc;
+}
+
+.place-fact-grid strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.print-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.print-note {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+@media (max-width: 780px) {
+  .mission-list,
+  .conversation-grid,
+  .place-fact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media print {
+  .site-header,
+  .site-footer,
+  .nav,
+  .hero-actions,
+  .print-actions,
+  .button {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .article-shell {
+    width: 100%;
+    margin: 0;
+  }
+
+  .article-card {
+    border: 0;
+    box-shadow: none;
+  }
+
+  .mission-card,
+  .passport-card,
+  .observation-card {
+    break-inside: avoid;
+    box-shadow: none;
+    background: #fff;
+  }
+}
