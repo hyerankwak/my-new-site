@@ -53,6 +53,35 @@
   line-height: 1.55;
 }
 
+.place-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 16px 0 24px;
+}
+
+.place-photo-grid figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.place-photo-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.place-photo-grid figcaption {
+  padding: 9px 11px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
 .cta-strip {
   margin: 26px 0;
   padding: 20px;
@@ -104,6 +133,10 @@
   .mission-list,
   .conversation-grid,
   .place-fact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .place-photo-grid {
     grid-template-columns: 1fr;
   }
 }
