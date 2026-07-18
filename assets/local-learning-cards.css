@@ -1,0 +1,131 @@
+.learning-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+  gap: 18px;
+}
+
+.learning-guide-card {
+  display: flex;
+  min-height: 305px;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #f0dce6;
+  border-radius: 16px;
+  background: #fff;
+  text-decoration: none;
+  box-shadow: 0 12px 26px rgba(112, 64, 88, .08);
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+  flex-direction: column;
+}
+
+.learning-guide-card:hover,
+.learning-guide-card:focus-visible {
+  border-color: #e56c9c;
+  box-shadow: 0 16px 30px rgba(200, 68, 121, .14);
+  transform: translateY(-2px);
+}
+
+.learning-guide-card__media {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fff2f7, #e9fbf5);
+}
+
+.learning-guide-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.learning-guide-card__placeholder {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  background: linear-gradient(135deg, #fff2f7, #e9fbf5);
+  color: #bd3f72;
+  font-size: 18px;
+  font-weight: 950;
+}
+
+.learning-guide-card__tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .94);
+  color: #bd3f72;
+  font-size: 11px;
+  font-weight: 950;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .1);
+}
+
+.learning-guide-card__body {
+  display: flex;
+  min-width: 0;
+  padding: 14px 15px 15px;
+  gap: 7px;
+  flex: 1;
+  flex-direction: column;
+}
+
+.learning-guide-card__body strong {
+  display: -webkit-box;
+  overflow: hidden;
+  color: #30242d;
+  font-size: 16px;
+  font-weight: 950;
+  line-height: 1.35;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.learning-guide-card__body span {
+  display: -webkit-box;
+  overflow: hidden;
+  color: #766a73;
+  font-size: 13px;
+  line-height: 1.55;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.learning-guide-card__cta {
+  display: inline-flex;
+  width: max-content;
+  margin-top: auto;
+  color: #c84479;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 950;
+}
+
+@media (max-width: 620px) {
+  .learning-guide-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .learning-guide-card {
+    min-height: 265px;
+    border-radius: 14px;
+  }
+
+  .learning-guide-card__body {
+    padding: 12px;
+  }
+
+  .learning-guide-card__body strong {
+    font-size: 14px;
+  }
+
+  .learning-guide-card__body span {
+    font-size: 12px;
+    -webkit-line-clamp: 2;
+  }
+}
