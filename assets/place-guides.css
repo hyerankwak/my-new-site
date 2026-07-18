@@ -112,7 +112,15 @@
 }
 
 .ticket-card--deal {
-  max-width: 560px;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  width: min(260px, 100%);
+  max-width: 260px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .ticket-card__media {
@@ -147,6 +155,20 @@
   font-weight: 950;
   line-height: 1;
   text-shadow: 0 1px 5px rgba(0, 0, 0, .22);
+}
+
+.ticket-card__status {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 5px 8px;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, .94);
+  color: #222;
+  font-size: 12px;
+  font-weight: 950;
+  line-height: 1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .14);
 }
 
 .ticket-card__body {
@@ -247,6 +269,62 @@
 
 .ticket-card__button {
   margin-top: auto;
+}
+
+.ticket-card--deal .ticket-card__media {
+  border-radius: 12px;
+  background: #eef6f1;
+  aspect-ratio: 4 / 3;
+}
+
+.ticket-card--deal .ticket-card__media img {
+  min-height: 0;
+  height: 100%;
+}
+
+.ticket-card--deal .ticket-card__body {
+  gap: 4px;
+}
+
+.ticket-card--deal .ticket-card__label,
+.ticket-card--deal .ticket-card__price-note,
+.ticket-card--deal .ticket-card__badges,
+.ticket-card--deal .ticket-card__button {
+  display: none;
+}
+
+.ticket-card--deal .ticket-card__title {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-top: 2px;
+  color: #111;
+  font-size: 15px;
+  line-height: 1.32;
+  font-weight: 900;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.ticket-card--deal .ticket-card__rating {
+  order: 2;
+  gap: 3px;
+  color: #111;
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.ticket-card--deal .ticket-card__price {
+  order: 3;
+  margin: 0;
+  color: #111;
+  font-size: 16px;
+  font-weight: 950;
+}
+
+.ticket-card--deal .ticket-card__meta {
+  order: 4;
+  color: #7f6f78;
+  font-size: 13px;
 }
 
 .conversation-grid,
