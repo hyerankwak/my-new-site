@@ -65,7 +65,7 @@
   overflow: hidden;
   border: 1px solid var(--line);
   border-radius: 14px;
-  background: #fff;
+  background: linear-gradient(135deg, #fff8fb, #effcf7);
 }
 
 .place-photo-grid img {
@@ -73,6 +73,7 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  background: linear-gradient(135deg, #fff1f7, #e9fbf5);
 }
 
 .place-photo-grid figcaption {
