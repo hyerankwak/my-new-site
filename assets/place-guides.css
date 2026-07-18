@@ -288,8 +288,7 @@
 
 .ticket-card--deal .ticket-card__label,
 .ticket-card--deal .ticket-card__price-note,
-.ticket-card--deal .ticket-card__badges,
-.ticket-card--deal .ticket-card__button {
+.ticket-card--deal .ticket-card__badges {
   display: none;
 }
 
@@ -325,6 +324,29 @@
   order: 4;
   color: #7f6f78;
   font-size: 13px;
+}
+
+.ticket-card--deal .ticket-card__button {
+  order: 5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 7px;
+  padding: 9px 10px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff6f9e, #ff8a6f);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 950;
+  line-height: 1;
+  box-shadow: 0 8px 18px rgba(255, 111, 158, .24);
+}
+
+.ticket-card--deal:hover .ticket-card__button,
+.ticket-card--deal:focus-visible .ticket-card__button {
+  background: linear-gradient(135deg, #ee4f86, #ff7257);
+  transform: translateY(-1px);
 }
 
 .conversation-grid,
