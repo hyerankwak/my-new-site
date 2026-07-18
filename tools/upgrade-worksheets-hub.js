@@ -175,7 +175,7 @@ function worksheetPage(item) {
 <section id="download"><h2>PDF 다운로드</h2><p>인쇄용 PDF는 자료 구성과 가독성을 점검한 뒤 순차적으로 연결합니다. 현재는 부모 활용법과 활동 예시를 먼저 공개하며, PDF가 연결되면 같은 페이지에서 내려받을 수 있게 업데이트합니다.</p><div class="summary-box"><strong>다운로드 전 안내</strong><p>PDF만 풀고 끝내기보다, 위의 쉬운 설명과 퀴즈를 함께 사용해 주세요. 토이포포 엄마표 자료실은 출력물보다 부모와 아이의 대화를 더 중요하게 생각합니다.</p><p><a class="button primary" href="#" aria-disabled="true">PDF 다운로드 준비 중</a></p></div></section>
 <section><h2>자주 묻는 질문</h2>${faq(item)}</section>
 <section><h2>함께 보면 좋은 글</h2><div class="related-grid">${related(item)}</div></section>
-<section class="source-note"><h2>최종 업데이트 날짜</h2><p>${today}</p><p>아이의 수준과 흥미에는 개인차가 있습니다. 자료가 너무 쉽거나 어렵게 느껴지면 문제 수를 줄이고 부모 설명을 더해 조절해 주세요.</p></section></article></main>${footer}</body></html>`;
+<section class="source-note"><h2>활용 안내</h2><p>아이의 수준과 흥미에는 개인차가 있습니다. 자료가 너무 쉽거나 어렵게 느껴지면 문제 수를 줄이고 부모 설명을 더해 조절해 주세요.</p></section></article></main>${footer}</body></html>`;
 }
 
 function mainPage() {
@@ -207,7 +207,7 @@ ${categories.map(([title, slugs]) => `<section class="section"><div class="secti
 <section class="section"><div class="section-head"><h2>수학 놀이</h2><p>수 세기, 분류, 규칙 찾기, 도형 놀이 자료를 순차적으로 추가할 예정입니다. 현재는 미로찾기와 독해 활동처럼 사고 과정을 설명하는 자료부터 제공합니다.</p></div><div class="link-grid">${card("maze-printable")}${card("elementary-reading-worksheet")}</div></section>
 <section class="section"><div class="section-head"><h2>색칠공부</h2><p>색칠공부는 단순 그림 자료가 아니라 관찰, 색 이름, 손 조절을 함께 연습하는 방향으로 준비합니다. 관련 자료는 최근 업데이트에 순차적으로 추가됩니다.</p></div><div class="link-grid">${card("maze-printable")}${card("hangeul-final-consonant-worksheet")}</div></section>
 <section class="section"><div class="section-head"><h2>초등 활동지</h2><p>한국사, 어휘, 독해를 초등 저학년 눈높이로 묶었습니다.</p></div><div class="link-grid">${allLinks}</div></section>
-<section class="section"><div class="section-head"><h2>최근 업데이트</h2><p>새 자료와 보강된 설명을 한눈에 확인하세요.</p></div><div class="link-grid">${items.slice(-5).reverse().map((item) => `<a href="/worksheets/${item.slug}.html"><strong>${esc(item.title)}</strong><span>최종 업데이트 ${today} · ${esc(item.category)}</span></a>`).join("")}</div></section></main>${footer}</body></html>`;
+<section class="section"><div class="section-head"><h2>최근 업데이트</h2><p>새 자료와 보강된 설명을 한눈에 확인하세요.</p></div><div class="link-grid">${items.slice(-5).reverse().map((item) => `<a href="/worksheets/${item.slug}.html"><strong>${esc(item.title)}</strong><span>${esc(item.category)}</span></a>`).join("")}</div></section></main>${footer}</body></html>`;
 }
 
 function updateSitemap() {

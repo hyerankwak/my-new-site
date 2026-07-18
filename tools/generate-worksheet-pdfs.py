@@ -312,7 +312,7 @@ def build_pdf(item):
     )
     story = []
     story.append(Paragraph(item["title"], s["title"]))
-    story.append(Paragraph(f"{item['category']} · 최종 업데이트 {TODAY}", s["subtitle"]))
+    story.append(Paragraph(str(item["category"]), s["subtitle"]))
     story.append(Paragraph(item["intro"], s["body"]))
     story.append(Spacer(1, 5 * mm))
     story.append(Paragraph("부모가 먼저 읽어주세요", s["h2"]))
