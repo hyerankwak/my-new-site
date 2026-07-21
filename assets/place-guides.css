@@ -115,8 +115,8 @@
 .ticket-card--deal {
   grid-template-columns: 1fr;
   gap: 8px;
-  width: min(360px, 100%);
-  max-width: 360px;
+  width: min(390px, 100%);
+  max-width: 390px;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -333,14 +333,15 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin-top: 9px;
-  padding: 13px 14px;
-  border-radius: 14px;
+  margin-top: 11px;
+  padding: 15px 16px;
+  border-radius: 16px;
   background: linear-gradient(135deg, #ff6f9e, #ff8a6f);
   color: #fff;
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 950;
-  line-height: 1;
+  line-height: 1.05;
+  text-align: center;
   box-shadow: 0 8px 18px rgba(255, 111, 158, .24);
 }
 
@@ -440,9 +441,10 @@
   }
 
   .ticket-card--deal .ticket-card__button {
-    padding: 15px 16px;
-    border-radius: 15px;
-    font-size: 17px;
+    padding: 17px 18px;
+    border-radius: 17px;
+    font-size: 18px;
+    min-height: 54px;
   }
 }
 
