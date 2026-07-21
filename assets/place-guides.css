@@ -284,6 +284,8 @@
 }
 
 .ticket-card--deal .ticket-card__body {
+  display: flex;
+  flex-direction: column;
   gap: 4px;
 }
 
@@ -294,6 +296,7 @@
 }
 
 .ticket-card--deal .ticket-card__title {
+  order: 1;
   display: -webkit-box;
   overflow: hidden;
   margin-top: 2px;
@@ -307,10 +310,19 @@
 
 .ticket-card--deal .ticket-card__rating {
   order: 2;
+  display: flex !important;
+  visibility: visible !important;
   gap: 3px;
   color: #111;
   font-size: 13px;
   font-weight: 850;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.ticket-card--deal .ticket-card__rating .star,
+.ticket-card--deal .ticket-card__rating .count {
+  display: inline !important;
 }
 
 .ticket-card--deal .ticket-card__price {
@@ -323,8 +335,17 @@
 
 .ticket-card--deal .ticket-card__meta {
   order: 4;
+  display: block;
   color: #7f6f78;
   font-size: 13px;
+}
+
+.ticket-card--deal .ticket-card__body > .ticket-card__notice {
+  order: 6;
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.45;
 }
 
 .ticket-card--deal .ticket-card__button {
@@ -429,7 +450,9 @@
   }
 
   .ticket-card--deal .ticket-card__rating {
-    font-size: 14px;
+    display: flex !important;
+    font-size: 15px;
+    gap: 4px;
   }
 
   .ticket-card--deal .ticket-card__price {
