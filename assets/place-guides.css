@@ -440,15 +440,26 @@
   }
 
   .ticket-card--deal {
+    display: grid;
+    grid-template-columns: 1fr !important;
     width: min(100%, 320px);
     max-width: 320px;
     margin-left: auto;
     margin-right: auto;
+    gap: 7px;
+    padding: 0;
   }
 
   .ticket-card--deal .ticket-card__media {
+    grid-column: 1 / -1;
+    width: 100%;
     aspect-ratio: 4 / 3;
     border-radius: 10px;
+  }
+
+  .ticket-card--deal .ticket-card__body {
+    grid-column: 1 / -1;
+    width: 100%;
   }
 
   .ticket-card--deal .ticket-card__title {
