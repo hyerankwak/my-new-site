@@ -43,6 +43,7 @@
   display: block;
   width: 100%;
   aspect-ratio: 16 / 9;
+  max-height: 420px;
   object-fit: cover;
 }
 
@@ -489,6 +490,10 @@
 
   .place-photo-grid {
     grid-template-columns: 1fr;
+  }
+
+  .place-hero-photo img {
+    max-height: none;
   }
 
   .ticket-card {
