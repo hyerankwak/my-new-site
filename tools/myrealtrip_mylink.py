@@ -33,7 +33,7 @@ def load_env() -> None:
 def create_mylink(target_url: str) -> dict:
     api_key = os.environ.get("MRT_API_KEY", "").strip()
     if not api_key:
-        raise SystemExit("MRT_API_KEY가 없습니다. .env에 MRT_API_KEY=... 형태로 저장한 뒤 다시 실행하세요.")
+        raise SystemExit("MRT_API_KEY is missing. Create .env with MRT_API_KEY=... and run again.")
 
     body = json.dumps({"targetUrl": target_url}, ensure_ascii=False).encode("utf-8")
     req = request.Request(

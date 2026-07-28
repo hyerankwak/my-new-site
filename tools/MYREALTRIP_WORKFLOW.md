@@ -1,8 +1,12 @@
 # MyRealTrip workflow for ToyPoppo
 
+ToyPoppo uses MyRealTrip affiliate links only as a supporting element. The
+article itself should stay useful for parents even if the booking card is
+removed.
+
 ## 1. Find article candidates
 
-Use the public MyRealTrip MCP endpoint through `tools/myrealtrip_search.py`.
+Use `tools/myrealtrip_search.py` when product discovery is available:
 
 ```powershell
 python tools\myrealtrip_search.py "제주 아이와 체험" --per-page 10 --include 제주
@@ -10,21 +14,21 @@ python tools\myrealtrip_search.py "부산 아이와 체험" --per-page 10 --incl
 python tools\myrealtrip_search.py "경주 아이와 역사 투어" --per-page 10 --include 경주
 ```
 
-The script prints:
+The search result may include:
 
 - product title
 - product URL
 - representative image URL
-- rating and review count when provided by the MCP result
-- price text when provided
+- rating and review count
+- price text
 - ToyPoppo article angle
 
-Use the candidates as source data only. The article body should be written as
-ToyPoppo's own parent guide, not copied from the product page.
+Use the product page only as source information. Do not copy review text or
+review photos. Write the article as ToyPoppo's own parent guide.
 
-## 2. Create affiliate short links
+## 2. Create one affiliate short link
 
-Create `.env` locally:
+Create `.env` locally. Never commit it.
 
 ```text
 MRT_API_KEY=your_api_key_here
@@ -36,26 +40,43 @@ Then run:
 python tools\myrealtrip_mylink.py "https://experiences.myrealtrip.com/products/6082857?utm_content=toypoppo-top"
 ```
 
-Rules:
+## 3. Convert raw product URLs already inside HTML
 
-- Never commit `.env`.
-- Use different `utm_content` values for top, middle, and bottom links when tracking matters.
-- Product prices, ratings, review counts, options, and cancellation rules can change. Always add a change notice in the article.
+First scan only:
 
-## 3. Safe ToyPoppo article format
+```powershell
+python tools\myrealtrip_convert_links.py --root .
+```
+
+After `.env` is ready, create affiliate links and replace raw product URLs:
+
+```powershell
+python tools\myrealtrip_convert_links.py --root . --write
+```
+
+The script writes `tmp/myrealtrip-link-map.json` with the original URL,
+tracking URL, affiliate URL, and file name.
+
+## 4. Safe ToyPoppo article format
 
 For AdSense and trust, keep information first:
 
-- intro for parents
+- parent-focused intro
 - who the activity fits
 - age-by-age tips
 - booking checklist
-- one affiliate card near the top and one in the middle
-- safety/comfort notes
+- one affiliate summary card near the top and one detailed card in the middle
+- safety and comfort notes
 - child conversation prompts
 - after-visit home activity
 - FAQ
 - related internal links
 
-Avoid using user review photos. Use the official product thumbnail for the booking
-card and ToyPoppo generated images in the body with a short caption.
+Booking card rules:
+
+- show real rating and review count only when the source page clearly provides it
+- if rating/review is not visible, say it needs checking on the booking page
+- include a notice that price, schedule, rating, review count, options, and refund rules can change
+- make the button large and readable on mobile
+- use official product thumbnails for booking cards when allowed
+- use ToyPoppo generated images in body sections with a short caption
