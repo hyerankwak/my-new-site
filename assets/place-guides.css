@@ -113,6 +113,16 @@
   box-shadow: 0 10px 24px rgba(91, 59, 75, .08);
   color: #241b22;
   text-decoration: none;
+  overflow: hidden;
+}
+
+.ticket-quick-card > img {
+  display: block;
+  width: 140px;
+  max-width: 100%;
+  max-height: 110px;
+  border-radius: 12px;
+  object-fit: contain;
 }
 
 .ticket-quick-card__eyebrow {
@@ -507,6 +517,14 @@
     grid-template-columns: 1fr;
     gap: 12px;
     padding: 15px;
+  }
+
+  .ticket-quick-card > img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    margin: 0 auto;
+    object-fit: contain;
   }
 
   .ticket-quick-card__title {
