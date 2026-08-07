@@ -102,7 +102,7 @@
 
 .ticket-quick-card {
   display: grid;
-  grid-template-columns: 140px minmax(0, 1fr) auto;
+  grid-template-columns: 1fr auto;
   gap: 14px;
   align-items: center;
   margin: 20px 0 24px;
@@ -114,6 +114,10 @@
   color: #241b22;
   text-decoration: none;
   overflow: hidden;
+}
+
+.ticket-quick-card:has(> img) {
+  grid-template-columns: 140px minmax(0, 1fr) auto;
 }
 
 .ticket-quick-card > img {
@@ -518,6 +522,10 @@
     grid-template-columns: 1fr;
     gap: 12px;
     padding: 15px;
+  }
+
+  .ticket-quick-card:has(> img) {
+    grid-template-columns: 1fr;
   }
 
   .ticket-quick-card > img {
