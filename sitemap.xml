@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://toypoppo.kr/blog/</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-10</lastmod>
   </url>
   <url>
     <loc>https://toypoppo.kr/blog/10-month-baby-development-play.html</loc>
@@ -782,7 +782,7 @@
   </url>
   <url>
     <loc>https://toypoppo.kr/pad-learning/</loc>
-    <lastmod>2026-08-08</lastmod>
+    <lastmod>2026-08-10</lastmod>
   </url>
   <url>
     <loc>https://toypoppo.kr/parent-guide/</loc>
@@ -1181,4 +1181,10 @@
     <lastmod>2026-08-07</lastmod>
   </url>
   <url><loc>https://toypoppo.kr/local-info/places/suwon-hwaseong-museum-haenggung-kids-history-tour.html</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://toypoppo.kr/blog/preschool-math-pad-learning-number-sense-guide.html</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
