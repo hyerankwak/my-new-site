@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://toypoppo.kr/blog/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-11</lastmod>
   </url>
   <url>
     <loc>https://toypoppo.kr/blog/10-month-baby-development-play.html</loc>
@@ -782,7 +782,7 @@
   </url>
   <url>
     <loc>https://toypoppo.kr/pad-learning/</loc>
-    <lastmod>2026-08-10</lastmod>
+    <lastmod>2026-08-11</lastmod>
   </url>
   <url>
     <loc>https://toypoppo.kr/parent-guide/</loc>
@@ -1184,6 +1184,12 @@
   <url>
     <loc>https://toypoppo.kr/blog/preschool-math-pad-learning-number-sense-guide.html</loc>
     <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://toypoppo.kr/blog/third-grade-pad-learning-self-directed-study-guide.html</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
