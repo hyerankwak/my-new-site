@@ -630,7 +630,7 @@
   </url>
   <url>
     <loc>https://toypoppo.kr/montessori/</loc>
-    <lastmod>2026-08-07</lastmod>
+    <lastmod>2026-08-11</lastmod>
   </url>
   <url>
     <loc>https://toypoppo.kr/montessori/age-10-month.html</loc>
@@ -1201,6 +1201,12 @@
   </url>
   <url>
     <loc>https://toypoppo.kr/blog/18-month-toddler-language-development-play.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://toypoppo.kr/blog/montessori-dressing-practice-age-3.html</loc>
     <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
