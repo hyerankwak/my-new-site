@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://toypoppo.kr/blog/</loc>
-    <lastmod>2026-08-11</lastmod>
+    <lastmod>2026-08-12</lastmod>
   </url>
   <url>
     <loc>https://toypoppo.kr/blog/10-month-baby-development-play.html</loc>
@@ -1208,6 +1208,12 @@
   <url>
     <loc>https://toypoppo.kr/blog/montessori-dressing-practice-age-3.html</loc>
     <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://toypoppo.kr/blog/first-grade-dictation-wrong-words-review.html</loc>
+    <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
