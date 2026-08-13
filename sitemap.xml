@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://toypoppo.kr/blog/22-month-toddler-balance-play.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://toypoppo.kr/</loc>
     <lastmod>2026-08-07</lastmod>
   </url>
@@ -370,7 +376,7 @@
   </url>
   <url>
     <loc>https://toypoppo.kr/development-play/</loc>
-    <lastmod>2026-08-12</lastmod>
+    <lastmod>2026-08-13</lastmod>
   </url>
   <url>
     <loc>https://toypoppo.kr/editorial-policy.html</loc>
