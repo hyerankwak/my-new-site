@@ -3,3 +3,4 @@ tmp/
 .env.*
 !.env.example
 __pycache__/
+data/coupang-toy-link-queue.md
