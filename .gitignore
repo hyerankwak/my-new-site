@@ -4,3 +4,6 @@ tmp/
 !.env.example
 __pycache__/
 data/coupang-toy-link-queue.md
+data/toypoppo-automation.json
+data/toypoppo-seven-day-plan.json
+logs/
