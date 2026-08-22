@@ -134,7 +134,7 @@ try {
 
   $Prompt = Build-Prompt -ResolvedSlot $ResolvedSlot
   Set-Content -LiteralPath $PromptPath -Value $Prompt -Encoding UTF8
-  Get-Content -Raw -LiteralPath $PromptPath | codex exec -C "$ProjectRoot" --sandbox workspace-write --approve-for-me -m gpt-5.5 -o "$LastMessagePath" - 2>&1 | ForEach-Object { Write-RunLog "codex: $_" }
+  Get-Content -Raw -LiteralPath $PromptPath | codex exec -C "$ProjectRoot" --approve-for-me -m gpt-5.5 -o "$LastMessagePath" - 2>&1 | ForEach-Object { Write-RunLog "codex: $_" }
   if ($LASTEXITCODE -ne 0) { throw "Codex generation failed with exit code $LASTEXITCODE" }
 
   if (Test-Path -LiteralPath (Join-Path $ProjectRoot "scripts\validate-toypoppo-deploy.cjs")) {
