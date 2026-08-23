@@ -132,6 +132,16 @@ try {
   if (Test-Path -LiteralPath $PlanPath) { Write-RunLog "Plan found: $PlanPath" }
   if (Test-Path -LiteralPath $CoupangQueuePath) { Write-RunLog "Coupang queue found: $CoupangQueuePath" }
 
+  $PrewrittenPublisher = Join-Path $ScriptDir "publish-toypoppo-prewritten.ps1"
+  if (Test-Path -LiteralPath $PrewrittenPublisher) {
+    & $PrewrittenPublisher -SlotType $ResolvedSlot 2>&1 | ForEach-Object { Write-RunLog "prewritten: $_" }
+    if ($LASTEXITCODE -eq 0) {
+      Write-RunLog "DONE ToyPoppo prewritten slot: $ResolvedSlot"
+      exit 0
+    }
+    Write-RunLog "No prewritten article for slot $ResolvedSlot, falling back to Codex generation"
+  }
+
   $Prompt = Build-Prompt -ResolvedSlot $ResolvedSlot
   Set-Content -LiteralPath $PromptPath -Value $Prompt -Encoding UTF8
   Get-Content -Raw -LiteralPath $PromptPath | codex exec -C "$ProjectRoot" --approve-for-me -m gpt-5.5 -o "$LastMessagePath" - 2>&1 | ForEach-Object { Write-RunLog "codex: $_" }

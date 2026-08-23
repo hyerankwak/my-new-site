@@ -6,4 +6,6 @@ __pycache__/
 data/coupang-toy-link-queue.md
 data/toypoppo-automation.json
 data/toypoppo-seven-day-plan.json
+data/toypoppo-prewritten-queue.json
+drafts/toypoppo-prewritten/
 logs/
