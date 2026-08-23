@@ -8,4 +8,5 @@ data/toypoppo-automation.json
 data/toypoppo-seven-day-plan.json
 data/toypoppo-prewritten-queue.json
 drafts/toypoppo-prewritten/
+scripts/prepare-toypoppo-prewritten-week.mjs
 logs/
