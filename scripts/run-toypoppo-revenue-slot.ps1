@@ -139,7 +139,11 @@ try {
       Write-RunLog "DONE ToyPoppo prewritten slot: $ResolvedSlot"
       exit 0
     }
-    Write-RunLog "No prewritten article for slot $ResolvedSlot, falling back to Codex generation"
+    if ($LASTEXITCODE -eq 2) {
+      Write-RunLog "SKIP: no prewritten article for slot $ResolvedSlot"
+      exit 0
+    }
+    throw "Prewritten publisher failed with exit code $LASTEXITCODE"
   }
 
   $Prompt = Build-Prompt -ResolvedSlot $ResolvedSlot

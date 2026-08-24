@@ -29,7 +29,7 @@ if (!(Test-Path -LiteralPath $QueuePath)) {
   exit 2
 }
 
-$Queue = Get-Content -Raw -LiteralPath $QueuePath | ConvertFrom-Json
+$Queue = Get-Content -Raw -Encoding UTF8 -LiteralPath $QueuePath | ConvertFrom-Json
 $today = Get-KstDay
 $Items = @($Queue.items)
 $Ready = $Items | Where-Object {
