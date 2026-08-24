@@ -61,7 +61,7 @@ Copy-Item -LiteralPath $SourcePath -Destination $TargetPath -Force
 
 $IndexPath = Join-Path $ProjectRoot "blog\index.html"
 if (Test-Path -LiteralPath $IndexPath) {
-  $index = Get-Content -Raw -LiteralPath $IndexPath
+  $index = Get-Content -Raw -Encoding UTF8 -LiteralPath $IndexPath
   $href = "/" + $TargetRel
   if ($index -notmatch [regex]::Escape($href)) {
     $card = "<a href=""$href""><strong>$($Ready.title)</strong><span>$($Ready.description)</span></a>"
@@ -72,7 +72,7 @@ if (Test-Path -LiteralPath $IndexPath) {
 
 $SitemapPath = Join-Path $ProjectRoot "sitemap.xml"
 if (Test-Path -LiteralPath $SitemapPath) {
-  $sitemap = Get-Content -Raw -LiteralPath $SitemapPath
+  $sitemap = Get-Content -Raw -Encoding UTF8 -LiteralPath $SitemapPath
   $loc = "https://toypoppo.kr/$TargetRel"
   if ($sitemap -notmatch [regex]::Escape($loc)) {
     $url = "  <url><loc>$loc</loc><lastmod>$today</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>`r`n"
@@ -83,8 +83,8 @@ if (Test-Path -LiteralPath $SitemapPath) {
 }
 
 $Ready.status = "published"
-$Ready.publishedAt = (Get-Date).ToUniversalTime().ToString("s") + "Z"
-$Ready.url = "https://toypoppo.kr/$TargetRel"
+$Ready | Add-Member -NotePropertyName publishedAt -NotePropertyValue ((Get-Date).ToUniversalTime().ToString("s") + "Z") -Force
+$Ready | Add-Member -NotePropertyName url -NotePropertyValue "https://toypoppo.kr/$TargetRel" -Force
 $Queue | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath $QueuePath -Encoding UTF8
 
 if (Test-Path -LiteralPath (Join-Path $ProjectRoot "scripts\validate-toypoppo-deploy.cjs")) {
