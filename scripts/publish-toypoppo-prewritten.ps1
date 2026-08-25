@@ -24,6 +24,11 @@ function Normalize-PathText($PathText) {
   return ($PathText -replace "\\", "/").TrimStart("/")
 }
 
+function Set-Utf8NoBom($Path, $Value) {
+  $encoding = New-Object System.Text.UTF8Encoding($false)
+  [System.IO.File]::WriteAllText($Path, $Value, $encoding)
+}
+
 if (!(Test-Path -LiteralPath $QueuePath)) {
   Write-Output "NO_QUEUE"
   exit 2
@@ -85,7 +90,7 @@ if (Test-Path -LiteralPath $SitemapPath) {
 $Ready.status = "published"
 $Ready | Add-Member -NotePropertyName publishedAt -NotePropertyValue ((Get-Date).ToUniversalTime().ToString("s") + "Z") -Force
 $Ready | Add-Member -NotePropertyName url -NotePropertyValue "https://toypoppo.kr/$TargetRel" -Force
-$Queue | ConvertTo-Json -Depth 8 | Set-Content -LiteralPath $QueuePath -Encoding UTF8
+Set-Utf8NoBom -Path $QueuePath -Value (($Queue | ConvertTo-Json -Depth 8) + "`n")
 
 if (Test-Path -LiteralPath (Join-Path $ProjectRoot "scripts\validate-toypoppo-deploy.cjs")) {
   node .\scripts\validate-toypoppo-deploy.cjs
@@ -112,6 +117,6 @@ if (Test-Path -LiteralPath (Join-Path $ProjectRoot "deploy-toypoppo.ps1")) {
   title = $Ready.title
   commit = $commit
   source = "prewritten"
-} | ConvertTo-Json | Set-Content -LiteralPath $LatestPath -Encoding UTF8
+} | ConvertTo-Json | ForEach-Object { Set-Utf8NoBom -Path $LatestPath -Value ($_ + "`n") }
 
 Write-Output "PUBLISHED https://toypoppo.kr/$TargetRel"
