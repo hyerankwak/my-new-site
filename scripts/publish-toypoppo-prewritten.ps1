@@ -92,7 +92,7 @@ if (Test-Path -LiteralPath (Join-Path $ProjectRoot "scripts\validate-toypoppo-de
   if ($LASTEXITCODE -ne 0) { throw "Validation failed with exit code $LASTEXITCODE" }
 }
 
-& $GitExe add $TargetRel "blog/index.html" "sitemap.xml"
+& $GitExe -c core.autocrlf=false add $TargetRel "blog/index.html" "sitemap.xml"
 & $GitExe commit -m "Publish prewritten ToyPoppo article"
 if ($LASTEXITCODE -ne 0) { throw "Git commit failed with exit code $LASTEXITCODE" }
 

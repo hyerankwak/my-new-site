@@ -10,7 +10,8 @@ $Times = @($Config.revenueTimes)
 if ($Times.Count -ne 5) { throw "revenueTimes must contain exactly five times." }
 if (!(Test-Path -LiteralPath $Runner)) { throw "Missing runner: $Runner" }
 
-Get-ScheduledTask -TaskName "ToyPoppoRevenue*" -ErrorAction SilentlyContinue | Disable-ScheduledTask -ErrorAction SilentlyContinue | Out-Null
+Get-ScheduledTask -TaskName "ToyPoppoRevenue*" -ErrorAction SilentlyContinue |
+  Unregister-ScheduledTask -Confirm:$false -ErrorAction SilentlyContinue | Out-Null
 
 foreach ($Time in $Times) {
   if ($Time -notmatch "^([01]\d|2[0-3]):[0-5]\d$") { throw "Invalid time: $Time" }
