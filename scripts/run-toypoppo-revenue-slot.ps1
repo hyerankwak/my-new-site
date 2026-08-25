@@ -134,16 +134,20 @@ try {
 
   $PrewrittenPublisher = Join-Path $ScriptDir "publish-toypoppo-prewritten.ps1"
   if (Test-Path -LiteralPath $PrewrittenPublisher) {
+    $previousErrorActionPreference = $ErrorActionPreference
+    $ErrorActionPreference = "Continue"
     & $PrewrittenPublisher -SlotType $ResolvedSlot 2>&1 | ForEach-Object { Write-RunLog "prewritten: $_" }
-    if ($LASTEXITCODE -eq 0) {
+    $prewrittenExitCode = $LASTEXITCODE
+    $ErrorActionPreference = $previousErrorActionPreference
+    if ($prewrittenExitCode -eq 0) {
       Write-RunLog "DONE ToyPoppo prewritten slot: $ResolvedSlot"
       exit 0
     }
-    if ($LASTEXITCODE -eq 2) {
+    if ($prewrittenExitCode -eq 2) {
       Write-RunLog "SKIP: no prewritten article for slot $ResolvedSlot"
       exit 0
     }
-    throw "Prewritten publisher failed with exit code $LASTEXITCODE"
+    throw "Prewritten publisher failed with exit code $prewrittenExitCode"
   }
 
   $Prompt = Build-Prompt -ResolvedSlot $ResolvedSlot
