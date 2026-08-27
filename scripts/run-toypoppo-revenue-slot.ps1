@@ -98,6 +98,7 @@ C:\Users\곽혜란\Documents\에드센스\toypoppo-deploy-repo
 - 정보 70% 이상, 제휴/상품 30% 이하.
 - 도입부, 상황/연령 특징, 선택 기준, 실제 방법, 부모 체크리스트, 주의사항, 요약 박스, FAQ 5개 이상, 관련 글 5개 이상, 마무리 포함.
 - 본문에 실사형 생성 이미지 2~3장을 넣는다. 만화, 3D, 포스터, 텍스트 박힌 이미지는 금지.
+- data:image, base64 SVG, 텍스트 카드형 임시 이미지 금지. 실제 /assets/images/... 이미지 파일을 생성·압축해서 연결한다.
 - 이미지 아래에 "토이포포 생성형 이미지입니다."를 표시한다.
 - 데스크톱 이미지 최대 너비 720px, 최대 높이 520px, object-fit: contain, 모바일 width 100%.
 - title, meta description, canonical, og 태그, Article/FAQ/BreadcrumbList JSON-LD 포함.

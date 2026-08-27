@@ -80,8 +80,20 @@ function footer() {
 }
 
 function figure(label, hint) {
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720"><defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fff1f7"/><stop offset="1" stop-color="#e4fbf4"/></linearGradient></defs><rect width="1200" height="720" fill="url(#g)"/><circle cx="190" cy="150" r="84" fill="#ff8fbc" opacity=".35"/><circle cx="1010" cy="560" r="110" fill="#6ed7c1" opacity=".35"/><rect x="170" y="170" width="860" height="380" rx="44" fill="#fff" stroke="#f0dce6" stroke-width="4"/><text x="230" y="285" font-family="Arial, sans-serif" font-size="54" font-weight="800" fill="#30242d">${label}</text><text x="230" y="370" font-family="Arial, sans-serif" font-size="34" fill="#766a73">${hint.slice(0, 34)}</text><text x="230" y="450" font-family="Arial, sans-serif" font-size="30" fill="#e84f8a">ToyPoppo visual guide</text></svg>`;
-  return `<figure class="article-figure"><img src="data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}" alt="${esc(label)} 참고 이미지" loading="lazy"><figcaption>토이포포 생성형 이미지입니다.</figcaption></figure>`;
+  const imagePool = [
+    "/assets/images/blog/seongnam-bundang-pangyo-kids-outing-photo.jpg",
+    "/assets/images/blog/busan-haeundae-blueline-park-family-photo.jpg",
+    "/assets/images/blog/seven-year-old-block-play-family-photo.jpg",
+    "/assets/images/blog/twenty-four-month-pretend-play-family-photo.jpg",
+    "/assets/images/blog/after-school-board-game-family-photo.jpg",
+    "/assets/images/blog/songpa-jamsil-kids-outing-family-photo.jpg",
+    "/assets/images/blog/five-year-old-toy-shelf-family-photo.jpg",
+    "/assets/images/blog/weekend-morning-half-day-family-photo.jpg"
+  ];
+  const key = `${label} ${hint}`;
+  const index = [...key].reduce((sum, char) => sum + char.charCodeAt(0), 0) % imagePool.length;
+  const src = imagePool[index];
+  return `<figure class="article-figure"><img src="${src}" alt="${esc(label)} 참고 이미지" loading="lazy"><figcaption>토이포포 생성형 이미지입니다.</figcaption></figure>`;
 }
 
 function related() {
