@@ -29,6 +29,29 @@ function Set-Utf8NoBom($Path, $Value) {
   [System.IO.File]::WriteAllText($Path, $Value, $encoding)
 }
 
+function Invoke-GitSafe([string[]] $Arguments) {
+  $psi = New-Object System.Diagnostics.ProcessStartInfo
+  $psi.FileName = $GitExe
+  foreach ($Argument in $Arguments) {
+    [void] $psi.ArgumentList.Add($Argument)
+  }
+  $psi.WorkingDirectory = $ProjectRoot
+  $psi.UseShellExecute = $false
+  $psi.RedirectStandardOutput = $true
+  $psi.RedirectStandardError = $true
+
+  $process = New-Object System.Diagnostics.Process
+  $process.StartInfo = $psi
+  [void] $process.Start()
+  $stdout = $process.StandardOutput.ReadToEnd()
+  $stderr = $process.StandardError.ReadToEnd()
+  $process.WaitForExit()
+
+  if ($stdout) { Write-Output ($stdout.TrimEnd()) }
+  if ($stderr) { Write-Output ($stderr.TrimEnd()) }
+  return $process.ExitCode
+}
+
 if (!(Test-Path -LiteralPath $QueuePath)) {
   Write-Output "NO_QUEUE"
   exit 2
@@ -87,28 +110,35 @@ if (Test-Path -LiteralPath $SitemapPath) {
   Set-Content -LiteralPath $SitemapPath -Value $sitemap -Encoding UTF8
 }
 
-$Ready.status = "published"
-$Ready | Add-Member -NotePropertyName publishedAt -NotePropertyValue ((Get-Date).ToUniversalTime().ToString("s") + "Z") -Force
-$Ready | Add-Member -NotePropertyName url -NotePropertyValue "https://toypoppo.kr/$TargetRel" -Force
-Set-Utf8NoBom -Path $QueuePath -Value (($Queue | ConvertTo-Json -Depth 8) + "`n")
-
 if (Test-Path -LiteralPath (Join-Path $ProjectRoot "scripts\validate-toypoppo-deploy.cjs")) {
   node .\scripts\validate-toypoppo-deploy.cjs
   if ($LASTEXITCODE -ne 0) { throw "Validation failed with exit code $LASTEXITCODE" }
 }
 
-& $GitExe -c core.autocrlf=false add $TargetRel "blog/index.html" "sitemap.xml"
-& $GitExe commit -m "Publish prewritten ToyPoppo article"
-if ($LASTEXITCODE -ne 0) { throw "Git commit failed with exit code $LASTEXITCODE" }
+$exit = Invoke-GitSafe @("-c", "core.autocrlf=false", "add", $TargetRel, "blog/index.html", "sitemap.xml")
+if ($exit -ne 0) { throw "Git add failed with exit code $exit" }
+
+$pending = (& $GitExe status --porcelain -- $TargetRel "blog/index.html" "sitemap.xml") -join "`n"
+if ($pending.Trim()) {
+  $exit = Invoke-GitSafe @("commit", "-m", "Publish prewritten ToyPoppo article")
+  if ($exit -ne 0) { throw "Git commit failed with exit code $exit" }
+} else {
+  Write-Output "NO_GIT_CHANGES target already committed"
+}
 
 $commit = (& $GitExe rev-parse --short HEAD).Trim()
-& $GitExe push origin gh-pages
-if ($LASTEXITCODE -ne 0) { throw "Git push failed with exit code $LASTEXITCODE" }
+$exit = Invoke-GitSafe @("push", "origin", "gh-pages")
+if ($exit -ne 0) { throw "Git push failed with exit code $exit" }
 
 if (Test-Path -LiteralPath (Join-Path $ProjectRoot "deploy-toypoppo.ps1")) {
   & (Join-Path $ProjectRoot "deploy-toypoppo.ps1")
   if ($LASTEXITCODE -ne 0) { throw "Deploy failed with exit code $LASTEXITCODE" }
 }
+
+$Ready.status = "published"
+$Ready | Add-Member -NotePropertyName publishedAt -NotePropertyValue ((Get-Date).ToUniversalTime().ToString("s") + "Z") -Force
+$Ready | Add-Member -NotePropertyName url -NotePropertyValue "https://toypoppo.kr/$TargetRel" -Force
+Set-Utf8NoBom -Path $QueuePath -Value (($Queue | ConvertTo-Json -Depth 8) + "`n")
 
 @{
   day = $today
