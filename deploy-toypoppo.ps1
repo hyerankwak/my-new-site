@@ -3,6 +3,11 @@ $ErrorActionPreference = "Stop"
 $repo = Split-Path -Parent $MyInvocation.MyCommand.Path
 Set-Location $repo
 
+$gitRoot = Join-Path $env:USERPROFILE ".cache\codex-runtimes\codex-primary-runtime\dependencies\native\git"
+$gitHelperPath = Join-Path $gitRoot "mingw64\bin"
+$env:GIT_EXEC_PATH = $gitHelperPath
+$env:PATH = "$gitHelperPath;$(Join-Path $gitRoot "cmd");$env:PATH"
+
 node scripts/validate-toypoppo-deploy.cjs
 
 $branch = git branch --show-current
