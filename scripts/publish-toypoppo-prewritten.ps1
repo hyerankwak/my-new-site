@@ -61,7 +61,7 @@ $Queue = Get-Content -Raw -Encoding UTF8 -LiteralPath $QueuePath | ConvertFrom-J
 $today = Get-KstDay
 $Items = @($Queue.items)
 $Ready = $Items | Where-Object {
-  $_.status -ne "published" -and
+  $_.status -eq "ready" -and
   $_.date -le $today -and
   ($SlotType -eq "auto" -or $_.slot -eq $SlotType)
 } | Sort-Object date, order | Select-Object -First 1
