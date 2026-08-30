@@ -119,7 +119,8 @@ $exit = Invoke-GitSafe @("-c", "core.autocrlf=false", "add", $TargetRel, "blog/i
 if ($exit -ne 0) { throw "Git add failed with exit code $exit" }
 
 $pending = (& $GitExe status --porcelain -- $TargetRel "blog/index.html" "sitemap.xml") -join "`n"
-if ($pending.Trim()) {
+$pendingText = [string] $pending
+if ($pendingText.Trim()) {
   $exit = Invoke-GitSafe @("commit", "-m", "Publish prewritten ToyPoppo article")
   if ($exit -ne 0) { throw "Git commit failed with exit code $exit" }
 } else {
