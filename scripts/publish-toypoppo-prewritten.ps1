@@ -11,7 +11,11 @@ $ProjectRoot = Resolve-Path (Join-Path $ScriptDir "..")
 $QueuePath = Join-Path $ProjectRoot "data\toypoppo-prewritten-queue.json"
 $LogDir = Join-Path $ProjectRoot "logs"
 $LatestPath = Join-Path $LogDir "toypoppo-revenue-latest.json"
-$GitExe = Join-Path $env:USERPROFILE ".cache\codex-runtimes\codex-primary-runtime\dependencies\native\git\cmd\git.exe"
+$GitRoot = Join-Path $env:USERPROFILE ".cache\codex-runtimes\codex-primary-runtime\dependencies\native\git"
+$GitExe = Join-Path $GitRoot "cmd\git.exe"
+$GitHelperPath = Join-Path $GitRoot "mingw64\bin"
+$env:GIT_EXEC_PATH = $GitHelperPath
+$env:PATH = "$GitHelperPath;$(Join-Path $GitRoot "cmd");$env:PATH"
 
 New-Item -ItemType Directory -Path $LogDir -Force | Out-Null
 Set-Location -LiteralPath $ProjectRoot
@@ -83,6 +87,9 @@ if ($DryRun) {
   Write-Output "DRY_RUN $($Ready.title) -> $TargetRel"
   exit 0
 }
+
+$exit = Invoke-GitSafe @("pull", "--rebase", "origin", "gh-pages")
+if ($exit -ne 0) { throw "Git sync failed with exit code $exit" }
 
 New-Item -ItemType Directory -Path (Split-Path -Parent $TargetPath) -Force | Out-Null
 Copy-Item -LiteralPath $SourcePath -Destination $TargetPath -Force
