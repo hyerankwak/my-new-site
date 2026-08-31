@@ -20,4 +20,16 @@ if ($cname -ne "toypoppo.kr") {
   throw "Deploy blocked: CNAME must be toypoppo.kr."
 }
 
-git push origin HEAD:gh-pages
+$previousErrorActionPreference = $ErrorActionPreference
+$ErrorActionPreference = "Continue"
+$pushOutput = git push origin HEAD:gh-pages 2>&1
+$pushExitCode = $LASTEXITCODE
+$ErrorActionPreference = $previousErrorActionPreference
+
+foreach ($line in @($pushOutput)) {
+  [Console]::Out.WriteLine($line)
+}
+
+if ($pushExitCode -ne 0) {
+  throw "Git push failed with exit code $pushExitCode"
+}
