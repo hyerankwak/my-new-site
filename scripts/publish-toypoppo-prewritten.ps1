@@ -34,26 +34,8 @@ function Set-Utf8NoBom($Path, $Value) {
 }
 
 function Invoke-GitSafe([string[]] $Arguments) {
-  $psi = New-Object System.Diagnostics.ProcessStartInfo
-  $psi.FileName = $GitExe
-  foreach ($Argument in $Arguments) {
-    [void] $psi.ArgumentList.Add($Argument)
-  }
-  $psi.WorkingDirectory = $ProjectRoot
-  $psi.UseShellExecute = $false
-  $psi.RedirectStandardOutput = $true
-  $psi.RedirectStandardError = $true
-
-  $process = New-Object System.Diagnostics.Process
-  $process.StartInfo = $psi
-  [void] $process.Start()
-  $stdout = $process.StandardOutput.ReadToEnd()
-  $stderr = $process.StandardError.ReadToEnd()
-  $process.WaitForExit()
-
-  if ($stdout) { Write-Output ($stdout.TrimEnd()) }
-  if ($stderr) { Write-Output ($stderr.TrimEnd()) }
-  return $process.ExitCode
+  & $GitExe @Arguments 2>&1
+  return $LASTEXITCODE
 }
 
 if (!(Test-Path -LiteralPath $QueuePath)) {
