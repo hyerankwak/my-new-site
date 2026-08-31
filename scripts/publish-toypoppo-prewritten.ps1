@@ -34,8 +34,12 @@ function Set-Utf8NoBom($Path, $Value) {
 }
 
 function Invoke-GitSafe([string[]] $Arguments) {
-  & $GitExe @Arguments 2>&1
-  return $LASTEXITCODE
+  $previousErrorActionPreference = $ErrorActionPreference
+  $ErrorActionPreference = "Continue"
+  & $GitExe @Arguments 2>&1 | ForEach-Object { Write-Output "$_" }
+  $exitCode = $LASTEXITCODE
+  $ErrorActionPreference = $previousErrorActionPreference
+  return $exitCode
 }
 
 if (!(Test-Path -LiteralPath $QueuePath)) {
