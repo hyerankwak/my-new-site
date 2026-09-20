@@ -16,7 +16,7 @@ const blogImages = [
   "/assets/images/blog/five-year-old-toy-shelf-family-photo.jpg",
   "/assets/images/blog/twenty-four-month-pretend-play-family-photo.jpg",
   "/assets/images/blog/weekend-morning-half-day-family-photo.jpg",
-  "/assets/images/blog/elementary-literacy-home-study-hero.jpg",
+  "/assets/images/blog/first-grade-dictation-review-parent.jpg",
   "/assets/images/blog/first-grade-dictation-cover-write.jpg",
   "/assets/images/blog/first-grade-dictation-review-parent.jpg",
   "/assets/images/blog/preschool-toy-cleanup-routine-1.jpg",

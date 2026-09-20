@@ -19,7 +19,7 @@ const images = {
     "/assets/images/blog/weekend-morning-half-day-family-photo.jpg",
   ],
   study: [
-    "/assets/images/blog/elementary-literacy-home-study-hero.jpg",
+    "/assets/images/blog/first-grade-dictation-review-parent.jpg",
     "/assets/images/blog/first-grade-dictation-cover-write.jpg",
     "/assets/images/blog/first-grade-dictation-review-parent.jpg",
     "/assets/images/blog/elementary-online-learning-free-trial-guide-routine.jpg",
