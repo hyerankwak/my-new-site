@@ -12,12 +12,11 @@ const endDate = "2026-09-14";
 
 const images = {
   play: [
-    "/assets/images/blog/first-grade-board-game-family.png",
-    "/assets/images/blog/five-year-old-card-play-routine.png",
-    "/assets/images/blog/seven-year-old-block-play-family-photo.jpg",
     "/assets/images/blog/after-school-board-game-family-photo.jpg",
-    "/assets/images/blog/developmental-toy-selection-guide-hero.jpg",
+    "/assets/images/blog/seven-year-old-block-play-family-photo.jpg",
     "/assets/images/blog/five-year-old-toy-shelf-family-photo.jpg",
+    "/assets/images/blog/twenty-four-month-pretend-play-family-photo.jpg",
+    "/assets/images/blog/weekend-morning-half-day-family-photo.jpg",
   ],
   study: [
     "/assets/images/blog/elementary-literacy-home-study-hero.jpg",

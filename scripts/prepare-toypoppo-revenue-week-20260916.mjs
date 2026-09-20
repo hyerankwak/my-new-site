@@ -11,15 +11,18 @@ const startDate = "2026-09-16";
 const endDate = "2026-09-22";
 
 const blogImages = [
-  "/assets/images/blog/first-grade-board-game-family.png",
-  "/assets/images/blog/five-year-old-card-play-routine.png",
-  "/assets/images/blog/seven-year-old-block-play-family-photo.jpg",
   "/assets/images/blog/after-school-board-game-family-photo.jpg",
+  "/assets/images/blog/seven-year-old-block-play-family-photo.jpg",
+  "/assets/images/blog/five-year-old-toy-shelf-family-photo.jpg",
+  "/assets/images/blog/twenty-four-month-pretend-play-family-photo.jpg",
+  "/assets/images/blog/weekend-morning-half-day-family-photo.jpg",
   "/assets/images/blog/elementary-literacy-home-study-hero.jpg",
-  "/assets/images/blog/first-grade-read-aloud-retelling-routine-1.png",
-  "/assets/images/blog/second-grade-vocabulary-sentence-routine-1.png",
-  "/assets/images/blog/rainy-day-home-play-craft.png",
-  "/assets/images/blog/24-month-toddler-pretend-play-routine-1.jpg",
+  "/assets/images/blog/first-grade-dictation-cover-write.jpg",
+  "/assets/images/blog/first-grade-dictation-review-parent.jpg",
+  "/assets/images/blog/preschool-toy-cleanup-routine-1.jpg",
+  "/assets/images/blog/preschool-toy-cleanup-routine-2.jpg",
+  "/assets/images/blog/montessori-prepared-environment-hero.jpg",
+  "/assets/images/blog/montessori-prepared-environment-shelf.jpg",
 ];
 
 const placeImages = [
