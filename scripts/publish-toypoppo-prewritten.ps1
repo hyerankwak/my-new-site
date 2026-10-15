@@ -88,9 +88,14 @@ if (Test-Path -LiteralPath $IndexPath) {
   $index = Get-Content -Raw -Encoding UTF8 -LiteralPath $IndexPath
   $href = "/" + $TargetRel
   if ($index -notmatch [regex]::Escape($href)) {
-    $card = "<a href=""$href""><strong>$($Ready.title)</strong><span>$($Ready.description)</span></a>"
-    $index = $index -replace '(<main>\s*<section class="section"><div class="link-grid">)', "`$1$card"
-    Set-Content -LiteralPath $IndexPath -Value $index -Encoding UTF8
+    $safeTitle = [System.Net.WebUtility]::HtmlEncode([string]$Ready.title)
+    $safeDescription = [System.Net.WebUtility]::HtmlEncode([string]$Ready.description)
+    $card = "<a href=""$href""><strong>$safeTitle</strong><span>$safeDescription</span></a>"
+    $grid = [regex]::new('<div class="link-grid">')
+    if (!$grid.IsMatch($index)) { throw "Blog index has no article grid" }
+    $index = $grid.Replace($index, [System.Text.RegularExpressions.MatchEvaluator]{ param($match) $match.Value + $card }, 1)
+    if (!$index.Contains("href=""$href""")) { throw "Published article is missing from blog index" }
+    Set-Utf8NoBom -Path $IndexPath -Value $index
   }
 }
 

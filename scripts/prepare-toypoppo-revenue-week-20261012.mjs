@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { reviseHtml } from "./revise-toypoppo-week-20261015.mjs";
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const draftDir = join(root, "drafts", "toypoppo-prewritten");
@@ -192,11 +193,14 @@ const created = [];
 days.forEach((day, index) => {
   const posts = [makeRegion(day), makeMrt(day, index), makeEducation(day, index), makeCoupang(day), makeSeason(day)];
   posts.forEach((post) => {
+    if (queue.items.some(item => item.date === day.date && item.slot === post.slot && item.status === "published")) return;
     const source = `drafts/toypoppo-prewritten/${post.slug}.html`;
     const target = `blog/${post.slug}.html`;
-    writeFileSync(join(root, source), post.html, "utf8");
-    queue.items.push({ order: nextOrder++, date: day.date, slot: post.slot, status: "ready", title: post.title, description: post.desc, source, target, url: `https://toypoppo.kr/${target}` });
-    created.push({ date: day.date, slot: post.slot, title: post.title, target });
+    const item = { order: nextOrder++, date: day.date, slot: post.slot, status: "ready", title: post.title, description: post.desc, source, target, url: `https://toypoppo.kr/${target}` };
+    const html = reviseHtml(item, post.html);
+    writeFileSync(join(root, item.source), html, "utf8");
+    queue.items.push(item);
+    created.push({ date: day.date, slot: post.slot, title: item.title, target: item.target });
   });
 });
 
