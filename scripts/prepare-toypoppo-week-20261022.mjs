@@ -73,6 +73,9 @@ function footerContent(record, slot) {
   return `<section><h2>${slot === "coupang" ? "제품별 사용법과 아쉬운 점 비교" : "이 활동에 쓸 도구가 필요하다면"}</h2>${slot !== "coupang" ? '<p>본문의 활동을 먼저 해보고 필요한 역할이 분명할 때 아래 제품을 비교하세요. 외출 필수 준비물은 아니며 이미 가진 도구로 같은 활동을 할 수 있다면 그것부터 활용해도 좋습니다.</p>' : '<p>아래 이름은 비교를 위한 제품·유형입니다. 실제 판매 옵션의 모델과 판본, 구성품은 달라질 수 있으므로 연결 페이지에서 정확한 상품을 확인하세요.</p>'}${productCards(record.products)}</section><section><h2>결제 전 마지막으로 비교할 것</h2><p>정확한 모델·판본과 포함 구성품, 제조사 표시 연령·작은 부품을 확인하고 배송·반품 조건까지 봅니다. 현재 가격과 별점·구매평은 판매 페이지의 실제 선택 옵션을 기준으로 확인하세요. 이 글에서는 확인하지 못한 가격·평점을 만들지 않습니다.</p><p>구매평을 읽을 때는 아이의 사용 나이와 부모 도움, 반복 사용과 부품 상태가 우리 집과 비슷한지 보세요. 오늘 이 도구로 할 놀이 하나와 다음에 꺼낼 시간이 떠오르면 선택을 구체적으로 좁힐 수 있습니다. 학습·발달 효과는 제품 하나로 보장되지 않습니다.</p></section>`;
 }
 export function renderArticle(record, slot, date, index) {
+  const verifiedDate = record.checkedAt || "2026-10-21";
+  const [verifiedYear, verifiedMonth, verifiedDay] = verifiedDate.split("-");
+  const verifiedLabel = `${verifiedYear}년 ${Number(verifiedMonth)}월 ${Number(verifiedDay)}일`;
   const slug = `${record.slug}-${date.replaceAll("-", "")}`;
   const url = `https://toypoppo.kr/blog/${slug}.html`;
   const description = record.intro.slice(0, 145);
@@ -92,7 +95,7 @@ export function renderArticle(record, slot, date, index) {
   const header = reference.slice(reference.indexOf("<header"),reference.indexOf("</header>")+9);
   const footer = reference.slice(reference.indexOf("<footer"),reference.indexOf("</footer>")+9);
   const html = `<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(record.title)}</title><meta name="description" content="${esc(description)}"><meta name="robots" content="index,follow,max-image-preview:large"><link rel="canonical" href="${url}"><meta property="og:title" content="${esc(record.title)}"><meta property="og:description" content="${esc(description)}"><meta property="og:type" content="article"><meta property="og:url" content="${url}"><meta property="og:image" content="https://toypoppo.kr${ogImage}"><meta property="og:locale" content="ko_KR"><meta property="og:site_name" content="토이포포"><link rel="stylesheet" href="/assets/styles.css">${editorialCss}<script type="application/ld+json">${JSON.stringify(json)}</script><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4675052661212934" crossorigin="anonymous"></script></head><body>${header}<main class="article-shell"><article class="article-card readable-article"><p class="breadcrumb"><a href="/">홈</a> / <a href="/blog/">블로그</a> / ${groupLabels[slot]}</p><h1>${esc(record.title)}</h1><p class="article-meta">${date} · ${groupLabels[slot]}</p>${body}</article></main>${footer}</body></html>`;
-  return { html, item: { date, slot, title:record.title, description, source:`drafts/toypoppo-prewritten/${slug}.html`, target:`blog/${slug}.html`, url, status:"ready", editorialRevision:"2026-10-21", scheduledTime:times[slot], ...(slot === "mrt" ? {affiliateProductId:record.gid,affiliateUrl:record.href,verifiedAt:"2026-10-21"} : {}) }, body };
+  return { html: html.replaceAll("2026년 10월 21일", verifiedLabel), item: { date, slot, title:record.title, description, source:`drafts/toypoppo-prewritten/${slug}.html`, target:`blog/${slug}.html`, url, status:"ready", editorialRevision:verifiedDate, scheduledTime:times[slot], ...(slot === "mrt" ? {affiliateProductId:record.gid,affiliateUrl:record.href,verifiedAt:verifiedDate} : {}) }, body: body.replaceAll("2026년 10월 21일", verifiedLabel) };
 }
 export function prepareWeek() {
   const queuePath=join(root,"data/toypoppo-prewritten-queue.json");

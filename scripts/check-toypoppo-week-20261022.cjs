@@ -4,7 +4,9 @@ const http = require('node:http');
 const crypto = require('node:crypto');
 const { chromium } = require('playwright');
 const root = path.resolve(__dirname, '..');
-const manifest = JSON.parse(fs.readFileSync(path.join(root,'data/toypoppo-week-20261022-manifest.json'),'utf8'));
+const batch = process.argv[2] || '20261022';
+if(!/^\d{8}$/.test(batch))throw new Error('Invalid week key');
+const manifest = JSON.parse(fs.readFileSync(path.join(root,`data/toypoppo-week-${batch}-manifest.json`),'utf8'));
 const queue = JSON.parse(fs.readFileSync(path.join(root,'data/toypoppo-prewritten-queue.json'),'utf8'));
 const fail = message => {throw new Error(message);};
 async function main() {
@@ -55,17 +57,17 @@ async function main() {
       });
       if(stats.overflow||stats.broken.length||stats.blankImages.length||stats.smallButton||!stats.sponsored||!stats.faqMatches||!stats.affiliateCount||stats.title!==item.title)fail(JSON.stringify({item:item.title,stats}));
       report.push({title:item.title,...stats});
-      if(item.date==='2026-10-22'&&item.slot==='mrt'){
+      if(item.date===manifest[0].date&&item.slot==='mrt'){
         await page.locator('.article-figure').first().scrollIntoViewIfNeeded();
-        await page.screenshot({path:path.join(root,'logs/week-20261022-mobile-photo.png')});
-        await page.screenshot({path:path.join(root,'logs/week-20261022-mobile.png'),fullPage:true});
+        await page.screenshot({path:path.join(root,`logs/week-${batch}-mobile-photo.png`)});
+        await page.screenshot({path:path.join(root,`logs/week-${batch}-mobile.png`),fullPage:true});
       }
       await page.setViewportSize({width:1440,height:1000});
       const desktop=await page.locator('article').boundingBox();
       if(desktop.width>950||await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth+1))fail(`Desktop overflow ${item.title}`);
-      if(item.date==='2026-10-22'&&item.slot==='coupang')await page.screenshot({path:path.join(root,'logs/week-20261022-desktop.png'),fullPage:true});
+      if(item.date===manifest[0].date&&item.slot==='coupang')await page.screenshot({path:path.join(root,`logs/week-${batch}-desktop.png`),fullPage:true});
     }
-    fs.writeFileSync(path.join(root,'logs/toypoppo-week-20261022-qa.json'),JSON.stringify({checked:report.length,failures:0,report},null,2));
+    fs.writeFileSync(path.join(root,`logs/toypoppo-week-${batch}-qa.json`),JSON.stringify({checked:report.length,failures:0,report},null,2));
     console.log(JSON.stringify({checked:report.length,failures:0,imagesPerArticle:2,viewports:[390,1440]}));
   }finally{
     if(browser)await browser.close();
