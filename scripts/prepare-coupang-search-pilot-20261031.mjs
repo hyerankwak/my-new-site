@@ -7,6 +7,14 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const research = JSON.parse(readFileSync(resolve(root, 'logs/affiliate-products-latest.json'), 'utf8'));
 const product = research.results.find(p => p.productId === 4673650342);
 if (!product || !product.name.includes('루미큐브 클래식')) throw Error('Reviewed product is missing');
+const trackingPath = resolve(root, 'data/coupang-article-tracking.json');
+if (existsSync(trackingPath)) {
+  const tracked = JSON.parse(readFileSync(trackingPath, 'utf8')).articles.find(a => a.productId === product.productId);
+  if (tracked?.affiliateUrl) {
+    if (new URL(tracked.affiliateUrl).searchParams.get('subid') !== tracked.subId) throw Error('Tracking URL mismatch');
+    product.affiliateUrl = tracked.affiliateUrl;
+  }
+}
 const esc = value => String(value).replaceAll('&', '&amp;').replaceAll('"', '&quot;').replaceAll('<', '&lt;');
 const image = '/assets/images/blog/rummikub-classic-coupang-official-20261031.jpg';
 if (!existsSync(resolve(root, '.' + image))) throw Error('Official product image missing');
