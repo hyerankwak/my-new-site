@@ -1,0 +1,16 @@
+export default [
+  {key:'katamino',id:2129304,match:'카타미노',keyword:'카타미노',volume:120,source:'https://en.gigamic.com/family-games/104-katamino.html'},
+  {key:'ubongo',id:1745429,match:'우봉고 보드게임',keyword:'우봉고',volume:4530,source:'https://www.thamesandkosmos.com/downloads/Ubongo_Demo_Sheet.pdf'},
+  {key:'labyrinth',id:6612398261,match:'라비린스 보드게임',keyword:'라비린스',volume:1850,source:'https://www.ravensburger.org/dk/produkte/spil/familiespil/labyrinth-26315/index.html'},
+  {key:'splendor',id:7309462,match:'스플렌더 보드게임',keyword:'스플렌더',volume:7320,source:'https://www.spacecowboys-games.com/game/splendor/'},
+  {key:'blokus',id:7687560042,match:'마텔 블로커스',keyword:'블로커스',volume:1680,source:'https://shop.mattel.com/products/blokus-game-bjv44'},
+  {key:'quoridor',id:2170426646,match:'쿼리도 추상전략',keyword:'쿼리도',volume:1320,source:'https://en.gigamic.com/modern-classics/107-quoridor.html'},
+  {key:'jenga',id:9786285133,match:'해즈브로 게이밍 젠가 클래식',keyword:'젠가',volume:4390,source:'https://instructions.hasbro.com/en-gb/instruction/classic-jenga'},
+  {key:'catan',id:7685271408,match:'카탄 주니어',keyword:'카탄주니어',volume:130,source:'https://www.catan.com/junior'},
+  {key:'duplo',id:4340138376,match:'10913',keyword:'레고듀플로',volume:7880,source:'https://www.lego.com/en-us/product/brick-box-10913'},
+  {key:'classic',id:7708749458,match:'10698',keyword:'레고클래식',volume:2390,source:'https://www.lego.com/en-us/product/lego-large-creative-brick-box-10698'},
+  {key:'magformers',id:9402929985,match:'시티 고 세트 25',keyword:'맥포머스',volume:7590,source:'https://magformers.co.kr/Ghome/en/products/product_view.asp?PCD=316'},
+  {key:'travel',id:6607306457,match:'루미큐브 트래블',keyword:'루미큐브트래블',volume:390,source:'https://rummikub.com/rules/'},
+  {key:'halli',id:201355,match:'아미고 할리갈리',keyword:'할리갈리',volume:10940,source:'https://blog.amigo-spiele.de/content/ap/rule/01700-ES-AmigoRule.pdf'},
+  {key:'dobble',id:8479043887,match:'도블 순발력',keyword:'도블',volume:3390,source:'https://www.zygomatic-games.com/universe/dobble-brand/'},
+];

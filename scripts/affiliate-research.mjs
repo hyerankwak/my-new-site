@@ -48,6 +48,24 @@ export async function searchProducts(keyword, limit = 5) {
   }));
 }
 
+export async function createDeeplinks(coupangUrls, subId) {
+  if (!/^[a-z0-9]{1,20}$/.test(subId) || !coupangUrls.length) throw Error('Invalid article tracking request');
+  for (const value of coupangUrls) if (new URL(value).hostname !== 'www.coupang.com') throw Error('Unexpected destination');
+  const path = '/v2/providers/affiliate_open_api/apis/openapi/deeplink';
+  const date = new Date().toISOString().replace(/[-:]/g, '').slice(2, 15) + 'Z';
+  const signature = createHmac('sha256', env.COUPANG_SECRET_KEY).update(date + 'POST' + path).digest('hex');
+  const response = await fetch('https://api-gateway.coupang.com' + path, {
+    method: 'POST', signal: AbortSignal.timeout(30000),
+    headers: { Authorization: `CEA algorithm=HmacSHA256, access-key=${env.COUPANG_ACCESS_KEY}, signed-date=${date}, signature=${signature}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({ coupangUrls, subId }),
+  });
+  if (!response.ok) throw Error(`Deeplink HTTP ${response.status}`);
+  const result = await response.json();
+  if (result.rCode !== '0' || result.data?.length !== coupangUrls.length) throw Error('Incomplete tracked links');
+  for (const row of result.data) if (new URL(row.landingUrl).hostname !== 'link.coupang.com' || new URL(row.landingUrl).searchParams.get('subid') !== subId) throw Error('Tracking verification failed');
+  return result.data;
+}
+
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   try {
     const mode = process.argv[2];

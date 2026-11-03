@@ -60,7 +60,7 @@ export function mappings() {
   const records = JSON.parse(readFileSync(mappingPath, 'utf8')).articles;
   if (new Set(records.map(r => r.subId)).size !== records.length) throw Error('Duplicate article tracking IDs');
   for (const record of records) if (!record.subId || !record.activatedAt || new URL(record.url).hostname !== 'toypoppo.kr') throw Error('Invalid article tracking mapping');
-  return records;
+  return records.filter(record => !record.pendingPublication || existsSync(resolve(root, '.' + new URL(record.url).pathname)));
 }
 export function recentArticles(limit = 15) {
   const records = [];
