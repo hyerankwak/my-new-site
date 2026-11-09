@@ -1,0 +1,16 @@
+export default [
+ {key:'skippity',id:8176854323,match:'스킵피티',keyword:'스킵피티',source:'https://www.mindware.orientaltrading.com/pdf/instructions/48146.pdf'},
+ {key:'chicken',id:282681258,match:'치킨차차',keyword:'치킨차차',source:'https://www.zoch-verlag.com/zoch_en/categories/children-s-games/zicke-zacke-huehnerkacke-601121800-en.html'},
+ {key:'icecream',id:285532413,match:'카트 한영버전',keyword:'아이스크림카트',source:'https://store.leapfrog.com/en-us/store/p/scoop-and-learn-ice-cream-cart/_/A-prod80-600700'},
+ {key:'numberblocks',id:7182938410,match:'1-10',keyword:'넘버블럭스교구',source:'https://www.learningresources.co.uk/catalog/product/view/_ignore_category/1/id/3234/s/numberblocks-mathlink-cubes/'},
+ {key:'doh',id:9806403115,match:'점보 컬러',keyword:'플레이도우',source:'https://consumercare.hasbro.com/en-us/product/play-doh-ultimate-color-collection-65-pack-of-assorted-modeling-compounds-for-kids-3-years-and-up-non-toxic-fun-size-1-ounce-cans/2C198B20-B337-493B-B351-2C552A829389'},
+ {key:'rubiks',id:6195214438,match:'루빅스 큐브',keyword:'루빅스큐브',source:'https://www.spinmaster.com/en-GB/brands/rubiks'},
+ {key:'clues',id:130192830,match:'13클루',keyword:'13클루',source:'https://www.dvgiochi.com/giochi/13Indizi/download/13Clues_Rules_ENG_Low.pdf'},
+ {key:'davinci',id:1077166,match:'다빈치 코드',keyword:'다빈치코드보드게임',source:'https://boardm.co.kr/product/다빈치코드/2784/category/163/display/1/'},
+ {key:'nimmt',id:4869230,match:'젝스님트',keyword:'젝스님트',source:'https://blog.amigo-spiele.de/content/ap/rule/04910-DE-AmigoRule.pdf'},
+ {key:'monkeys',id:111115,match:'텀블링몽키',keyword:'텀블링몽키',source:'https://service.mattel.com/instruction_sheets/52563-0720.pdf'},
+ {key:'louie',id:8987113766,match:'루핑루이',keyword:'루핑루이',source:'https://instructions.hasbro.com/fr-ch/instruction/jeu-loopin-louie'},
+ {key:'uno',id:7578905440,match:'우노 카드게임',keyword:'우노카드게임',source:'https://shop.mattel.com/en-ca/products/uno-w2087-en-ca'},
+ {key:'sketch',id:6379852170,match:'캐치스케치',keyword:'캐치스케치',source:'https://www.etnews.com/20260915000253'},
+ {key:'redhood',id:9591430455,match:'빨간모자퍼즐게임',keyword:'빨간모자퍼즐',source:'https://smartgames.eu/uk/one-player-games/little-red-riding-hood-deluxe'},
+];
