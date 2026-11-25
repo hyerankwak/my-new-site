@@ -50,7 +50,12 @@ export async function refreshReports() {
     }
     await new Promise(r => setTimeout(r, 1300));
   }
-  const cache = { fetchedAt: new Date().toISOString(), startDate, endDate, reports };
+  let githubPublications=[];
+  try {
+    const response=await fetch('https://raw.githubusercontent.com/hyerankwak/my-new-site/gh-pages/data/toypoppo-publication-status.json',{signal:AbortSignal.timeout(10000)});
+    if(response.ok){const status=await response.json();if(status.engine==='github-actions')githubPublications=(status.items||[]).filter(x=>x.status==='published'&&x.verifiedAt).map(x=>x.url);}
+  } catch {}
+  const cache = { fetchedAt: new Date().toISOString(), startDate, endDate, reports, githubPublications };
   mkdirSync(dirname(cachePath), { recursive: true });
   writeFileSync(cachePath, JSON.stringify(cache, null, 2) + '\n', 'utf8');
   return cache;
@@ -60,7 +65,9 @@ export function mappings() {
   const records = JSON.parse(readFileSync(mappingPath, 'utf8')).articles;
   if (new Set(records.map(r => r.subId)).size !== records.length) throw Error('Duplicate article tracking IDs');
   for (const record of records) if (!record.subId || !record.activatedAt || new URL(record.url).hostname !== 'toypoppo.kr') throw Error('Invalid article tracking mapping');
-  return records.filter(record => !record.pendingPublication || existsSync(resolve(root, '.' + new URL(record.url).pathname)));
+  let cloudUrls=[];
+  try{cloudUrls=JSON.parse(readFileSync(cachePath,'utf8')).githubPublications||[];}catch{}
+  return records.filter(record => !record.pendingPublication || existsSync(resolve(root, '.' + new URL(record.url).pathname)) || cloudUrls.includes(record.url));
 }
 export function recentArticles(limit = 15) {
   const records = [];

@@ -1,0 +1,48 @@
+{
+  "campaign": "coupang-week-20261126",
+  "objective": "Useful purchase comparisons with disclosed affiliate links; revenue is not guaranteed",
+  "startDate": "2026-11-26",
+  "endDate": "2026-12-02",
+  "timezone": "Asia/Seoul",
+  "articles": 7,
+  "scheduledTime": "12:10",
+  "engine": "github-actions",
+  "pcRequiredForPublication": false,
+  "scheduleCaveat": "GitHub schedules can be delayed; an hourly retry checks due articles. No article is published early, and a failed deployment is retried before another article.",
+  "publicRepositoryCaveat": "Stored source drafts are visible in the GitHub repository. They are excluded from the Pages artifact, index and sitemap before publication. Never store keys or private customer data with drafts.",
+  "baseline": {
+    "source": "Official Coupang Partners reports, all four report endpoints returned success",
+    "startDate": "2026-11-18",
+    "endDate": "2026-11-24",
+    "accountClicks": 1,
+    "accountOrders": 0,
+    "accountCommission": 0,
+    "trackedToyPoppoArticleClicks": 0,
+    "note": "Account-wide or unattributed revenue is not ToyPoppo article revenue. Search screenshot lacks reporting period and target page URLs; no traffic/conversion conclusions are inferred from its small sample or its 200 percent brand CTR."
+  },
+  "editorial": {
+    "minimumRenderedCharacters": 4298,
+    "maximumRenderedCharacters": 4425,
+    "distinctProductsPerArticle": 2,
+    "affiliateCardsPerArticle": 4,
+    "faqPerArticle": 5,
+    "bodyPhotosPerArticle": 2,
+    "observedPriceDate": "2026-11-25",
+    "inventedRatings": false,
+    "fakePersonalExperience": false,
+    "sources": "Manufacturer product pages/rules and inspected current product images; domestic product labels take priority"
+  },
+  "verification": {
+    "browserViewports": [360, 390, 1440],
+    "browserChecks": 21,
+    "browserFailures": 0,
+    "publisherUnitTests": 5,
+    "revenueUnitTests": 5,
+    "adminAdapterUnitTests": 3,
+    "livePublicationVerification": "The workflow checks exact title and HTTP 200 after each due publication; future article URLs are not claimed live."
+  },
+  "generatedPhotos": [
+    {"path":"assets/images/blog/week-20261126-shape-play.webp","prompt":"Photorealistic Korean mother and eight-year-old using generic unbranded geometric pieces at a home table; no recreation of a commercial product, no text or testimonial."},
+    {"path":"assets/images/blog/week-20261126-family-cards.webp","prompt":"Photorealistic Korean father and two school-age children discussing generic landscape picture cards; no copied commercial artwork, no text or testimonial."}
+  ]
+}

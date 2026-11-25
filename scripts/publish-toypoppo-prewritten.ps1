@@ -20,6 +20,15 @@ $env:PATH = "$GitHelperPath;$(Join-Path $GitRoot "cmd");$env:PATH"
 New-Item -ItemType Directory -Path $LogDir -Force | Out-Null
 Set-Location -LiteralPath $ProjectRoot
 
+$PublishingModePath = Join-Path $ProjectRoot "data\toypoppo-publishing.json"
+if (Test-Path -LiteralPath $PublishingModePath) {
+  $PublishingMode = Get-Content -Raw -Encoding UTF8 -LiteralPath $PublishingModePath | ConvertFrom-Json
+  if ($PublishingMode.engine -eq "github-actions") {
+    Write-Output "SKIP_GITHUB_MANAGED_PUBLICATION"
+    exit 0
+  }
+}
+
 function Get-KstDay() {
   return [System.TimeZoneInfo]::ConvertTimeBySystemTimeZoneId((Get-Date), "Korea Standard Time").ToString("yyyy-MM-dd")
 }

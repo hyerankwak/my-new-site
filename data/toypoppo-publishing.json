@@ -1,0 +1,6 @@
+{
+  "engine": "github-actions",
+  "queue": ".publication/queue.json",
+  "workflow": "publish-toypoppo.yml",
+  "statusUrl": "https://raw.githubusercontent.com/hyerankwak/my-new-site/gh-pages/data/toypoppo-publication-status.json"
+}

@@ -1,0 +1,10 @@
+import {readFileSync,writeFileSync} from 'node:fs';
+import sharp from 'sharp';
+import {createDeeplinks} from './affiliate-research.mjs';
+const products=[...JSON.parse(readFileSync('logs/coupang-week-20261126-search.json','utf8')).results,...JSON.parse(readFileSync('logs/affiliate-products-latest.json','utf8')).results];
+const selected=[['blokus',6801565553],['ubongo',1745429],['rummikub',4673650342],['halli',123522],['dixit',5838348176],['uno',7578905440],['redhood',22443027]];
+const reviewed=[];
+for(const [key,id] of selected){const p=products.find(x=>x.productId===id);if(!p)throw Error('Missing exact product '+id);const response=await fetch(p.image);if(!response.ok)throw Error('Image download failed');const image='/assets/images/blog/coupang-20261126-'+key+'.jpg';writeFileSync('.'+image,await sharp(Buffer.from(await response.arrayBuffer())).resize({width:800,height:800,fit:'inside',withoutEnlargement:true}).jpeg({quality:85,mozjpeg:true}).toBuffer());reviewed.push({...p,key,image});}
+const pairs=[['blokus'],['blokus','ubongo'],['ubongo'],['ubongo','rummikub'],['rummikub'],['rummikub','uno'],['halli'],['halli','redhood'],['dixit'],['dixit','ubongo'],['uno'],['uno','rummikub'],['redhood'],['redhood','blokus']];
+const articles=[];
+for(let i=0;i<pairs.length;i++){const subId='tp261126'+String(i+1).padStart(2,'0'),pick=pairs[i].map(key=>reviewed.find(p=>p.key===key));const urls=pick.map(p=>{const previous=new URL(p.affiliateUrl),url=new URL('https://www.coupang.com/vp/products/'+p.productId);for(const k of ['itemId','vendorItemId']){const v=previous.searchParams.get(k);if(!v)throw Error('Missing option');url.searchParams.set(k,v);}return url.href;});const links=await createDeeplinks(urls,subId);articles.push({subId,products:pick.map((p,j)=>({...p,affiliateUrl:links[j].landingUrl}))});writeFileSync('logs/coupang-week-20261126-reviewed.json',JSON.stringify(articles,null,2)+'\n');console.log(JSON.stringify({article:i+1,subId,products:pick.map(p=>p.name)}));await new Promise(r=>setTimeout(r,1600));}

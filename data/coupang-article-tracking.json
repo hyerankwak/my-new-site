@@ -352,6 +352,83 @@
         9591430455
       ],
       "pendingPublication": true
+    },
+    {
+      "subId": "tp26112602",
+      "title": "초등 저학년 보드게임 추천: 블로커스와 우봉고, 우리 아이에게 맞는 쪽은?",
+      "url": "https://toypoppo.kr/blog/early-elementary-blokus-versus-ubongo-buying-guide-20261126.html",
+      "activatedAt": "2026-11-26T12:10:00+09:00",
+      "productIds": [
+        6801565553,
+        1745429
+      ],
+      "pendingPublication": true
+    },
+    {
+      "subId": "tp26112604",
+      "title": "초등 수학 보드게임 우봉고·루미큐브 비교: 도형 퍼즐과 숫자 조합의 차이",
+      "url": "https://toypoppo.kr/blog/elementary-math-game-ubongo-rummikub-comparison-20261127.html",
+      "activatedAt": "2026-11-27T12:10:00+09:00",
+      "productIds": [
+        1745429,
+        4673650342
+      ],
+      "pendingPublication": true
+    },
+    {
+      "subId": "tp26112606",
+      "title": "부모와 둘이 하는 보드게임 추천: 루미큐브와 우노, 첫 가족 게임 비교",
+      "url": "https://toypoppo.kr/blog/parent-child-two-player-rummikub-uno-choice-20261128.html",
+      "activatedAt": "2026-11-28T12:10:00+09:00",
+      "productIds": [
+        4673650342,
+        7578905440
+      ],
+      "pendingPublication": true
+    },
+    {
+      "subId": "tp26112608",
+      "title": "4세 보드게임 선물 비교: 할리갈리 주니어와 빨간모자 퍼즐, 경쟁과 혼자 놀이",
+      "url": "https://toypoppo.kr/blog/four-year-old-halli-galli-junior-red-riding-hood-gift-20261129.html",
+      "activatedAt": "2026-11-29T12:10:00+09:00",
+      "productIds": [
+        123522,
+        22443027
+      ],
+      "pendingPublication": true
+    },
+    {
+      "subId": "tp26112610",
+      "title": "초등 말하기 보드게임 딕싯 추천 전 확인: 우봉고와 다른 재미·인원·판본",
+      "url": "https://toypoppo.kr/blog/dixit-elementary-speaking-family-game-versus-ubongo-20261130.html",
+      "activatedAt": "2026-11-30T12:10:00+09:00",
+      "productIds": [
+        5838348176,
+        1745429
+      ],
+      "pendingPublication": true
+    },
+    {
+      "subId": "tp26112612",
+      "title": "초등 겨울방학 가족 보드게임 고르기: 우노·루미큐브, 짧은 카드놀이와 타일게임",
+      "url": "https://toypoppo.kr/blog/winter-break-elementary-uno-rummikub-family-game-20261201.html",
+      "activatedAt": "2026-12-01T12:10:00+09:00",
+      "productIds": [
+        7578905440,
+        4673650342
+      ],
+      "pendingPublication": true
+    },
+    {
+      "subId": "tp26112614",
+      "title": "혼자 하는 유아 퍼즐과 가족 보드게임 차이: 빨간모자·블로커스 선물 선택",
+      "url": "https://toypoppo.kr/blog/solo-preschool-puzzle-family-boardgame-redhood-blokus-20261202.html",
+      "activatedAt": "2026-12-02T12:10:00+09:00",
+      "productIds": [
+        22443027,
+        6801565553
+      ],
+      "pendingPublication": true
     }
   ]
 }

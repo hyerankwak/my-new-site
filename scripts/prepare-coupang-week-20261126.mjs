@@ -1,0 +1,31 @@
+import {readFileSync,writeFileSync,mkdirSync,existsSync} from 'node:fs';
+import {renderArticle} from './prepare-toypoppo-week-20261022.mjs';
+import {validateQueue,publicStatus} from './publish-toypoppo-github.mjs';
+import content from './content-coupang-week-20261126.mjs';
+const links=JSON.parse(readFileSync('logs/coupang-week-20261126-reviewed.json','utf8'));
+const queuePath='.publication/queue.json',queue=existsSync(queuePath)?JSON.parse(readFileSync(queuePath,'utf8')):{version:1,items:[]};
+const tracking=JSON.parse(readFileSync('data/coupang-article-tracking.json','utf8'));
+const campaign='coupang-week-20261126',esc=x=>String(x).replaceAll('&','&amp;').replaceAll('"','&quot;').replaceAll('<','&lt;').replaceAll('>','&gt;');
+const card=(p,end=false)=>`<a class="affiliate-card" href="${esc(p.affiliateUrl)}" rel="sponsored nofollow noopener" target="_blank"><div class="affiliate-card__media"><img src="${p.image}" width="300" height="300" alt="${esc(p.name)} 실제 판매 상품 대표 이미지" loading="lazy"></div><div class="affiliate-card__body"><strong class="affiliate-card__title">${esc(p.name)}</strong><span class="affiliate-card__price">조회 당시 ${Number(p.price).toLocaleString('ko-KR')}원</span><span>현재 판매 옵션의 구성·표시 연령·설명서 언어를 확인하세요.</span><span class="affiliate-card__button">${end?'구매평·선택 옵션 보기':'현재 가격·구성 보기'}</span></div></a>`;
+const manifest=[];
+mkdirSync('.publication/articles',{recursive:true});
+for(let i=0;i<content.length;i++){
+ const record={...content[i]},link=links[record.pair];if(!link||link.products.length!==2)throw Error('Comparison needs two verified products');
+ const date=new Date(Date.UTC(2026,10,26+i)).toISOString().slice(0,10);
+ record.products=[];record.checkedAt='2026-11-25';
+ record.photos=i%2?['/assets/images/blog/week-20261126-family-cards.webp','/assets/images/blog/week-20261126-shape-play.webp']:['/assets/images/blog/week-20261126-shape-play.webp','/assets/images/blog/week-20261126-family-cards.webp'];
+ record.sources=record.sources.map(([href,label])=>[href.replace('https://service.mattel.com/instruction_sheets/42001pr.pdf','https://service.mattel.com/us/productDetail.aspx?prodno=FFK04&siteid=27').replace('https://www.smartgames.eu/uk/one-player-games/little-red-riding-hood','https://smartgames.eu/uk/one-player-games/little-red-riding-hood-deluxe'),label]);
+ const rendered=renderArticle(record,'coupang',date,i),item={...rendered.item,campaign,source:'.publication/articles/'+rendered.item.target.split('/').at(-1),scheduledTime:'12:10',affiliateSubId:link.subId,affiliateProductIds:link.products.map(p=>p.productId),verifiedAt:null};
+ if(existsSync(item.target))throw Error('Already published '+item.target);
+ const old=queue.items.find(x=>x.url===item.url);if(old&&old.status!=='ready')throw Error('Cannot replace published article');
+ let html=rendered.html.replace(/(<p class="affiliate-notice">[\s\S]*?<\/p>)/,'$1'+`<section><h2>먼저 좁혀보는 선택</h2><p>${esc(record.fit)}</p>${link.products.map(p=>card(p)).join('')}<p class="disclosure">가격은 2026년 11월 25일 상품 검색 확인 시점 기준이며 현재 가격·배송·옵션은 달라질 수 있습니다. 별점·구매평 수가 제공되지 않아 임의로 표시하지 않았습니다. 실제 구매평은 판매 페이지에서 선택 옵션에 맞춰 확인하세요.</p></section>`);
+ html=html.replace(/<section><h2>제품별 사용법과 아쉬운 점 비교<\/h2>[\s\S]*?(?=<section><h2>결제 전 마지막으로 비교할 것)/,`<section><h2>우리 가족에게 맞는 제품의 판매 조건 확인</h2><p>${esc(record.fit)} 두 제품을 모두 살 필요는 없습니다. 본문의 인원·부담·판본 차이 중 우리 집 조건에 맞는 쪽만 확인해 보세요.</p>${link.products.map(p=>card(p,true)).join('')}</section>`);
+ html=html.replace(/(<meta property="og:image" content=")[^"]+/,`$1https://toypoppo.kr${link.products[0].image}`);
+ const schemaTag=html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s),schema=JSON.parse(schemaTag[1]);schema['@graph'][0].image='https://toypoppo.kr'+link.products[0].image;schema['@graph'][0].datePublished=date+'T12:10:00+09:00';schema['@graph'][0].dateModified=date+'T12:10:00+09:00';html=html.replace(schemaTag[0],`<script type="application/ld+json">${JSON.stringify(schema)}</script>`);
+ const article=html.match(/<article\b[\s\S]*?<\/article>/)[0],text=article.replace(/<[^>]+>/g,' ').replace(/\s+/g,' ').trim();if(text.length<3500||/\?\?\?|product ID|API|MCP|수익형 글/.test(text))throw Error('Editorial validation '+record.title+' '+text.length);
+ writeFileSync(item.source,html);if(old)Object.assign(old,item);else queue.items.push(item);
+ const trackingItem={subId:link.subId,title:item.title,url:item.url,activatedAt:date+'T12:10:00+09:00',productIds:item.affiliateProductIds,pendingPublication:true};
+ const existing=tracking.articles.find(x=>x.subId===link.subId);if(existing&&existing.url!==item.url)throw Error('Tracking conflict');if(!existing)tracking.articles.push(trackingItem);
+ manifest.push({...item,characters:text.length});
+}
+validateQueue(process.cwd(),queue);writeFileSync(queuePath,JSON.stringify(queue,null,2)+'\n');writeFileSync('data/toypoppo-publication-status.json',JSON.stringify(publicStatus(queue,new Date()),null,2)+'\n');writeFileSync('data/coupang-article-tracking.json',JSON.stringify(tracking,null,2)+'\n');writeFileSync('data/coupang-week-20261126-manifest.json',JSON.stringify(manifest,null,2)+'\n');console.log(JSON.stringify({articles:manifest.length,start:manifest[0].date,end:manifest.at(-1).date,minCharacters:Math.min(...manifest.map(x=>x.characters)),maxCharacters:Math.max(...manifest.map(x=>x.characters))}));

@@ -1,0 +1,78 @@
+name: Publish stored ToyPoppo articles
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/publish-toypoppo.yml']
+  schedule:
+    - cron: '10 * * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Validate the stored queue without publishing
+        type: boolean
+        default: true
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: toypoppo-cloud-publisher
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Validate publisher
+        run: node --test scripts/publish-toypoppo-github.test.mjs
+      - name: Select one due stored article
+        id: due
+        env:
+          DRY_RUN: ${{ github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.dry_run) }}
+        run: |
+          if [ "$DRY_RUN" = "true" ]; then
+            node scripts/publish-toypoppo-github.mjs --dry-run
+          else
+            node scripts/publish-toypoppo-github.mjs
+          fi
+      - name: Validate site
+        if: steps.due.outputs.changed == 'true'
+        run: node scripts/validate-toypoppo-deploy.cjs
+      - name: Save publication record
+        if: steps.due.outputs.changed == 'true'
+        run: |
+          git config user.name 'ToyPoppo Publisher'
+          git config user.email 'toypoppo-publisher@users.noreply.github.com'
+          git add .publication/queue.json data/toypoppo-publication-status.json blog sitemap.xml
+          if ! git diff --cached --quiet; then git commit -m 'Publish due stored ToyPoppo article'; git push origin HEAD:gh-pages; fi
+      - name: Stage public files
+        if: steps.due.outputs.changed == 'true'
+        run: node scripts/stage-toypoppo-site.mjs
+      - uses: actions/configure-pages@v5
+        if: steps.due.outputs.changed == 'true'
+      - uses: actions/upload-pages-artifact@v3
+        if: steps.due.outputs.changed == 'true'
+        with:
+          path: _site
+      - uses: actions/deploy-pages@v4
+        if: steps.due.outputs.changed == 'true'
+        id: deployment
+      - name: Verify live page and save verified status
+        if: steps.due.outputs.changed == 'true'
+        run: |
+          node scripts/publish-toypoppo-github.mjs --verify
+          git add .publication/queue.json data/toypoppo-publication-status.json
+          if ! git diff --cached --quiet; then git commit -m 'Verify ToyPoppo publication URL'; git push origin HEAD:gh-pages; fi
+      - name: Publication summary
+        if: always()
+        run: |
+          echo '## ToyPoppo GitHub publisher' >> "$GITHUB_STEP_SUMMARY"
+          node scripts/publish-toypoppo-github.mjs --dry-run >> "$GITHUB_STEP_SUMMARY"
