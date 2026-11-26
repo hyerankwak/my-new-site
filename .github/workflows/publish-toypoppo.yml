@@ -13,17 +13,13 @@ on:
         default: true
 permissions:
   contents: write
-  pages: write
-  id-token: write
+  actions: write
 concurrency:
   group: toypoppo-cloud-publisher
   cancel-in-progress: false
 jobs:
   publish:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -53,18 +49,29 @@ jobs:
           git config user.email 'toypoppo-publisher@users.noreply.github.com'
           git add .publication/queue.json data/toypoppo-publication-status.json blog sitemap.xml
           if ! git diff --cached --quiet; then git commit -m 'Publish due stored ToyPoppo article'; git push origin HEAD:gh-pages; fi
-      - name: Stage public files
-        if: steps.due.outputs.changed == 'true'
-        run: node scripts/stage-toypoppo-site.mjs
-      - uses: actions/configure-pages@v5
-        if: steps.due.outputs.changed == 'true'
-      - uses: actions/upload-pages-artifact@v3
-        if: steps.due.outputs.changed == 'true'
+      - name: Resolve site revision
+        id: revision
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - name: Deploy from the permitted Pages branch and wait
+        if: steps.due.outputs.changed == 'true' || github.event_name == 'push'
+        uses: actions/github-script@v7
+        env:
+          SITE_SHA: ${{ steps.revision.outputs.sha }}
         with:
-          path: _site
-      - uses: actions/deploy-pages@v4
-        if: steps.due.outputs.changed == 'true'
-        id: deployment
+          script: |
+            const started = Date.now() - 120000;
+            await github.rest.actions.createWorkflowDispatch({...context.repo, workflow_id: 'pages.yml', ref: 'gh-pages'});
+            for (let attempt = 0; attempt < 60; attempt++) {
+              await new Promise(resolve => setTimeout(resolve, 10000));
+              const {data} = await github.rest.actions.listWorkflowRuns({...context.repo, workflow_id: 'pages.yml', branch: 'gh-pages', event: 'workflow_dispatch', per_page: 10});
+              const run = data.workflow_runs.find(r => r.head_sha === process.env.SITE_SHA && Date.parse(r.created_at) >= started);
+              if (!run) continue;
+              core.info(`Pages deployment: ${run.html_url} (${run.status})`);
+              if (run.status !== 'completed') continue;
+              if (run.conclusion !== 'success') throw new Error(`Pages deployment ${run.conclusion}: ${run.html_url}`);
+              return;
+            }
+            throw new Error('Pages deployment did not complete within the verification window');
       - name: Verify live page and save verified status
         if: steps.due.outputs.changed == 'true'
         run: |
