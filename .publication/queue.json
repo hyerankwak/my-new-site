@@ -9,7 +9,7 @@
       "source": ".publication/articles/early-elementary-blokus-versus-ubongo-buying-guide-20261126.html",
       "target": "blog/early-elementary-blokus-versus-ubongo-buying-guide-20261126.html",
       "url": "https://toypoppo.kr/blog/early-elementary-blokus-versus-ubongo-buying-guide-20261126.html",
-      "status": "ready",
+      "status": "published",
       "editorialRevision": "2026-11-25",
       "scheduledTime": "12:10",
       "campaign": "coupang-week-20261126",
@@ -18,7 +18,9 @@
         6801565553,
         1745429
       ],
-      "verifiedAt": null
+      "verifiedAt": null,
+      "publishedAt": "2026-11-26T13:43:23.960Z",
+      "runUrl": "https://github.com/hyerankwak/my-new-site/actions/runs/45831852829"
     },
     {
       "date": "2026-11-27",

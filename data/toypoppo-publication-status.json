@@ -2,8 +2,8 @@
   "version": 1,
   "engine": "github-actions",
   "repository": "hyerankwak/my-new-site",
-  "updatedAt": "2026-11-24T15:40:32.289Z",
-  "operationDate": "2026-11-25",
+  "updatedAt": "2026-11-26T13:43:23.960Z",
+  "operationDate": "2026-11-26",
   "items": [
     {
       "date": "2026-11-26",
@@ -12,7 +12,7 @@
       "description": "초등 저학년 보드게임 순위를 찾아도 1위가 우리 집에서 가장 자주 꺼낼 게임이라는 보장은 없습니다. 블로커스와 우봉고는 모두 조각을 다루지만 재미를 느끼는 순간이 다릅니다. 다른 사람의 차례를 보며 다음 수를 생각하는지, 자기 문제를 동시에 풀며 완성하는지부터",
       "target": "blog/early-elementary-blokus-versus-ubongo-buying-guide-20261126.html",
       "url": "https://toypoppo.kr/blog/early-elementary-blokus-versus-ubongo-buying-guide-20261126.html",
-      "status": "ready",
+      "status": "published",
       "editorialRevision": "2026-11-25",
       "scheduledTime": "12:10",
       "campaign": "coupang-week-20261126",
@@ -21,7 +21,9 @@
         6801565553,
         1745429
       ],
-      "verifiedAt": null
+      "verifiedAt": null,
+      "publishedAt": "2026-11-26T13:43:23.960Z",
+      "runUrl": "https://github.com/hyerankwak/my-new-site/actions/runs/45831852829"
     },
     {
       "date": "2026-11-27",
@@ -132,7 +134,7 @@
       "verifiedAt": null
     }
   ],
-  "todayCount": 0,
-  "readyCount": 7,
+  "todayCount": 1,
+  "readyCount": 6,
   "workflowUrl": "https://github.com/hyerankwak/my-new-site/actions/workflows/publish-toypoppo.yml"
 }
