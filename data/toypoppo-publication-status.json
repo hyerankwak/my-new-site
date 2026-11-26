@@ -2,7 +2,7 @@
   "version": 1,
   "engine": "github-actions",
   "repository": "hyerankwak/my-new-site",
-  "updatedAt": "2026-11-26T13:43:23.960Z",
+  "updatedAt": "2026-11-26T13:44:20.066Z",
   "operationDate": "2026-11-26",
   "items": [
     {
@@ -21,7 +21,7 @@
         6801565553,
         1745429
       ],
-      "verifiedAt": null,
+      "verifiedAt": "2026-11-26T13:44:20.066Z",
       "publishedAt": "2026-11-26T13:43:23.960Z",
       "runUrl": "https://github.com/hyerankwak/my-new-site/actions/runs/45831852829"
     },
