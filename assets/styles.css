@@ -1,0 +1,4808 @@
+:root {
+  --ink: #342b2d;
+  --muted: #74676b;
+  --line: #eadde1;
+  --paper: #fffaf7;
+  --soft: #fff1f3;
+  --rose: #d84f72;
+  --rose-dark: #a93556;
+  --coral: #ff8b77;
+  --mint: #63b7a5;
+  --gold: #b98a45;
+  --gold-soft: #fff4df;
+  --charcoal: #2d2528;
+  --white: #ffffff;
+  --shadow: 0 18px 45px rgba(117, 62, 77, 0.14);
+}
+
+/* Compact booking facts for honeymoon articles. */
+.booking-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.booking-summary-item {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #eadde1;
+  border-radius: 16px;
+  background: #fffafa;
+}
+
+.booking-summary-item span {
+  display: block;
+  margin-bottom: 7px;
+  color: #9f294d;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.booking-summary-item strong {
+  display: block;
+  color: #272225;
+  font-size: 19px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.booking-summary-item p {
+  margin: 8px 0 0;
+  color: #625b5e;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+@media (max-width: 760px) {
+  .booking-summary {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .booking-summary-item {
+    padding: 17px 18px;
+  }
+}
+
+/* MyRealTrip honeymoon package / tour hubs */
+.honeymoon-subnav.compact {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 14px max(18px, calc((100vw - 1120px) / 2));
+  border-bottom: 1px solid rgba(191, 77, 106, .14);
+  background: rgba(255, 250, 248, .94);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.honeymoon-subnav.compact a {
+  flex: 0 0 auto;
+  min-width: auto;
+  padding: 10px 16px;
+  border: 1px solid rgba(191, 77, 106, .18);
+  border-radius: 999px;
+  background: #fff;
+  color: #5f3c43;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 8px 22px rgba(122, 54, 68, .05);
+}
+
+.honeymoon-subnav.compact a.active {
+  color: #fff;
+  background: linear-gradient(135deg, #dc5571, #c88a3f);
+  border-color: transparent;
+}
+
+.experience-hero {
+  min-height: 420px;
+  color: #fff;
+}
+
+.experience-hero::before {
+  background: linear-gradient(90deg, rgba(38, 20, 25, .84), rgba(38, 20, 25, .42)), var(--honeymoon-image);
+  background-size: cover;
+  background-position: center;
+}
+
+.experience-hero .hero-content {
+  max-width: 760px;
+}
+
+.affiliate-disclosure {
+  font-size: 14px;
+  line-height: 1.7;
+  opacity: .92;
+}
+
+.region-filter-row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.region-filter-row a {
+  flex: 0 0 auto;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(191, 77, 106, .2);
+  color: #5f3c43;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.experience-grid.compact {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.experience-card {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  min-width: 0;
+  background: #fff;
+  border: 1px solid rgba(191, 77, 106, .16);
+  border-radius: 22px;
+  overflow: hidden;
+  color: #2d2325;
+  text-decoration: none;
+  box-shadow: 0 18px 38px rgba(122, 54, 68, .08);
+}
+
+.experience-grid.compact .experience-card {
+  grid-template-columns: 1fr;
+}
+
+.experience-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 230px;
+  object-fit: cover;
+}
+
+.experience-grid.compact .experience-card img {
+  aspect-ratio: 4 / 3;
+  min-height: auto;
+}
+
+.experience-card-body {
+  min-width: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.experience-card h3 {
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.35;
+  word-break: keep-all;
+}
+
+.experience-card p {
+  margin: 0;
+  line-height: 1.7;
+  color: #68575b;
+}
+
+.experience-price {
+  color: #cf3f5f !important;
+  font-size: 20px;
+  font-weight: 950;
+}
+
+.experience-cta {
+  margin-top: auto;
+  display: inline-flex;
+  justify-content: center;
+  padding: 13px 16px;
+  border-radius: 999px;
+  color: #fff;
+  background: linear-gradient(135deg, #dc5571, #c88a3f);
+  font-size: 15px;
+}
+
+.section-heading-row {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.section-heading-row a {
+  flex: 0 0 auto;
+  color: #b23c58;
+  font-weight: 900;
+}
+
+@media (max-width: 900px) {
+  .experience-grid,
+  .experience-grid.compact {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-card,
+  .experience-grid.compact .experience-card {
+    grid-template-columns: 132px minmax(0, 1fr);
+    border-radius: 18px;
+  }
+
+  .experience-card img,
+  .experience-grid.compact .experience-card img {
+    height: 100%;
+    min-height: 180px;
+    aspect-ratio: auto;
+  }
+
+  .experience-card-body {
+    padding: 16px;
+  }
+
+  .experience-card h3 {
+    font-size: 17px;
+  }
+
+  .experience-price {
+    font-size: 17px;
+  }
+
+  .section-heading-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 520px) {
+  .experience-hero {
+    min-height: 460px;
+  }
+
+  .experience-card,
+  .experience-grid.compact .experience-card {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-card img,
+  .experience-grid.compact .experience-card img {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  .experience-card-body {
+    padding: 18px;
+  }
+
+  .experience-card h3 {
+    font-size: 20px;
+  }
+
+  .honeymoon-subnav.compact {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+@media (max-width: 760px) {
+  .resort-region-grid {
+    grid-template-columns: 1fr;
+    width: min(100% - 24px, 560px);
+    gap: 12px;
+  }
+
+  .resort-region-card {
+    grid-template-columns: 108px minmax(0, 1fr);
+    gap: 12px;
+    border-radius: 16px;
+    padding: 10px;
+  }
+
+  .resort-region-card img {
+    height: 112px;
+    border-radius: 12px;
+  }
+
+  .resort-region-card strong {
+    font-size: 17px;
+  }
+
+  .resort-region-card p {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 13px;
+  }
+
+  .resort-filter-tabs {
+    width: calc(100% - 24px);
+    margin-bottom: 18px;
+  }
+
+  .resort-filter-tabs button {
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+
+  .affiliate-disclosure {
+    width: calc(100% - 24px);
+    font-size: 13px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+.affiliate-disclosure {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto 18px;
+  padding: 12px 16px;
+  border: 1px solid rgba(216, 79, 114, 0.18);
+  border-radius: 14px;
+  background: rgba(255, 247, 249, 0.82);
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.resort-filter-tabs {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto 24px;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 3px 0 10px;
+  scrollbar-width: none;
+}
+
+.resort-filter-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.resort-filter-tabs button {
+  flex: 0 0 auto;
+  border: 1px solid rgba(216, 79, 114, 0.22);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  padding: 10px 17px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(117, 62, 77, 0.06);
+}
+
+.resort-filter-tabs button.active {
+  color: #fff;
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--rose), var(--gold));
+}
+
+.resort-region-grid {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.resort-region-card {
+  display: grid;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 18px;
+  align-items: stretch;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(216, 79, 114, 0.16);
+  border-radius: 20px;
+  background: #fff;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 16px 40px rgba(117, 62, 77, 0.08);
+}
+
+.resort-region-card img {
+  width: 100%;
+  height: 132px;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+.resort-region-card span {
+  color: var(--rose);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.resort-region-card strong,
+.resort-region-card p,
+.resort-region-card em {
+  display: block;
+  min-width: 0;
+}
+
+.resort-region-card strong {
+  margin-top: 5px;
+  font-size: 20px;
+  line-height: 1.32;
+}
+
+.resort-region-card p {
+  margin: 8px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.resort-region-card em {
+  color: var(--rose-dark);
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.resort-region-section[hidden],
+.resort-filter-item[hidden],
+.resort-region-card[hidden] {
+  display: none !important;
+}
+
+.resort-list-grid .resort-price::after,
+.honeymoon-region-panel .resort-price::after {
+  content: "무료취소 가능 여부 확인" !important;
+}
+
+.resort-list-grid .resort-booking-card::before,
+.honeymoon-region-panel .resort-booking-card::before {
+  content: "후기·가격 비교" !important;
+}
+
+a {
+  color: inherit;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 16px clamp(18px, 4vw, 56px);
+  background: rgba(255, 250, 247, 0.88);
+  border-bottom: 1px solid rgba(234, 221, 225, 0.8);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--rose), var(--coral));
+  border-radius: 50%;
+  font-weight: 800;
+  box-shadow: 0 10px 24px rgba(216, 79, 114, 0.24);
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  font-size: 17px;
+}
+
+.brand small {
+  margin-top: -3px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.nav a {
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: var(--rose-dark);
+}
+
+.hero {
+  position: relative;
+  min-height: 650px;
+  display: grid;
+  align-items: end;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: linear-gradient(90deg, rgba(52, 43, 45, 0.7), rgba(52, 43, 45, 0.22) 48%, rgba(52, 43, 45, 0.05)), url("hero-wedding-fair.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 160px;
+  z-index: -1;
+  background: linear-gradient(0deg, var(--paper), rgba(255, 250, 247, 0));
+}
+
+.hero-content {
+  width: min(760px, calc(100% - 36px));
+  margin: 0 auto 84px clamp(18px, 8vw, 96px);
+  color: var(--white);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--rose);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.hero .eyebrow {
+  color: #ffd2dc;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: 0;
+}
+
+h1 {
+  max-width: 720px;
+  font-size: clamp(38px, 6vw, 68px);
+}
+
+.hero-copy {
+  max-width: 680px;
+  margin: 22px 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.35;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.button.primary {
+  color: var(--white);
+  background: linear-gradient(135deg, var(--rose), var(--gold));
+  box-shadow: 0 14px 28px rgba(185, 138, 69, 0.22);
+}
+
+.button.secondary {
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.notice-band {
+  margin: -24px auto 0;
+  width: min(1120px, calc(100% - 36px));
+  padding: 16px 22px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.notice-band p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.portal-hero h1 {
+  max-width: 820px;
+}
+
+.big-cta {
+  min-height: 58px;
+  padding-inline: 28px;
+  font-size: 18px;
+}
+
+.hero-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.hero-proof span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 6px 12px;
+  color: #fff8eb;
+  border: 1px solid rgba(255, 244, 223, 0.55);
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.section {
+  width: min(1120px, calc(100% - 36px));
+  margin: 84px auto;
+}
+
+.section-heading {
+  max-width: 760px;
+  margin-bottom: 28px;
+}
+
+.section-heading h2,
+.split h2 {
+  font-size: clamp(28px, 4vw, 42px);
+}
+
+.section-heading p:not(.eyebrow),
+.split p {
+  color: var(--muted);
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr minmax(240px, 360px);
+  gap: 16px;
+  align-items: end;
+  margin-bottom: 26px;
+}
+
+.region-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tab {
+  border: 1px solid var(--line);
+  background: var(--white);
+  color: var(--muted);
+  padding: 9px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.tab[aria-pressed="true"] {
+  color: var(--white);
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.search {
+  display: grid;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.search input {
+  width: 100%;
+  min-height: 46px;
+  padding: 12px 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--white);
+  color: var(--ink);
+  font: inherit;
+}
+
+.fair-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.priority-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.conversion-section {
+  margin-top: 62px;
+}
+
+.compact-conversion {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.conversion-panel {
+  padding: 28px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.conversion-panel.urgent {
+  background: linear-gradient(135deg, #fff4df, #fff8f2);
+  border-color: #ead2a8;
+}
+
+.conversion-panel h2 {
+  font-size: clamp(25px, 3vw, 34px);
+}
+
+.conversion-panel p {
+  color: var(--muted);
+}
+
+.mini-fair-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.mini-fair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 14px;
+  background: #fffaf7;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.mini-fair a {
+  text-decoration: none;
+}
+
+.mini-fair strong,
+.mini-fair span {
+  display: block;
+}
+
+.mini-fair strong {
+  font-size: 16px;
+}
+
+.mini-fair span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.mini-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 8px 12px;
+  color: var(--white);
+  background: var(--rose-dark);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.fair-card {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 8px 18px rgba(117, 62, 77, 0.07);
+}
+
+.fair-image {
+  position: relative;
+  aspect-ratio: 16 / 7;
+  max-height: 150px;
+  background: linear-gradient(135deg, #ffe5ec, #fff7ec 50%, #ddf4ee);
+  overflow: hidden;
+}
+
+.fair-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fair-image .placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  color: var(--rose-dark);
+  font-weight: 900;
+  text-align: center;
+}
+
+.fair-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 14px;
+}
+
+.fair-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--rose-dark);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.fair-card h3 {
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.fair-title-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.fair-title-link:hover {
+  color: var(--rose-dark);
+}
+
+.fair-card p {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.fair-details {
+  display: grid;
+  gap: 7px;
+  margin: 12px 0 14px;
+  padding: 0;
+  list-style: none;
+  font-size: 13px;
+}
+
+.fair-details li {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 8px;
+  align-items: start;
+  padding: 8px 9px;
+  color: var(--ink);
+  background: #fffaf7;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.fair-details strong {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 22px;
+  padding: 2px 6px;
+  color: var(--white);
+  background: var(--rose-dark);
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.fair-details span {
+  min-width: 0;
+  color: #4c3f42;
+  font-weight: 800;
+  line-height: 1.4;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.fair-details .detail-date {
+  background: #fff4e8;
+  border-color: #ffd7bd;
+}
+
+.fair-details .detail-place {
+  background: #f5fbff;
+  border-color: #cfe8f8;
+}
+
+.fair-details .detail-benefit {
+  background: #fff0f4;
+  border-color: #f7c9d4;
+}
+
+.fair-details .detail-benefit span {
+  color: var(--rose-dark);
+}
+
+.fair-detail-link {
+  display: inline-flex;
+  justify-content: center;
+  margin: 0 0 8px;
+  min-height: 40px;
+  padding: 9px 14px;
+  color: var(--rose-dark);
+  background: var(--soft);
+  border: 1px solid #f4c9d2;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.fair-detail-link:hover {
+  background: #ffe3ea;
+}
+
+.fair-cta {
+  margin-top: auto;
+  display: inline-flex;
+  justify-content: center;
+  min-height: 46px;
+  padding: 11px 16px;
+  border-radius: 8px;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--rose), var(--coral));
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.fair-cta:hover {
+  background: linear-gradient(135deg, var(--rose-dark), var(--rose));
+}
+
+.empty-state {
+  padding: 24px;
+  color: var(--muted);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.split > *,
+.section > *,
+main > * {
+  min-width: 0;
+}
+
+.checklist {
+  padding: 26px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.checklist h3 {
+  font-size: 22px;
+}
+
+.checklist ul {
+  margin: 16px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.cards-three {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.region-link-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 22px 0 34px;
+}
+
+.region-link-grid a {
+  display: block;
+  padding: 13px 14px;
+  color: var(--rose-dark);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-weight: 900;
+  text-align: center;
+  text-decoration: none;
+}
+
+.region-link-grid a:hover {
+  border-color: var(--rose);
+  box-shadow: 0 8px 20px rgba(216, 79, 114, 0.12);
+}
+
+.portal-links a {
+  min-height: 58px;
+  display: grid;
+  place-items: center;
+  color: var(--charcoal);
+  background: linear-gradient(135deg, var(--white), #fff8eb);
+  border-color: #ead2a8;
+}
+
+.portal-hub {
+  padding: 42px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.hub-grid,
+.text-link-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.hub-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.hub-grid a,
+.text-link-grid a,
+.context-links a {
+  text-decoration: none;
+}
+
+.hub-grid a {
+  display: grid;
+  align-content: start;
+  gap: 8px;
+  min-height: 136px;
+  padding: 18px;
+  background: #fffaf7;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.hub-grid strong {
+  color: var(--charcoal);
+  font-size: 18px;
+}
+
+.hub-grid span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.text-link-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
+.text-link-grid a,
+.context-links a {
+  padding: 12px 14px;
+  color: var(--rose-dark);
+  background: #fff7f0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-weight: 900;
+}
+
+.section-more {
+  margin-top: 22px;
+}
+
+.page-hero {
+  padding-top: 72px;
+}
+
+.context-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.timeline {
+  display: grid;
+  gap: 16px;
+}
+
+.timeline article,
+.download-card,
+.review-card,
+.calculator-card {
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 26px rgba(117, 62, 77, 0.08);
+}
+
+.calculator-grid,
+.download-grid,
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.calculator-card label {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.calculator-card input {
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font: inherit;
+}
+
+.calc-result {
+  margin-top: 12px;
+  padding: 14px;
+  background: var(--gold-soft);
+  border-radius: 8px;
+  font-weight: 900;
+}
+
+.region-hero {
+  padding-top: 64px;
+}
+
+.detail-page .region-hero {
+  display: grid;
+  min-height: 460px;
+  align-content: end;
+  color: var(--white);
+  background:
+    linear-gradient(135deg, rgba(52, 43, 45, 0.82), rgba(168, 58, 86, 0.54)),
+    var(--detail-og-image, linear-gradient(135deg, var(--rose), var(--coral)));
+  background-position: center;
+  background-size: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.detail-page .region-hero h1,
+.detail-page .region-hero p {
+  max-width: 860px;
+}
+
+.detail-page .region-hero p {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.detail-sticky-summary {
+  position: sticky;
+  top: 75px;
+  z-index: 9;
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) minmax(170px, 0.85fr) minmax(220px, 1.1fr) minmax(220px, 1.1fr) auto;
+  gap: 10px;
+  align-items: stretch;
+  padding: 10px clamp(14px, 3vw, 42px);
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 14px 30px rgba(117, 62, 77, 0.12);
+  backdrop-filter: blur(18px);
+}
+
+.summary-title,
+.summary-chip,
+.summary-cta {
+  min-width: 0;
+  border-radius: 8px;
+}
+
+.summary-title {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  color: var(--rose-dark);
+  background: #fff0f4;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.summary-chip {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
+  padding: 9px 11px;
+  border: 1px solid var(--line);
+}
+
+.summary-chip strong {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  min-height: 28px;
+  padding: 3px 8px;
+  color: var(--white);
+  background: var(--rose-dark);
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.summary-chip span {
+  color: #403538;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.summary-date {
+  background: #fff4e8;
+  border-color: #ffd7bd;
+}
+
+.summary-place {
+  background: #f5fbff;
+  border-color: #cfe8f8;
+}
+
+.summary-benefit {
+  background: #fff0f4;
+  border-color: #f7c9d4;
+}
+
+.summary-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  padding: 10px 14px;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--rose), var(--coral));
+  font-weight: 900;
+  text-decoration: none;
+  box-shadow: 0 12px 24px rgba(216, 79, 114, 0.24);
+}
+
+.detail-media-section {
+  background: #fff5f0;
+}
+
+.detail-photo-grid {
+  display: grid;
+  grid-template-columns: 1.2fr repeat(2, minmax(0, 0.8fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.detail-photo {
+  min-height: 190px;
+  margin: 0;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 26px rgba(117, 62, 77, 0.12);
+}
+
+.detail-photo:empty {
+  display: none;
+}
+
+.detail-photo.is-large {
+  grid-row: span 2;
+  min-height: 395px;
+}
+
+.detail-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+}
+
+.detail-rich-guide {
+  background: #fffdfb;
+}
+
+.small-note {
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.detail-guide-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.detail-guide-panel {
+  padding: 26px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(117, 62, 77, 0.1);
+}
+
+.detail-guide-panel.accent {
+  background: linear-gradient(135deg, #fff0f4, #fff7ee);
+  border-color: #f4c7d2;
+}
+
+.detail-guide-panel h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+}
+
+.detail-guide-panel p,
+.detail-guide-panel li {
+  color: var(--muted);
+}
+
+.detail-guide-panel ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.detail-guide-panel .button {
+  margin-top: 16px;
+}
+
+.planner-table-section,
+.planner-deep-section {
+  padding: 42px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 16px 42px rgba(117, 62, 77, 0.1);
+}
+
+.planner-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fffdfb;
+}
+
+.planner-table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.planner-table th,
+.planner-table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.planner-table thead th {
+  color: var(--white);
+  background: linear-gradient(135deg, var(--rose-dark), var(--gold));
+  font-size: 14px;
+}
+
+.planner-table tbody th {
+  width: 110px;
+  color: var(--rose-dark);
+  background: #fff3f6;
+  font-weight: 900;
+}
+
+.planner-table tbody td {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.planner-table tbody tr:last-child th,
+.planner-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.planner-mini-grid,
+.planner-deep-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.planner-mini-grid article,
+.planner-deep-grid article {
+  padding: 24px;
+  background: #fffaf7;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.planner-mini-grid h3,
+.planner-deep-grid h3,
+.planner-faq h3 {
+  font-size: 22px;
+}
+
+.planner-mini-grid ul {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.planner-deep-grid p {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.planner-faq {
+  margin-top: 24px;
+  padding: 24px;
+  background: #fff8f0;
+  border: 1px solid #ead2a8;
+  border-radius: 8px;
+}
+
+.planner-faq details {
+  padding: 16px 0;
+  border-top: 1px solid #ead2a8;
+}
+
+.planner-faq details:first-of-type {
+  border-top: 0;
+}
+
+.planner-faq summary {
+  cursor: pointer;
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.planner-faq p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.detail-info-board {
+  position: sticky;
+  top: 168px;
+  z-index: 4;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.detail-page .fair-details li {
+  grid-template-columns: 72px minmax(0, 1fr);
+  padding: 14px 15px;
+}
+
+.detail-page .fair-details strong {
+  min-height: 32px;
+  font-size: 13px;
+}
+
+.detail-page .fair-details span {
+  font-size: 16px;
+}
+
+.cards-three article {
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.cards-three h3 {
+  font-size: 21px;
+}
+
+.cards-three p {
+  margin: 10px 0 0;
+  color: var(--muted);
+}
+
+.faq details {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 18px 20px;
+}
+
+.faq details + details {
+  margin-top: 10px;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.faq p {
+  margin: 12px 0 0;
+  color: var(--muted);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 36px clamp(18px, 4vw, 56px);
+  color: var(--muted);
+  background: #2d2528;
+}
+
+.footer strong {
+  color: var(--white);
+}
+
+.footer p {
+  margin: 6px 0 0;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px 18px;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+}
+
+@media (max-width: 920px) {
+  .site-header,
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav,
+  .footer-links {
+    justify-content: flex-start;
+  }
+
+  .controls,
+  .split,
+  .cards-three,
+  .region-link-grid,
+  .compact-conversion,
+  .hub-grid,
+  .calculator-grid,
+  .download-grid,
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fair-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .portal-hub {
+    padding: 26px;
+  }
+
+  .detail-page .region-hero {
+    min-height: 380px;
+    padding-top: 52px;
+  }
+
+  .detail-sticky-summary {
+    top: 107px;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px 16px;
+  }
+
+  .summary-title,
+  .summary-cta {
+    grid-column: 1 / -1;
+  }
+
+  .detail-photo-grid,
+  .detail-guide-layout,
+  .planner-mini-grid,
+  .planner-deep-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .planner-table-section,
+  .planner-deep-section {
+    padding: 26px;
+  }
+
+  .detail-photo,
+  .detail-photo.is-large {
+    grid-row: auto;
+    min-height: 260px;
+  }
+
+  .detail-info-board {
+    position: static;
+  }
+}
+
+@media (max-width: 620px) {
+  .fair-article-lead,
+  .article-event-section {
+    width: min(100% - 28px, 1120px);
+    margin-top: 28px;
+  }
+
+  .fair-article-lead h1 {
+    font-size: 30px;
+  }
+
+  .article-benefit-strip,
+  .event-info-list li {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .article-benefit-strip strong,
+  .event-info-list strong {
+    width: fit-content;
+  }
+
+  .article-benefit-strip span,
+  .event-info-list span {
+    font-size: 16px;
+  }
+
+  .article-main-cta {
+    min-height: 58px;
+    font-size: 20px;
+  }
+
+  .event-info-board,
+  .article-content-card {
+    padding: 18px;
+  }
+
+  .article-step-grid,
+  .article-question-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .planner-table-section,
+  .planner-deep-section {
+    padding: 18px;
+  }
+
+  .planner-table-wrap {
+    overflow-x: visible;
+  }
+
+  .planner-table {
+    min-width: 0;
+    font-size: 14px;
+  }
+
+  .planner-table,
+  .planner-table tbody,
+  .planner-table tr,
+  .planner-table th,
+  .planner-table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .planner-table thead {
+    display: none;
+  }
+
+  .planner-table tr {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .planner-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  .planner-table th,
+  .planner-table td,
+  .planner-table tbody tr:last-child th,
+  .planner-table tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  .planner-table tbody th {
+    width: 100%;
+    padding: 14px 14px 6px;
+    background: #fff3f6;
+  }
+
+  .planner-table tbody td {
+    padding: 6px 14px 14px;
+    overflow-wrap: anywhere;
+  }
+
+  .hero {
+    min-height: 620px;
+  }
+
+  .hero-media {
+    background-image: linear-gradient(90deg, rgba(52, 43, 45, 0.78), rgba(52, 43, 45, 0.48)), url("hero-wedding-fair.png");
+  }
+
+  .hero-content {
+    margin: 0 auto 64px;
+  }
+
+  .hero-copy {
+    font-size: 16px;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .hero-proof {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .fair-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fair-image {
+    aspect-ratio: 16 / 6;
+    max-height: 128px;
+  }
+
+  .fair-body {
+    padding: 13px;
+  }
+
+  .fair-card h3 {
+    font-size: 17px;
+  }
+
+  .mini-fair {
+    grid-template-columns: 1fr;
+  }
+
+  .text-link-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-page .region-hero {
+    min-height: 420px;
+  }
+
+  .detail-sticky-summary {
+    top: 0;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .summary-title {
+    display: none;
+  }
+
+  .summary-chip {
+    grid-template-columns: 58px minmax(0, 1fr);
+    padding: 8px 9px;
+  }
+
+  .summary-chip span {
+    font-size: 12px;
+  }
+
+  .summary-cta {
+    min-height: 42px;
+  }
+
+  .detail-photo,
+  .detail-photo.is-large {
+    min-height: 230px;
+  }
+
+  .detail-guide-panel {
+    padding: 20px;
+  }
+
+  .planner-table-section,
+  .planner-deep-section {
+    padding: 20px;
+  }
+}
+
+
+.button.ghost {
+  color: var(--rose-dark);
+  background: var(--white);
+  border: 1px solid var(--line);
+}
+
+.honeymoon-hero {
+  position: relative;
+  display: grid;
+  align-items: end;
+  min-height: 520px;
+  padding: 96px clamp(18px, 6vw, 72px) 76px;
+  color: var(--white);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.honeymoon-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-image: linear-gradient(90deg, rgba(45, 37, 40, 0.78), rgba(45, 37, 40, 0.34)), var(--honeymoon-image);
+  background-size: cover;
+  background-position: center;
+}
+
+.honeymoon-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 130px;
+  z-index: -1;
+  background: linear-gradient(0deg, var(--paper), rgba(255, 250, 247, 0));
+}
+
+.honeymoon-hero > div {
+  width: min(840px, 100%);
+}
+
+.honeymoon-hero p:not(.eyebrow) {
+  max-width: 760px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+}
+
+.honeymoon-card-grid a,
+.honeymoon-info-grid article,
+.timeline article {
+  min-height: 160px;
+}
+
+.honeymoon-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.honeymoon-info-grid article,
+.timeline article {
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(117, 62, 77, 0.08);
+}
+
+.honeymoon-info-grid h2,
+.timeline h3 {
+  font-size: 23px;
+}
+
+.timeline {
+  display: grid;
+  gap: 16px;
+}
+
+.honeymoon-links {
+  margin-top: 8px;
+}
+
+.honeymoon-next {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  gap: 24px;
+  align-items: center;
+  padding: 30px;
+  background: linear-gradient(135deg, #fff8ec, #fff1f4);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.cta-row {
+  display: grid;
+  gap: 10px;
+}
+
+@media (max-width: 920px) {
+  .honeymoon-info-grid,
+  .honeymoon-next {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .honeymoon-hero {
+    align-items: center;
+    min-height: 430px;
+    padding: 58px 18px 64px;
+  }
+
+  .honeymoon-hero h1 {
+    max-width: 350px;
+    font-size: clamp(26px, 8.7vw, 36px);
+    line-height: 1.18;
+    letter-spacing: 0;
+    word-break: keep-all;
+  }
+
+  .honeymoon-hero p:not(.eyebrow) {
+    max-width: 350px;
+    font-size: 15px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.96);
+  }
+
+  .honeymoon-hero .hero-actions {
+    align-items: stretch;
+    max-width: 340px;
+  }
+
+  .honeymoon-hero .button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+.honeymoon-subnav {
+  position: sticky;
+  top: 75px;
+  z-index: 9;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 9px clamp(18px, 4vw, 56px);
+  overflow-x: auto;
+  background: rgba(255, 250, 247, 0.96);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 10px 24px rgba(117, 62, 77, 0.07);
+  backdrop-filter: blur(18px);
+  scrollbar-width: none;
+}
+
+.honeymoon-subnav::-webkit-scrollbar {
+  display: none;
+}
+
+.honeymoon-subnav a {
+  flex: 0 0 auto;
+  display: grid;
+  gap: 1px;
+  min-width: 104px;
+  min-height: 54px;
+  align-content: center;
+  padding: 8px 14px;
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(216, 79, 114, 0.16);
+  border-radius: 16px;
+  font-weight: 900;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: 0 8px 18px rgba(117, 62, 77, 0.06);
+}
+
+.honeymoon-subnav a span,
+.honeymoon-subnav a small {
+  display: block;
+  line-height: 1.2;
+}
+
+.honeymoon-subnav a span {
+  font-size: 14px;
+}
+
+.honeymoon-subnav a small {
+  color: var(--rose-dark);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.honeymoon-subnav a:hover,
+.honeymoon-subnav a:focus {
+  color: #fff;
+  background: linear-gradient(135deg, var(--rose), var(--gold));
+  border-color: transparent;
+}
+
+.honeymoon-subnav a:hover small,
+.honeymoon-subnav a:focus small {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.honeymoon-filter-grid a {
+  flex: 0 0 auto;
+  padding: 9px 14px;
+  color: var(--rose-dark);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.honeymoon-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.honeymoon-feature-grid article {
+  min-height: 220px;
+  padding: 22px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(117, 62, 77, 0.1);
+}
+
+.honeymoon-feature-grid h3 {
+  font-size: 22px;
+}
+
+.honeymoon-feature-grid p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+.honeymoon-feature-grid a {
+  display: inline-flex;
+  margin-top: 12px;
+  color: var(--rose-dark);
+  font-weight: 900;
+}
+
+.honeymoon-finder {
+  padding: 28px;
+  background: linear-gradient(135deg, #fff8ec, #fff1f4);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.honeymoon-filter-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.honeymoon-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.honeymoon-stat-grid article {
+  padding: 20px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.honeymoon-stat-grid strong,
+.honeymoon-stat-grid span {
+  display: block;
+}
+
+.honeymoon-stat-grid strong {
+  color: var(--rose-dark);
+  font-size: 14px;
+}
+
+.honeymoon-stat-grid span {
+  margin-top: 8px;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.map-note {
+  padding: 10px 12px;
+  background: var(--gold-soft);
+  border-radius: 8px;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.mini-calc {
+  display: grid;
+  gap: 10px;
+}
+
+.mini-calc label {
+  display: grid;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.mini-calc input {
+  min-height: 42px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.calc-result {
+  color: var(--rose-dark);
+}
+
+.myrealtrip-products {
+  padding-top: 42px;
+  padding-bottom: 42px;
+}
+
+.myrealtrip-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.myrealtrip-card,
+.myrealtrip-skeleton,
+.myrealtrip-empty {
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 12px 32px rgba(117, 62, 77, 0.1);
+}
+
+.myrealtrip-skeleton,
+.myrealtrip-empty {
+  grid-column: 1 / -1;
+  padding: 22px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.myrealtrip-image {
+  position: relative;
+  display: block;
+  min-height: 190px;
+  background-size: cover;
+  background-position: center;
+  text-decoration: none;
+}
+
+.myrealtrip-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(24, 20, 21, 0.05), rgba(24, 20, 21, 0.45));
+}
+
+.myrealtrip-image span {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 1;
+  padding: 7px 11px;
+  color: var(--white);
+  background: rgba(92, 54, 64, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.myrealtrip-body {
+  display: grid;
+  gap: 12px;
+  padding: 20px;
+}
+
+.myrealtrip-body h3 {
+  margin: 0;
+  font-size: 21px;
+}
+
+.myrealtrip-body p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+}
+
+.myrealtrip-body dl {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+}
+
+.myrealtrip-body dl div {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr);
+  gap: 10px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.myrealtrip-body dt {
+  color: var(--rose-dark);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.myrealtrip-body dd {
+  margin: 0;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.55;
+}
+
+@media (max-width: 1100px) {
+  .honeymoon-feature-grid,
+  .honeymoon-stat-grid,
+  .myrealtrip-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .honeymoon-feature-grid,
+  .honeymoon-stat-grid,
+  .myrealtrip-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .honeymoon-subnav {
+    top: 0;
+  }
+}
+
+.tool-panel {
+  max-width: 980px;
+}
+
+.brief-form,
+.brief-output,
+.article-checklist {
+  display: grid;
+  gap: 16px;
+  padding: clamp(20px, 4vw, 34px);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.brief-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--rose-dark);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.brief-form input,
+.brief-form textarea,
+.brief-output textarea {
+  width: 100%;
+  padding: 13px 15px;
+  color: var(--ink);
+  background: #fffdfb;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font: inherit;
+  line-height: 1.55;
+}
+
+.brief-form textarea,
+.brief-output textarea {
+  resize: vertical;
+}
+
+.brief-output {
+  margin-top: 18px;
+}
+
+.brief-output h2 {
+  margin: 0;
+}
+
+.article-checklist ol {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 22px;
+}
+
+.article-checklist li {
+  padding-left: 4px;
+}
+
+.comparison-table-wrap {
+  overflow-x: auto;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 15px 16px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--line);
+}
+
+.comparison-table th {
+  color: var(--rose-dark);
+  background: var(--gold-soft);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.comparison-table td:first-child {
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.article-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.article-photo-card {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+}
+
+.article-photo-card img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: #fff8f5;
+}
+
+.article-photo-card span {
+  display: block;
+  padding: 12px 14px;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.fair-article-page {
+  background:
+    radial-gradient(circle at 16% 0%, rgba(234, 84, 111, 0.13), transparent 34%),
+    linear-gradient(180deg, #fff7f4 0%, #fffaf8 46%, #fffdfb 100%);
+}
+
+.fair-article-lead,
+.article-event-section {
+  color: var(--ink);
+}
+
+.fair-article-lead {
+  margin-top: 34px;
+}
+
+.fair-article-lead .eyebrow {
+  color: var(--rose-dark);
+}
+
+.fair-article-lead h1 {
+  max-width: 860px;
+  margin-bottom: 16px;
+  color: var(--ink);
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.18;
+  word-break: keep-all;
+}
+
+.fair-article-lead p {
+  max-width: 760px;
+  color: var(--muted);
+}
+
+.article-benefit-strip,
+.event-info-list li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.article-benefit-strip {
+  margin: 24px 0 12px;
+  padding: 10px 14px;
+  color: var(--ink);
+  background: #fff0f4;
+  border: 1px solid #f4c4cf;
+}
+
+.article-benefit-strip strong,
+.event-info-list strong {
+  display: inline-grid;
+  place-items: center;
+  min-width: 78px;
+  min-height: 34px;
+  padding: 6px 14px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--rose), var(--rose-dark));
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.article-benefit-strip span,
+.event-info-list span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-weight: 900;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.article-main-cta {
+  display: grid;
+  place-items: center;
+  min-height: 64px;
+  margin: 12px 0 20px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--rose), var(--gold));
+  border-radius: 10px;
+  box-shadow: 0 16px 34px rgba(114, 0, 6, 0.28);
+  font-size: 22px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.article-hero-image {
+  margin: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #eadde1;
+  border-radius: 12px;
+}
+
+.article-hero-image img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: contain;
+  background: #fff;
+}
+
+.article-hero-image figcaption {
+  padding: 10px 14px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.article-event-section h2 {
+  color: var(--ink);
+}
+
+.event-info-board {
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #eadde1;
+  border-radius: 12px;
+}
+
+.event-info-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.event-info-list li {
+  padding: 16px;
+  background: #fff8f5;
+  border: 1px solid #eadde1;
+}
+
+.event-info-list span {
+  color: var(--ink);
+  font-size: 20px;
+}
+
+.article-content-card {
+  padding: 34px;
+  background: #fffaf7;
+  border: 1px solid #eadde1;
+  border-radius: 12px;
+  box-shadow: 0 18px 44px rgba(117, 62, 77, 0.11);
+}
+
+.article-content-card + .article-content-card {
+  margin-top: 22px;
+}
+
+.article-content-card h2 {
+  margin-top: 0;
+}
+
+.article-step-grid,
+.article-question-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.article-step-card,
+.article-question-card {
+  min-width: 0;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #eadde1;
+  border-radius: 10px;
+}
+
+.article-step-card strong,
+.article-question-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--rose-dark);
+  font-size: 18px;
+}
+
+.article-inline-cta {
+  display: grid;
+  place-items: center;
+  min-height: 54px;
+  margin-top: 20px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--rose), var(--gold));
+  border-radius: 999px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.resort-gallery {
+  display: grid;
+  gap: 18px;
+}
+
+.resort-gallery-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: end;
+}
+
+.resort-gallery-head h2 {
+  margin: 4px 0 0;
+}
+
+.resort-gallery-head p {
+  max-width: 680px;
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.resort-gallery-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr 0.85fr;
+  gap: 14px;
+}
+
+.resort-gallery-card {
+  overflow: hidden;
+  border: 1px solid rgba(126, 71, 92, 0.16);
+  border-radius: 18px;
+  background: var(--white);
+  box-shadow: var(--shadow-soft);
+}
+
+.resort-gallery-card.featured {
+  grid-row: span 2;
+}
+
+.resort-gallery-card img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+}
+
+.resort-gallery-card.featured img {
+  height: 100%;
+  min-height: 438px;
+}
+
+.resort-gallery-card figcaption {
+  display: grid;
+  gap: 5px;
+  padding: 14px 15px 15px;
+}
+
+.resort-gallery-card.featured figcaption {
+  padding: 16px 18px 18px;
+}
+
+.resort-gallery-card strong {
+  color: var(--ink);
+  font-size: 1.02rem;
+}
+
+.resort-gallery-card span {
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+.resort-gallery-cta {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  padding: 16px 18px;
+  border: 1px solid rgba(212, 151, 76, 0.28);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 246, 239, 0.94), rgba(255, 255, 255, 0.98));
+}
+
+.resort-gallery-cta p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.affiliate-product-card {
+  display: grid;
+  grid-template-columns: 156px minmax(0, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 100%;
+  margin: 16px 0;
+  overflow: hidden;
+  border: 1px solid rgba(34, 34, 34, 0.08);
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  text-decoration: none !important;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.affiliate-product-card > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 164px;
+  object-fit: cover;
+  background: var(--gold-soft);
+}
+
+.affiliate-product-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(225, 84, 106, 0.28);
+  box-shadow: 0 18px 45px rgba(72, 52, 45, 0.16);
+}
+
+.affiliate-product-image {
+  position: relative;
+  min-height: 164px;
+  background: var(--gold-soft);
+}
+
+.affiliate-product-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 164px;
+  object-fit: cover;
+}
+
+.affiliate-bookmark {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 34px;
+  border: 2px solid #fff;
+  border-radius: 8px 8px 3px 3px;
+  background: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.14);
+}
+
+.affiliate-product-body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  padding: 16px 16px 16px 0;
+}
+
+.affiliate-product-card > div:not(.affiliate-product-image) {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 18px;
+}
+
+.affiliate-product-card > div:not(.affiliate-product-image) h2,
+.affiliate-product-card > div:not(.affiliate-product-image) p {
+  margin: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
+}
+
+.affiliate-product-card > div:not(.affiliate-product-image) h2 {
+  color: var(--ink);
+  font-size: clamp(24px, 4vw, 34px);
+  line-height: 1.24;
+}
+
+.affiliate-product-card > div:not(.affiliate-product-image) p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.affiliate-product-card > div:not(.affiliate-product-image) .button {
+  margin-top: 6px;
+}
+
+.affiliate-product-title {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.42;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.affiliate-product-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.affiliate-product-price {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.affiliate-product-price .discount {
+  color: #f04452;
+  font-size: 0.94rem;
+  font-weight: 900;
+}
+
+.affiliate-product-price strong {
+  color: var(--ink);
+  font-size: 1.08rem;
+  font-weight: 950;
+}
+
+.affiliate-product-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.affiliate-product-rating .star {
+  color: #ffbf00;
+  font-size: 1rem;
+}
+
+.affiliate-product-rating strong {
+  color: var(--ink);
+}
+
+.affiliate-product-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.affiliate-product-badges span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 5px 9px;
+  border-radius: 7px;
+  background: #eef4ff;
+  color: #2864d8;
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.affiliate-product-badges .hot {
+  background: #ffeff5;
+  color: #e13f67;
+}
+
+.affiliate-product-badges .confirm {
+  background: #fff1f1;
+  color: #ef4444;
+}
+
+.affiliate-product-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 36px;
+  margin-top: 4px;
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--rose), var(--gold));
+  color: #fff;
+  font-weight: 900;
+  line-height: 1;
+}
+
+@media (max-width: 860px) {
+  .resort-gallery-head,
+  .resort-gallery-cta {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .resort-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .resort-gallery-card.featured {
+    grid-row: auto;
+  }
+
+  .resort-gallery-card img,
+  .resort-gallery-card.featured img {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .article-photo-grid {
+    display: block;
+  }
+
+  .article-photo-card + .article-photo-card {
+    margin-top: 16px;
+  }
+
+  .article-photo-card img {
+    aspect-ratio: 3 / 4;
+    object-fit: contain;
+  }
+
+  .affiliate-product-card {
+    grid-template-columns: 128px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .affiliate-product-image,
+  .affiliate-product-image img {
+    min-height: 150px;
+  }
+
+  .affiliate-product-body {
+    padding: 12px 12px 12px 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .page-hero {
+    padding-top: 44px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(32px, 10vw, 44px);
+    line-height: 1.22;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .page-hero > p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .page-hero .context-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .page-hero .context-links a {
+    min-height: 42px;
+    padding: 10px 8px;
+    display: grid;
+    place-items: center;
+    font-size: 14px;
+    line-height: 1.25;
+    text-align: center;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .page-hero .section-more .fair-cta {
+    width: 100%;
+  }
+
+  .article-photo-card img {
+    max-height: 540px;
+  }
+}
+
+.resort-booking-card {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 16px;
+  align-items: stretch;
+  padding: 12px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 14px 36px rgba(117, 62, 77, 0.12);
+  color: var(--ink);
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.resort-booking-card *,
+.image-link-card * {
+  text-decoration: none !important;
+}
+
+.resort-booking-card:hover,
+.resort-booking-card:focus {
+  transform: translateY(-2px);
+  border-color: rgba(225, 84, 106, 0.34);
+  box-shadow: 0 18px 46px rgba(117, 62, 77, 0.18);
+}
+
+.resort-booking-card img {
+  display: block;
+  width: 132px;
+  height: 132px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #f7eef1;
+}
+
+.resort-booking-body {
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.resort-booking-body strong {
+  display: block;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.25;
+  text-decoration: none;
+  word-break: keep-all;
+}
+
+.resort-rating {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.resort-rating span {
+  color: #f5a400;
+}
+
+.resort-rating em {
+  color: var(--ink);
+  font-style: normal;
+}
+
+.resort-review-count {
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.resort-price {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  align-items: baseline;
+  color: var(--rose-dark);
+  font-size: 16px;
+  font-weight: 950;
+  text-decoration: none;
+}
+
+.resort-price-stack {
+  display: grid;
+  gap: 1px;
+}
+
+.resort-price-stack small,
+.affiliate-product-original {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: line-through;
+}
+
+.resort-price .sale {
+  color: #ef3f4f;
+}
+
+.resort-price strong {
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 950;
+}
+
+.resort-price small {
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: line-through;
+}
+
+.resort-location {
+  display: block;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.resort-card-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 34px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--rose), #c9883b);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 950;
+  box-shadow: 0 10px 22px rgba(217, 75, 101, 0.22);
+}
+
+.resort-product-row {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+  gap: 22px;
+  align-items: center;
+}
+
+.resort-list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.resort-list-grid .resort-booking-card {
+  align-items: stretch;
+  min-height: 190px;
+  grid-template-columns: 210px minmax(0, 1fr);
+  position: relative;
+}
+
+.resort-list-grid .resort-booking-card img {
+  width: 210px;
+  height: 176px;
+  border-radius: 14px;
+}
+
+.resort-list-note {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.resort-list-grid .resort-booking-body,
+.honeymoon-region-panel .resort-booking-body {
+  align-content: start;
+  padding: 4px 2px 4px 0;
+}
+
+.resort-list-grid .resort-booking-body strong,
+.honeymoon-region-panel .resort-booking-body strong {
+  font-size: 19px;
+}
+
+.resort-list-grid .resort-card-action,
+.honeymoon-region-panel .resort-card-action {
+  margin-top: 2px;
+  background: linear-gradient(135deg, #d94b65, #c9883b);
+}
+
+.resort-list-grid .resort-location,
+.honeymoon-region-panel .resort-location {
+  display: inline-flex;
+  width: fit-content;
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: rgba(255, 246, 239, 0.9);
+  color: var(--rose-dark);
+}
+
+.resort-list-grid .resort-review-count,
+.honeymoon-region-panel .resort-review-count {
+  color: #5f6172;
+}
+
+.resort-list-grid .resort-price,
+.honeymoon-region-panel .resort-price {
+  margin-top: 1px;
+}
+
+.resort-list-grid .resort-price::after,
+.honeymoon-region-panel .resort-price::after {
+  content: "무료취소 가능 여부 확인";
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  margin-left: 2px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #e6fbf1;
+  color: #069861;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.resort-list-grid .resort-booking-card::before,
+.honeymoon-region-panel .resort-booking-card::before {
+  content: "후기·가격 비교";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 1;
+  padding: 6px 10px;
+  border-radius: 0 0 10px 0;
+  background: linear-gradient(135deg, #2867ff, #8b1cff);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 950;
+  box-shadow: 0 8px 18px rgba(58, 55, 180, 0.18);
+}
+
+.resort-detail-guide {
+  background: linear-gradient(135deg, rgba(255, 246, 239, 0.96), rgba(255, 255, 255, 0.98));
+}
+
+.detail-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.detail-guide-grid article {
+  padding: 22px;
+  border: 1px solid rgba(126, 71, 92, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 16px 38px rgba(117, 62, 77, 0.08);
+}
+
+.detail-guide-grid h3 {
+  margin: 0 0 10px;
+  color: var(--ink);
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.detail-guide-grid p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.honeymoon-resort-spotlight {
+  border-top: 1px solid rgba(126, 71, 92, 0.1);
+  border-bottom: 1px solid rgba(126, 71, 92, 0.1);
+  background: linear-gradient(135deg, rgba(255, 246, 239, 0.95), rgba(255, 255, 255, 0.98));
+}
+
+.honeymoon-region-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 18px 0 22px;
+}
+
+.honeymoon-region-tabs a {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border: 1px solid rgba(126, 71, 92, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  color: var(--rose-dark);
+  font-size: 14px;
+  font-weight: 950;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(117, 62, 77, 0.08);
+}
+
+.honeymoon-region-tabs a:hover,
+.honeymoon-region-tabs a:focus {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--rose), #c9883b);
+  color: #fff;
+}
+
+.honeymoon-region-panel {
+  margin-top: 18px;
+  padding: 22px;
+  border: 1px solid rgba(126, 71, 92, 0.12);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 46px rgba(117, 62, 77, 0.09);
+}
+
+.honeymoon-region-panel + .honeymoon-region-panel {
+  margin-top: 24px;
+}
+
+.region-panel-heading {
+  display: flex;
+  gap: 18px;
+  align-items: end;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.region-panel-heading h3 {
+  margin: 3px 0 8px;
+  color: var(--ink);
+  font-size: 25px;
+  line-height: 1.25;
+}
+
+.region-panel-heading p:last-child {
+  margin: 0;
+  max-width: 760px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.resort-home-grid {
+  margin-top: 18px;
+}
+
+.resort-home-actions {
+  margin-top: 22px;
+}
+
+.image-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.honeymoon-article-hero {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 64px 0 28px;
+}
+
+.honeymoon-article-hero.light {
+  padding-top: 54px;
+}
+
+.honeymoon-article-hero.light .button.secondary,
+.honeymoon-article-hero.light .button.ghost {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(117, 62, 77, 0.22);
+}
+
+.honeymoon-article-hero h1 {
+  max-width: 860px;
+  margin: 0 0 16px;
+  font-size: clamp(34px, 6vw, 62px);
+  line-height: 1.08;
+  letter-spacing: 0;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+
+.honeymoon-article-hero p {
+  max-width: 820px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.resort-mini-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.resort-mini-summary span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 38px;
+  padding: 8px 13px;
+  border: 1px solid rgba(225, 84, 106, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.seo-resort-page main,
+.seo-resort-page article {
+  overflow-x: hidden;
+}
+
+.honeymoon-api-region-link {
+  background: linear-gradient(135deg, rgba(255, 247, 244, 0.94), rgba(255, 255, 255, 0.98));
+}
+
+.image-link-card {
+  overflow: hidden;
+  display: grid;
+  align-content: start;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 16px 42px rgba(117, 62, 77, 0.11);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.image-link-card:hover,
+.image-link-card:focus {
+  transform: translateY(-3px);
+  border-color: rgba(225, 84, 106, 0.34);
+  box-shadow: 0 22px 52px rgba(117, 62, 77, 0.18);
+}
+
+.image-link-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background: #f8eef1;
+}
+
+.image-link-card-body {
+  display: grid;
+  gap: 9px;
+  padding: 18px;
+}
+
+.image-link-card strong {
+  color: var(--ink);
+  font-size: 19px;
+  line-height: 1.35;
+}
+
+.image-link-card span {
+  display: block;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.image-link-card .tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.image-link-card .tag-row b {
+  display: inline-flex;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #fff1f4;
+  color: var(--rose-dark);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.resort-deep-section {
+  padding: clamp(24px, 4vw, 40px);
+  background: linear-gradient(135deg, #fff8ec, #fff2f5);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+.resort-highlight-list {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.resort-highlight-list li {
+  padding-left: 4px;
+}
+
+@media (max-width: 820px) {
+  .honeymoon-region-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .honeymoon-region-tabs a {
+    min-height: 40px;
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  .honeymoon-region-panel {
+    padding: 16px;
+    border-radius: 18px;
+  }
+
+  .region-panel-heading {
+    display: grid;
+    align-items: start;
+  }
+
+  .region-panel-heading h3 {
+    font-size: 21px;
+  }
+
+  .resort-product-row {
+    grid-template-columns: 1fr;
+  }
+
+  .resort-list-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .resort-booking-card {
+    grid-template-columns: 96px minmax(0, 1fr);
+    padding: 10px;
+  }
+
+  .resort-booking-card img {
+    width: 96px;
+    height: 106px;
+  }
+
+  .resort-booking-body strong {
+    font-size: 16px;
+  }
+
+  .resort-rating,
+  .resort-location,
+  .resort-list-note {
+    font-size: 12px;
+  }
+
+  .resort-price {
+    font-size: 14px;
+  }
+
+  .resort-price strong {
+    font-size: 15px;
+  }
+
+  .resort-card-action {
+    width: 100%;
+    min-height: 32px;
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .image-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .affiliate-product-card {
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .affiliate-product-image,
+  .affiliate-product-image img,
+  .affiliate-product-card > img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: 54vh;
+    aspect-ratio: auto;
+    object-fit: contain;
+    background: #fffaf7;
+  }
+
+  .affiliate-product-body {
+    padding: 14px;
+  }
+
+  .affiliate-product-card > div:not(.affiliate-product-image) {
+    display: grid;
+    gap: 12px;
+    padding: 18px 16px 20px;
+    background: #fff;
+  }
+
+  .affiliate-product-card > div:not(.affiliate-product-image) h2 {
+    font-size: 25px;
+    line-height: 1.28;
+  }
+
+  .affiliate-product-card > div:not(.affiliate-product-image) p {
+    display: block !important;
+    font-size: 15px;
+    line-height: 1.68;
+  }
+}
+
+@media (max-width: 640px) {
+  .honeymoon-article-hero {
+    width: min(100% - 28px, 100%);
+    padding: 40px 0 18px;
+  }
+
+  .honeymoon-article-hero h1 {
+    font-size: 34px;
+    line-height: 1.16;
+  }
+
+  .honeymoon-article-hero p {
+    font-size: 16px;
+    line-height: 1.72;
+  }
+
+  .resort-mini-summary {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .resort-mini-summary span {
+    width: 100%;
+    border-radius: 14px;
+  }
+
+  .resort-list-grid .resort-booking-card,
+  .honeymoon-region-panel .resort-booking-card {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .resort-list-grid .resort-booking-card img,
+  .honeymoon-region-panel .resort-booking-card img {
+    width: 100%;
+    height: 184px;
+    border-radius: 14px;
+  }
+
+  .resort-list-grid .resort-booking-body,
+  .honeymoon-region-panel .resort-booking-body {
+    align-content: start;
+    gap: 9px;
+  }
+
+  .resort-list-grid .resort-booking-body strong,
+  .honeymoon-region-panel .resort-booking-body strong {
+    font-size: 18px;
+    line-height: 1.32;
+  }
+
+  .resort-list-grid .resort-rating,
+  .honeymoon-region-panel .resort-rating,
+  .resort-list-grid .resort-location,
+  .honeymoon-region-panel .resort-location,
+  .resort-list-grid .resort-list-note,
+  .honeymoon-region-panel .resort-list-note {
+    font-size: 13px;
+  }
+
+  .resort-list-grid .resort-card-action,
+  .honeymoon-region-panel .resort-card-action {
+    width: 100%;
+    min-height: 38px;
+    margin-top: 2px;
+  }
+}
+
+@media (max-width: 760px) {
+  .resort-list-grid,
+  .honeymoon-region-panel .resort-list-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .resort-list-grid .resort-booking-card,
+  .honeymoon-region-panel .resort-booking-card,
+  .section .resort-list-grid .resort-booking-card {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: none !important;
+    min-height: 0 !important;
+    gap: 12px !important;
+    padding: 12px !important;
+  }
+
+  .resort-list-grid .resort-booking-card img,
+  .honeymoon-region-panel .resort-booking-card img,
+  .section .resort-list-grid .resort-booking-card img {
+    width: 100% !important;
+    max-width: none !important;
+    height: 184px !important;
+    flex: 0 0 auto !important;
+    object-fit: cover !important;
+  }
+
+  .resort-list-grid .resort-booking-body,
+  .honeymoon-region-panel .resort-booking-body,
+  .section .resort-list-grid .resort-booking-body {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .resort-list-grid .resort-card-action,
+  .honeymoon-region-panel .resort-card-action,
+  .section .resort-list-grid .resort-card-action {
+    width: 100% !important;
+  }
+}
+
+/* Hard mobile clamp for generated fair/resort article pages. */
+@media (max-width: 760px) {
+  .fair-detail-page,
+  .fair-detail-page *,
+  .article-page,
+  .article-page * {
+    box-sizing: border-box;
+  }
+
+  .fair-detail-page,
+  .fair-detail-page .section,
+  .fair-detail-page .article-hero,
+  .article-page .article-hero,
+  .article-page .section {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    overflow-x: hidden !important;
+  }
+
+  .fair-detail-page .fair-hero-image,
+  .article-page .fair-hero-image,
+  .fair-detail-page .article-hero-image,
+  .article-page .article-hero-image {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 18px 0 0 !important;
+    padding: 0 !important;
+    border-radius: 14px !important;
+    overflow: hidden !important;
+    background: #fff !important;
+  }
+
+  .fair-detail-page .fair-hero-image img,
+  .article-page .fair-hero-image img,
+  .fair-detail-page .article-hero-image img,
+  .article-page .article-hero-image img {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  .fair-detail-page .fair-hero-image figcaption,
+  .article-page .fair-hero-image figcaption,
+  .fair-detail-page .article-hero-image figcaption,
+  .article-page .article-hero-image figcaption {
+    width: 100% !important;
+    padding: 12px 14px !important;
+    overflow-wrap: anywhere !important;
+    word-break: keep-all;
+  }
+
+  .fair-detail-page .article-main-cta,
+  .fair-detail-page .article-benefit-strip {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Final mobile article override: keep the SETEC guide usable in cached mobile browsers. */
+.fair-article-page .article-main-cta {
+  min-height: 76px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-size: 26px;
+}
+
+.fair-article-page .article-benefit-strip,
+.fair-article-page .article-hero-image,
+.fair-article-page .article-break-image,
+.fair-article-page .article-content-card,
+.fair-article-page .event-info-board {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.fair-article-page .article-hero-image img,
+.fair-article-page .article-break-image img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.article-break-image {
+  margin: 22px 0;
+  overflow: hidden;
+  background: #fffaf7;
+  border: 1px solid #eadde1;
+  border-radius: 12px;
+  box-shadow: 0 16px 38px rgba(117, 62, 77, 0.12);
+}
+
+.article-break-image img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.article-break-image figcaption {
+  padding: 12px 16px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+@media (max-width: 620px) {
+  .fair-article-page .section {
+    width: calc(100% - 28px);
+  }
+
+  .fair-article-page .article-main-cta {
+    min-height: 82px;
+    font-size: 25px;
+    border-radius: 12px;
+  }
+
+  .fair-article-page .article-hero-image {
+    margin-top: 18px;
+  }
+
+  .fair-article-page .article-hero-image img {
+    aspect-ratio: 16 / 10;
+    object-fit: contain;
+  }
+
+  .article-break-image {
+    margin: 18px 0;
+  }
+
+  .article-break-image img {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Final mobile clamp for honeymoon resort lists. Keep this at the end so older generated rules cannot override it. */
+@media (max-width: 760px) {
+  .resort-list-grid,
+  .resort-all-grid,
+  .honeymoon-region-panel .resort-list-grid,
+  .resort-region-section .resort-list-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: min(100% - 24px, 560px) !important;
+    max-width: 560px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    gap: 16px !important;
+    overflow: visible !important;
+  }
+
+  .resort-list-grid .resort-booking-card,
+  .resort-all-grid .resort-booking-card,
+  .honeymoon-region-panel .resort-booking-card,
+  .resort-region-section .resort-booking-card {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 12px !important;
+    gap: 12px !important;
+    overflow: hidden !important;
+  }
+
+  .resort-list-grid .resort-booking-card img,
+  .resort-all-grid .resort-booking-card img,
+  .honeymoon-region-panel .resort-booking-card img,
+  .resort-region-section .resort-booking-card img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16 / 10 !important;
+    object-fit: cover !important;
+    border-radius: 14px !important;
+  }
+
+  .resort-list-grid .resort-booking-body,
+  .resort-all-grid .resort-booking-body,
+  .honeymoon-region-panel .resort-booking-body,
+  .resort-region-section .resort-booking-body {
+    display: grid !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 0 !important;
+    gap: 8px !important;
+    overflow: visible !important;
+  }
+
+  .resort-list-grid .resort-booking-body *,
+  .resort-all-grid .resort-booking-body *,
+  .honeymoon-region-panel .resort-booking-body *,
+  .resort-region-section .resort-booking-body * {
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
+    word-break: keep-all !important;
+  }
+
+  .resort-list-grid .resort-card-action,
+  .resort-all-grid .resort-card-action,
+  .honeymoon-region-panel .resort-card-action,
+  .resort-region-section .resort-card-action {
+    width: 100% !important;
+  }
+
+  #all-resorts[hidden],
+  .resort-region-section[hidden],
+  .resort-region-card[hidden] {
+    display: none !important;
+  }
+}
+
+/* Mobile image safety: show full product/event photos instead of cropping them. */
+@media (max-width: 760px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .article-page,
+  .fair-article-page,
+  .seo-resort-page,
+  .article-page main,
+  .fair-article-page main {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .article-page .section,
+  .seo-resort-page .section,
+  .article-page .split,
+  .article-page .resort-product-row,
+  .article-page .affiliate-product-card,
+  .article-page .affiliate-product-card > div,
+  .article-page .resort-deep-section,
+  .article-page .resort-gallery,
+  .article-page .resort-gallery-grid,
+  .article-page .resort-gallery-card,
+  .article-page .honeymoon-stat-grid,
+  .article-page .comparison-table-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  .article-page .comparison-table {
+    min-width: 0;
+  }
+
+  .article-page .comparison-table thead {
+    display: none;
+  }
+
+  .article-page .comparison-table,
+  .article-page .comparison-table tbody,
+  .article-page .comparison-table tr,
+  .article-page .comparison-table td {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .article-page .comparison-table tr {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .article-page .comparison-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  .article-page .comparison-table td {
+    display: grid;
+    grid-template-columns: 92px minmax(0, 1fr);
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .article-page .comparison-table td::before {
+    content: attr(data-label);
+    color: var(--rose-dark);
+    font-size: 13px;
+    font-weight: 900;
+  }
+
+  .article-page p,
+  .article-page h1,
+  .article-page h2,
+  .article-page h3,
+  .article-page li,
+  .article-page span,
+  .article-page strong,
+  .article-page .button {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: keep-all;
+  }
+
+  .article-page .hero-actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .article-page .button,
+  .article-page .big-cta {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 54px;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    font-size: clamp(15px, 4.5vw, 20px) !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  .affiliate-product-card {
+    border-radius: 16px !important;
+  }
+
+  .affiliate-product-card > img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 54vh !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: #fffaf7 !important;
+  }
+
+  .article-hero-image,
+  .fair-hero-image,
+  .article-break-image,
+  .article-photo-card,
+  .detail-photo,
+  .resort-gallery-card,
+  .affiliate-product-image {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .article-hero-image img,
+  .fair-hero-image img,
+  .article-break-image img,
+  .article-photo-card img,
+  .detail-photo img,
+  .resort-gallery-card img,
+  .resort-gallery-card.featured img,
+  .affiliate-product-image img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 62vh !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+    background: #fffaf7 !important;
+  }
+
+  .fair-hero-image,
+  .article-hero-image {
+    margin-inline: 0 !important;
+  }
+
+  .fair-hero-image figcaption,
+  .article-hero-image figcaption,
+  .article-break-image figcaption,
+  .resort-gallery-card figcaption {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+}
+
+/* Final mobile guard for the honeymoon hotel/resort index.
+   Earlier mobile rules can be overridden by later resort styles, so this block
+   intentionally sits at the end of the stylesheet. */
+@media (max-width: 760px) {
+  body,
+  main,
+  .section,
+  .resort-index-hero,
+  .resort-filter-tabs,
+  .resort-region-grid,
+  .resort-list-grid,
+  .resort-all-grid,
+  .resort-region-section {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  .resort-filter-tabs {
+    width: calc(100% - 32px) !important;
+    margin-inline: auto !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+  }
+
+  .resort-region-grid,
+  .resort-list-grid,
+  .resort-all-grid {
+    width: calc(100% - 32px) !important;
+    margin-inline: auto !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .resort-region-card,
+  .resort-booking-card,
+  .resort-list-grid .resort-booking-card,
+  .resort-all-grid .resort-booking-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    display: grid !important;
+    grid-template-columns: 108px minmax(0, 1fr) !important;
+    gap: 12px !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .resort-region-card img,
+  .resort-booking-card img,
+  .resort-list-grid .resort-booking-card img,
+  .resort-all-grid .resort-booking-card img {
+    width: 108px !important;
+    max-width: 108px !important;
+    height: 112px !important;
+    border-radius: 14px !important;
+    object-fit: cover !important;
+  }
+
+  .resort-region-card > div,
+  .resort-booking-body {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .resort-region-card span,
+  .resort-region-card strong,
+  .resort-region-card p,
+  .resort-region-card em,
+  .resort-booking-body strong,
+  .resort-rating,
+  .resort-review-count,
+  .resort-price,
+  .resort-location,
+  .resort-card-action,
+  .resort-list-note {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    word-break: keep-all !important;
+  }
+
+  .resort-region-card strong,
+  .resort-booking-body strong {
+    font-size: 16px !important;
+    line-height: 1.35 !important;
+  }
+
+  .resort-region-card p,
+  .resort-list-note {
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .resort-region-card,
+  .resort-booking-card,
+  .resort-list-grid .resort-booking-card,
+  .resort-all-grid .resort-booking-card {
+    grid-template-columns: 92px minmax(0, 1fr) !important;
+  }
+
+  .resort-region-card img,
+  .resort-booking-card img,
+  .resort-list-grid .resort-booking-card img,
+  .resort-all-grid .resort-booking-card img {
+    width: 92px !important;
+    max-width: 92px !important;
+    height: 100px !important;
+  }
+}
+
+/* Honeymoon split pages: snaps / tours / activities */
+.split-nav {
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.split-nav a {
+  white-space: nowrap;
+}
+
+.split-experience-hero .hero-content {
+  max-width: 860px;
+}
+
+.split-filter-section {
+  padding-bottom: 18px;
+}
+
+.split-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.split-filter-row a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 18px;
+  border: 1px solid rgba(219, 123, 139, .28);
+  border-radius: 999px;
+  background: #fff;
+  color: #2f2527;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(80, 35, 45, .06);
+}
+
+.split-experience-grid {
+  align-items: stretch;
+}
+
+.split-experience-card {
+  overflow: hidden;
+}
+
+.split-experience-card > img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: #fff7f3;
+}
+
+.split-check-grid p {
+  margin-bottom: 0;
+}
+
+@media (max-width: 760px) {
+  .split-nav {
+    display: flex !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-inline: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  .split-filter-section,
+  .split-region-preview,
+  .split-experience-hero,
+  .split-experience-grid,
+  .split-check-grid {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  .split-filter-row {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    padding-bottom: 8px;
+  }
+
+  .split-filter-row a {
+    flex: 0 0 auto;
+  }
+
+  .split-experience-grid,
+  .experience-grid.split-experience-grid,
+  .experience-grid.compact.split-experience-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .split-experience-card,
+  .experience-card.split-experience-card {
+    display: grid !important;
+    grid-template-columns: 118px minmax(0, 1fr) !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 10px !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+
+  .split-experience-card > img,
+  .experience-card.split-experience-card > img {
+    width: 118px !important;
+    max-width: 118px !important;
+    height: 124px !important;
+    border-radius: 14px !important;
+    object-fit: cover !important;
+  }
+
+  .split-experience-card .experience-card-body,
+  .experience-card.split-experience-card .experience-card-body {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .split-experience-card h3,
+  .split-experience-card p,
+  .split-experience-card span,
+  .split-experience-card strong,
+  .split-experience-card .experience-price,
+  .split-experience-card .experience-cta,
+  .split-experience-card .affiliate-product-rating {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-wrap: anywhere !important;
+    word-break: keep-all !important;
+    white-space: normal !important;
+  }
+
+  .split-experience-card h3 {
+    font-size: 16px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 5px !important;
+  }
+
+  .split-experience-card p {
+    font-size: 12px !important;
+    line-height: 1.45 !important;
+  }
+
+  .split-experience-card .experience-cta {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    min-height: 42px !important;
+    font-size: 13px !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .split-experience-card,
+  .experience-card.split-experience-card {
+    grid-template-columns: 96px minmax(0, 1fr) !important;
+  }
+
+  .split-experience-card > img,
+  .experience-card.split-experience-card > img {
+    width: 96px !important;
+    max-width: 96px !important;
+    height: 108px !important;
+  }
+}
+
+/* 2026-08-04: mobile-safe product photos. Keep real product images visible, not cropped. */
+.article-main-image,
+.fair-hero-image,
+.resort-gallery-card,
+.affiliate-product-card,
+.affiliate-link-card,
+.image-link-card {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.article-main-image img,
+.fair-hero-image img,
+.resort-gallery-card img,
+.resort-gallery-card.featured img,
+.affiliate-product-card > img,
+.affiliate-link-card > img,
+.image-link-card img,
+.article-photo-grid img,
+.honeymoon-article-hero img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  background: #fffaf7;
+}
+
+@media (max-width: 760px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+
+  main,
+  section,
+  .section,
+  .article-page,
+  .article-hero,
+  .light-article-hero,
+  .article-content-card,
+  .resort-gallery,
+  .resort-gallery-grid,
+  .article-photo-grid,
+  .article-related-grid,
+  .affiliate-product-card,
+  .affiliate-link-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+
+  .article-main-image,
+  .fair-hero-image,
+  .resort-gallery-card,
+  .image-link-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .article-main-image img,
+  .fair-hero-image img,
+  .resort-gallery-card img,
+  .resort-gallery-card.featured img,
+  .image-link-card img,
+  .article-photo-grid img,
+  .honeymoon-article-hero img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  .affiliate-product-card,
+  .affiliate-link-card {
+    display: grid !important;
+    grid-template-columns: 112px minmax(0, 1fr) !important;
+    gap: 12px !important;
+    padding: 12px !important;
+  }
+
+  .affiliate-product-card > img,
+  .affiliate-link-card > img {
+    width: 112px !important;
+    max-width: 112px !important;
+    height: 112px !important;
+    object-fit: cover !important;
+    border-radius: 16px !important;
+  }
+
+  .affiliate-product-card h2,
+  .affiliate-link-card h2,
+  .affiliate-product-card p,
+  .affiliate-link-card p,
+  .affiliate-product-card strong,
+  .affiliate-link-card strong {
+    max-width: 100% !important;
+    min-width: 0 !important;
+    white-space: normal !important;
+    word-break: keep-all !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .affiliate-product-card .button,
+  .affiliate-link-card .button {
+    width: 100% !important;
+    min-height: 42px !important;
+    padding: 10px 12px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* 2026-08-04: final mobile containment for honeymoon/fair editorial pages. */
+img,
+picture,
+video {
+  max-width: 100%;
+}
+
+.article-page,
+.article-page *,
+.honeymoon-page,
+.honeymoon-page *,
+.resort-page,
+.resort-page *,
+.experience-page,
+.experience-page * {
+  box-sizing: border-box;
+}
+
+.article-page figure,
+.honeymoon-page figure,
+.resort-page figure,
+.experience-page figure {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  overflow: hidden;
+}
+
+.article-page figure img,
+.honeymoon-page figure img,
+.resort-page figure img,
+.experience-page figure img,
+.article-content-card img,
+.resort-gallery-card img,
+.image-link-card img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.button,
+.big-cta,
+.experience-cta,
+.resort-card-action {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .site-header,
+  .article-page,
+  .honeymoon-page,
+  .resort-page,
+  .experience-page,
+  .article-hero,
+  .light-article-hero,
+  .honeymoon-hero,
+  .section,
+  .article-content-card,
+  .resort-gallery,
+  .resort-gallery-grid,
+  .resort-list-grid,
+  .experience-grid,
+  .context-links,
+  .hero-actions {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    overflow-x: hidden !important;
+  }
+
+  .article-page,
+  .honeymoon-page,
+  .resort-page,
+  .experience-page {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .article-page > *,
+  .honeymoon-page > *,
+  .resort-page > *,
+  .experience-page > *,
+  main > .section,
+  main > .article-hero,
+  main > .honeymoon-hero {
+    max-width: calc(100vw - 32px) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .article-page h1,
+  .article-page h2,
+  .article-page h3,
+  .honeymoon-page h1,
+  .honeymoon-page h2,
+  .honeymoon-page h3,
+  .resort-page h1,
+  .resort-page h2,
+  .resort-page h3,
+  .experience-page h1,
+  .experience-page h2,
+  .experience-page h3,
+  .article-page p,
+  .honeymoon-page p,
+  .resort-page p,
+  .experience-page p {
+    max-width: 100% !important;
+    word-break: keep-all !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .article-page figure,
+  .honeymoon-page figure,
+  .resort-page figure,
+  .experience-page figure,
+  .article-main-image,
+  .fair-hero-image,
+  .resort-gallery-card,
+  .image-link-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    border-radius: 16px !important;
+  }
+
+  .article-page figure img,
+  .honeymoon-page figure img,
+  .resort-page figure img,
+  .experience-page figure img,
+  .article-main-image img,
+  .fair-hero-image img,
+  .resort-gallery-card img,
+  .image-link-card img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center !important;
+  }
+
+  .hero-actions {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .hero-actions .button,
+  .button.big-cta,
+  .big-cta {
+    width: 100% !important;
+    min-height: 58px !important;
+    padding: 16px 18px !important;
+    font-size: 18px !important;
+    line-height: 1.25 !important;
+  }
+
+  .affiliate-product-card,
+  .affiliate-link-card {
+    grid-template-columns: 104px minmax(0, 1fr) !important;
+    align-items: start !important;
+  }
+
+  .affiliate-product-card > img,
+  .affiliate-link-card > img {
+    width: 104px !important;
+    max-width: 104px !important;
+    height: 104px !important;
+    object-fit: cover !important;
+  }
+}

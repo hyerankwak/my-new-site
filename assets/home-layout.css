@@ -1,0 +1,42 @@
+.home-page main{min-width:0}
+.home-page .section{margin-top:44px;margin-bottom:44px}
+.home-page .portal-hero{min-height:380px;padding-top:48px;padding-bottom:48px}
+.home-page .portal-hero h1{font-size:40px;line-height:1.25;letter-spacing:0}
+.home-page #fairs .controls{display:flex;flex-wrap:wrap;align-items:center;gap:16px;min-width:0}
+.home-page #region-tabs{display:flex;flex-wrap:wrap;gap:8px;overflow:visible;max-width:100%}
+.home-page #fairs .search{flex:1 1 250px;max-width:420px;min-width:0}
+.home-page #fair-results-count{font-size:14px;color:#5a5557;margin:16px 0}
+.home-page #fairs .fair-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:start}
+.home-page #fairs .fair-card{display:flex;flex-direction:column;width:auto;min-width:0;height:auto;overflow:hidden;border-radius:8px}
+.home-page #fairs .fair-image{width:100%;height:auto;aspect-ratio:16/9;min-width:0;background:#fff;overflow:hidden}
+.home-page #fairs .fair-image img{display:block;width:100%;max-width:100%;height:100%;object-fit:contain}
+.home-page #fairs .fair-body{display:flex;flex-direction:column;width:auto;min-width:0;height:auto;padding:18px;gap:10px}
+.home-page #fairs h3{font-size:19px;line-height:1.5;margin:0;overflow-wrap:anywhere}
+.home-page #fairs .fair-details{margin:0;min-width:0}
+.home-page #fairs .fair-details li{min-width:0}
+.home-page #fairs .fair-details span{white-space:normal;overflow-wrap:anywhere;min-width:0}
+.home-page #fairs .fair-cta{font-size:16px;min-width:0;white-space:normal}
+.home-page .section-heading h2{font-size:27px;line-height:1.4}
+.home-page #latest-posts .hub-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.home-page #latest-posts .hub-grid>a{min-width:0;padding:16px;border-radius:8px}
+.home-page #latest-posts strong{font-size:16px;line-height:1.6;overflow-wrap:anywhere}
+.home-page #latest-posts span{font-size:13px}
+.home-page .notice-band p{font-size:14px}
+.home-page .notice-band{margin:0 auto;position:relative;box-shadow:none}
+.home-page #fair-load-more{color:#332d2e;border-color:#d7cfd1;background:#fff}
+.home-page [hidden]{display:none!important}
+@media(max-width:1000px){.home-page #fairs .fair-grid,.home-page #latest-posts .hub-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){
+ .home-page .portal-hero{min-height:310px;padding:32px 20px}
+ .home-page .portal-hero h1{font-size:30px}
+ .home-page .hero-copy{font-size:16px}
+ .home-page .hero-proof{flex-wrap:wrap}
+ .home-page .section{margin-top:32px;margin-bottom:32px;padding-left:20px;padding-right:20px}
+ .home-page #fairs .fair-grid,.home-page #latest-posts .hub-grid{grid-template-columns:minmax(0,1fr)}
+ .home-page .section-heading h2{font-size:24px}
+ .home-page #fairs .controls{display:flex;flex-direction:column;align-items:stretch}
+ .home-page #fairs .search{flex:auto;max-width:none;width:100%}
+ .home-page #region-tabs .tab{padding:9px 13px;font-size:14px}
+ .home-page .compact-conversion{grid-template-columns:minmax(0,1fr)}
+ .home-page .nav{flex-wrap:wrap}
+}

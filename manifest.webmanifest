@@ -1,0 +1,27 @@
+{
+  "name": "웨딩박람회 일정가이드",
+  "short_name": "웨딩가이드",
+  "description": "전국 웨딩박람회 일정, 무료 사전예약, 지역별 웨딩홀, 스드메, 허니문 정보를 제공하는 결혼 준비 플랫폼입니다.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fff7f6",
+  "theme_color": "#ea546f",
+  "icons": [
+    {
+      "src": "/assets/site-icon-48.png",
+      "sizes": "48x48",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/site-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/site-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

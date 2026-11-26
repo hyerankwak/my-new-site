@@ -1,0 +1,48 @@
+{
+  "engine": "github-actions",
+  "updatedAt": "2026-11-26T15:04:44.167Z",
+  "items": [
+    {
+      "title": "수원 타임빌라스 웨딩박람회 11월 28~29일 일정·장소·무료초대권",
+      "url": "https://wedding-guide.co.kr/magazine/suwon-timevillas-grand-wedding-fair-20261128-free-ticket-checklist",
+      "scheduledAt": "2026-11-27T10:00:00+09:00",
+      "status": "approved"
+    },
+    {
+      "title": "천안 갤러리아 웨딩박람회 12월 5~6일 일정과 센터시티 초대권",
+      "url": "https://wedding-guide.co.kr/magazine/cheonan-galleria-grand-wedding-fair-20261205-free-ticket-checklist",
+      "scheduledAt": "2026-11-28T10:00:00+09:00",
+      "status": "approved"
+    },
+    {
+      "title": "원주 AK플라자 웨딩박람회 12월 5~6일 6층 행사장·무료초대권",
+      "url": "https://wedding-guide.co.kr/magazine/wonju-ak-plaza-grand-wedding-fair-20261205-free-ticket-checklist",
+      "scheduledAt": "2026-11-29T10:00:00+09:00",
+      "status": "approved"
+    },
+    {
+      "title": "수원 갤러리아 광교 웨딩박람회 12월 5~6일 일정·초대권 신청",
+      "url": "https://wedding-guide.co.kr/magazine/suwon-galleria-gwanggyo-wedding-fair-20261205-free-ticket-checklist",
+      "scheduledAt": "2026-11-30T10:00:00+09:00",
+      "status": "approved"
+    },
+    {
+      "title": "세텍 웨딩박람회 12월 5~6일 일정·SETEC 장소·무료초대권",
+      "url": "https://wedding-guide.co.kr/magazine/seoul-setec-wedding-fair-20261205-free-ticket-checklist",
+      "scheduledAt": "2026-12-01T10:00:00+09:00",
+      "status": "approved"
+    },
+    {
+      "title": "용산 아이파크몰 웨딩박람회 12월 12~13일 리빙파크 3층·초대권",
+      "url": "https://wedding-guide.co.kr/magazine/yongsan-iparkmall-wedding-fair-20261212-free-ticket-checklist",
+      "scheduledAt": "2026-12-02T10:00:00+09:00",
+      "status": "approved"
+    },
+    {
+      "title": "청량리 롯데 웨딩박람회 12월 19~20일 일정·장소·초대권",
+      "url": "https://wedding-guide.co.kr/magazine/cheongnyangni-lotte-grand-wedding-fair-20261219-free-ticket-checklist",
+      "scheduledAt": "2026-12-03T10:00:00+09:00",
+      "status": "approved"
+    }
+  ]
+}
