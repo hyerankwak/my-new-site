@@ -30,7 +30,7 @@
       "source": ".publication/articles/elementary-math-game-ubongo-rummikub-comparison-20261127.html",
       "target": "blog/elementary-math-game-ubongo-rummikub-comparison-20261127.html",
       "url": "https://toypoppo.kr/blog/elementary-math-game-ubongo-rummikub-comparison-20261127.html",
-      "status": "ready",
+      "status": "published",
       "editorialRevision": "2026-11-25",
       "scheduledTime": "12:10",
       "campaign": "coupang-week-20261126",
@@ -39,7 +39,9 @@
         1745429,
         4673650342
       ],
-      "verifiedAt": null
+      "verifiedAt": null,
+      "publishedAt": "2026-11-27T12:11:14.576Z",
+      "runUrl": "https://github.com/hyerankwak/my-new-site/actions/runs/45996504542"
     },
     {
       "date": "2026-11-28",

@@ -2,8 +2,8 @@
   "version": 1,
   "engine": "github-actions",
   "repository": "hyerankwak/my-new-site",
-  "updatedAt": "2026-11-26T13:44:20.066Z",
-  "operationDate": "2026-11-26",
+  "updatedAt": "2026-11-27T12:11:14.576Z",
+  "operationDate": "2026-11-27",
   "items": [
     {
       "date": "2026-11-26",
@@ -32,7 +32,7 @@
       "description": "수학 보드게임이라는 이름으로 묶어도 우봉고와 루미큐브가 요구하는 행동은 다릅니다. 우봉고는 주어진 도형을 돌리고 뒤집어 맞추는 게임이고, 루미큐브는 숫자와 색의 조합을 만들고 바꾸는 게임입니다. 성적을 올려줄 게임을 찾기보다 아이가 즐길 수 있는 조작과 가족이",
       "target": "blog/elementary-math-game-ubongo-rummikub-comparison-20261127.html",
       "url": "https://toypoppo.kr/blog/elementary-math-game-ubongo-rummikub-comparison-20261127.html",
-      "status": "ready",
+      "status": "published",
       "editorialRevision": "2026-11-25",
       "scheduledTime": "12:10",
       "campaign": "coupang-week-20261126",
@@ -41,7 +41,9 @@
         1745429,
         4673650342
       ],
-      "verifiedAt": null
+      "verifiedAt": null,
+      "publishedAt": "2026-11-27T12:11:14.576Z",
+      "runUrl": "https://github.com/hyerankwak/my-new-site/actions/runs/45996504542"
     },
     {
       "date": "2026-11-28",
@@ -135,6 +137,6 @@
     }
   ],
   "todayCount": 1,
-  "readyCount": 6,
+  "readyCount": 5,
   "workflowUrl": "https://github.com/hyerankwak/my-new-site/actions/workflows/publish-toypoppo.yml"
 }
