@@ -51,7 +51,7 @@
       "source": ".publication/articles/parent-child-two-player-rummikub-uno-choice-20261128.html",
       "target": "blog/parent-child-two-player-rummikub-uno-choice-20261128.html",
       "url": "https://toypoppo.kr/blog/parent-child-two-player-rummikub-uno-choice-20261128.html",
-      "status": "ready",
+      "status": "published",
       "editorialRevision": "2026-11-25",
       "scheduledTime": "12:10",
       "campaign": "coupang-week-20261126",
@@ -60,7 +60,9 @@
         4673650342,
         7578905440
       ],
-      "verifiedAt": null
+      "verifiedAt": null,
+      "publishedAt": "2026-11-28T03:54:09.966Z",
+      "runUrl": "https://github.com/hyerankwak/my-new-site/actions/runs/46105011705"
     },
     {
       "date": "2026-11-29",
